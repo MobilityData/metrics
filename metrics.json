@@ -1,1 +1,5451 @@
-[]
+[
+    {
+        "id": "5d5d769f.9a1b78",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "fe0abb7f.8647f8",
+        "type": "tab",
+        "label": "START",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "57701e8f.efc2b",
+        "type": "tab",
+        "label": "Update info",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "75268d6f.390154",
+        "type": "tab",
+        "label": "PRs comments",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4bdc555e.83ca1c",
+        "type": "tab",
+        "label": "Merged PRs count",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3d4f0b03.605214",
+        "type": "tab",
+        "label": "Forks count",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1149b3f.5dfb14c",
+        "type": "tab",
+        "label": "Issues count",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4996e429.7d1b4c",
+        "type": "tab",
+        "label": "Issues comments",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "aae8f9f.973a508",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "fec3a672.124b78",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "60f3cd2a.064de4",
+        "type": "tab",
+        "label": "Flow avec post request",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3fed928b.104c6e",
+        "type": "tab",
+        "label": "MQTT ",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "56a13451.bb1bfc",
+        "type": "tab",
+        "label": "Package management",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "4ad4e04e.6fb9a",
+        "type": "ui_tab",
+        "name": "transit",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1eb27c71.6e6544",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "MobilityData Metrics",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "true",
+            "allowTempTheme": "none",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "736e0e84.c011c",
+        "type": "graphql-server",
+        "endpoint": "https://api.github.com/graphql",
+        "name": "GitHub endpoint"
+    },
+    {
+        "id": "fe0fe71a.1025a8",
+        "type": "ui_group",
+        "name": "Chart",
+        "tab": "",
+        "order": 2,
+        "disp": false,
+        "width": "18"
+    },
+    {
+        "id": "fe10a4d7.b3a3e8",
+        "type": "ui_group",
+        "name": "Home",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "9d4e8729.9035e8",
+        "type": "ui_group",
+        "name": "Number of merged PRs",
+        "tab": "a6220871.982918",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "a6220871.982918",
+        "type": "ui_tab",
+        "name": "gtfs-validator",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f3404590.666e58",
+        "type": "ui_group",
+        "name": "Number of opened issues",
+        "tab": "a6220871.982918",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "48e1463b.bd6158",
+        "type": "ui_group",
+        "name": "Update information",
+        "tab": "a6220871.982918",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "8244f0bd.c2964",
+        "type": "ui_group",
+        "name": "Number of merged PRs",
+        "tab": "4ad4e04e.6fb9a",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "27c7b7e8.6f7c08",
+        "type": "ui_group",
+        "name": "Update information",
+        "tab": "4ad4e04e.6fb9a",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b63552c9.00e05",
+        "type": "ui_group",
+        "name": "Number of opened issues",
+        "tab": "4ad4e04e.6fb9a",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3e59cb0d.097304",
+        "type": "ui_group",
+        "name": "Number of comments on repo issues",
+        "tab": "a6220871.982918",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2954c1f.949923e",
+        "type": "ui_group",
+        "name": "Number of comments of repo PRs",
+        "tab": "a6220871.982918",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "101169b0.0dc846",
+        "type": "ui_group",
+        "name": "Number of 1st degree forks",
+        "tab": "a6220871.982918",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "bd6db19d.9a0ad",
+        "type": "ui_group",
+        "name": "Number of comments on repo issues",
+        "tab": "4ad4e04e.6fb9a",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2a70ce0c.8cc212",
+        "type": "ui_group",
+        "name": "Number of comments on repo PRs",
+        "tab": "4ad4e04e.6fb9a",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "41a7a2f0.2e6c6c",
+        "type": "ui_group",
+        "name": "Number of 1st degree forks",
+        "tab": "4ad4e04e.6fb9a",
+        "order": 6,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "384cf460.6ed05c",
+        "type": "mqtt-broker",
+        "name": "test mqtt broker",
+        "broker": "demo.groov.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "c087c688.c4f478",
+        "type": "graphql-server",
+        "endpoint": "https://api.github.com/graphql",
+        "name": "Package management"
+    },
+    {
+        "id": "20e842e8.18de3e",
+        "type": "http in",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "url": "transcodeget",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 740,
+        "wires": [
+            [
+                "e3dd8d13.abe96",
+                "56347fab.9f15d"
+            ]
+        ]
+    },
+    {
+        "id": "c0fe6987.905ca8",
+        "type": "http response",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 730,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "6f956d31.323234",
+        "type": "change",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 760,
+        "wires": [
+            [
+                "c0fe6987.905ca8"
+            ]
+        ]
+    },
+    {
+        "id": "182a3b2a.615015",
+        "type": "inject",
+        "z": "aae8f9f.973a508",
+        "name": "MD sample",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{   \"plans\": [     {       \"plan_id\": \"plan1\",       \"description\": \"$1 fixed price for all rides\",       \"currency\": \"USD\",       \"price\": 1     },     {       \"plan_id\": \"plan2\",       \"description\": \"$1 to unlock and $0.10 for each minute of riding\",       \"currency\": \"USD\",       \"price\": 1,       \"variable_price\": {         \"variable_unit\": \"minute\",         \"rate_segments\": {           \"start\": 0,           \"rate\": 0.1         }       }     },     {       \"plan_id\": \"plan3\",       \"description\": \"$1 to unlcok with 30 minutes free, after 30 minutes, additional $1 every 30 minutes\",       \"currency\": \"USD\",       \"price\": 1,       \"variable_price\": {         \"variable_unit\": \"minute\",         \"flat_segments\": {           \"price\": 1,           \"interval\": 30,           \"start\": 30         }       }     },     {       \"plan_id\": \"plan4\",       \"description\": \"$1/km up to 10km, then $15 as well as $1/km\",       \"currency\": \"USD\",       \"variable_price\": {         \"variable_unit\": \"km\",         \"rate_segments\": {           \"start\": 0,           \"rate\": 1         },         \"flat_segments\": {           \"price\": 15,           \"start\": 10         }       }     }   ] }",
+        "payloadType": "json",
+        "x": 750,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "25ce9672.f37d3a",
+        "type": "inject",
+        "z": "aae8f9f.973a508",
+        "name": "Lime sample",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{   \"plans\": [     {       \"plan_id\": \"2UBTPBLGLUIXU\",       \"currency\": \"EUR\",       \"is_taxable\": 0,       \"price_base\": 1,       \"price_variable\": 0.2,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 1.2         },         {           \"start\": 1,           \"rate\": 0.2         }       ]     },     {       \"plan_id\": \"GEZIJCCCQ62HV\",       \"currency\": \"ILS\",       \"is_taxable\": 0,       \"price_base\": 5,       \"price_variable\": 0.6,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 5.6         },         {           \"start\": 1,           \"rate\": 0.6         }       ]     },     {       \"plan_id\": \"7W32DQOL5VFQE\",       \"currency\": \"PLN\",       \"is_taxable\": 0,       \"price_base\": 3,       \"price_variable\": 0.5,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 3.5         },         {           \"start\": 1,           \"rate\": 0.5         }       ]     },     {       \"plan_id\": \"7HPRKJ4MXXMCG\",       \"currency\": \"USD\",       \"is_taxable\": 0,       \"price_base\": 1,       \"price_variable\": 0.25,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 1.25         },         {           \"start\": 1,           \"rate\": 0.25         }       ]     },     {       \"plan_id\": \"4LPDC7GQOTFJB\",       \"currency\": \"USD\",       \"is_taxable\": 0,       \"price_base\": 1,       \"price_variable\": 0.36,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 1.36         },         {           \"start\": 1,           \"rate\": 0.36         }       ]     },     {       \"plan_id\": \"GEOH3VUN4HC2R\",       \"currency\": \"USD\",       \"is_taxable\": 0,       \"price_base\": 1,       \"price_variable\": 0.42,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 1.42         },         {           \"start\": 1,           \"rate\": 0.42         }       ]     }   ] }",
+        "payloadType": "json",
+        "x": 150,
+        "y": 680,
+        "wires": [
+            [
+                "2a637377.3be5cc"
+            ]
+        ]
+    },
+    {
+        "id": "a79c48c5.c3c5a8",
+        "type": "inject",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "lionelTopic",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "15ab00fe.d5d5cf"
+            ]
+        ]
+    },
+    {
+        "id": "da01a086.3c45c",
+        "type": "debug",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "fae5aac3.b3f058",
+        "type": "debug",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "15ab00fe.d5d5cf",
+        "type": "change",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "myNewField",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "anotherNewField",
+                "pt": "msg",
+                "to": "1122",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 340,
+        "wires": [
+            [
+                "fae5aac3.b3f058"
+            ]
+        ]
+    },
+    {
+        "id": "286964a6.74c35c",
+        "type": "debug",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "2a637377.3be5cc",
+        "type": "change",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temp",
+                "pt": "msg",
+                "to": "payload.plans[0]",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "myNewField",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "anotherNewField",
+                "pt": "msg",
+                "to": "1122",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 540,
+        "wires": [
+            [
+                "286964a6.74c35c",
+                "56347fab.9f15d"
+            ]
+        ]
+    },
+    {
+        "id": "56347fab.9f15d",
+        "type": "debug",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 730,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "4559c8f.c764938",
+        "type": "switch",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 160,
+        "y": 500,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "3483cca9.cbe384",
+        "type": "function",
+        "z": "aae8f9f.973a508",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 250,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e3dd8d13.abe96",
+        "type": "change",
+        "z": "aae8f9f.973a508",
+        "name": "set paylod to MD sample",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{   \"plans\": [     {       \"plan_id\": \"plan1\",       \"description\": \"$1 fixed price for all rides\",       \"currency\": \"USD\",       \"price\": 1     },     {       \"plan_id\": \"plan2\",       \"description\": \"$1 to unlock and $0.10 for each minute of riding\",       \"currency\": \"USD\",       \"price\": 1,       \"variable_price\": {         \"variable_unit\": \"minute\",         \"rate_segments\": {           \"start\": 0,           \"rate\": 0.1         }       }     },     {       \"plan_id\": \"plan3\",       \"description\": \"$1 to unlcok with 30 minutes free, after 30 minutes, additional $1 every 30 minutes\",       \"currency\": \"USD\",       \"price\": 1,       \"variable_price\": {         \"variable_unit\": \"minute\",         \"flat_segments\": {           \"price\": 1,           \"interval\": 30,           \"start\": 30         }       }     },     {       \"plan_id\": \"plan4\",       \"description\": \"$1/km up to 10km, then $15 as well as $1/km\",       \"currency\": \"USD\",       \"variable_price\": {         \"variable_unit\": \"km\",         \"rate_segments\": {           \"start\": 0,           \"rate\": 1         },         \"flat_segments\": {           \"price\": 15,           \"start\": 10         }       }     }   ] }",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 820,
+        "wires": [
+            [
+                "c0fe6987.905ca8"
+            ]
+        ]
+    },
+    {
+        "id": "8beee96c.f5ff68",
+        "type": "http in",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "url": "transcode",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 440,
+        "y": 740,
+        "wires": [
+            [
+                "63879b67.daa724",
+                "206bb3f8.c35b1c"
+            ]
+        ]
+    },
+    {
+        "id": "20d924fc.f18f0c",
+        "type": "http response",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1090,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "11ad7f76.242161",
+        "type": "change",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 760,
+        "wires": [
+            [
+                "20d924fc.f18f0c"
+            ]
+        ]
+    },
+    {
+        "id": "430f26b.8531bd8",
+        "type": "inject",
+        "z": "fec3a672.124b78",
+        "name": "MD sample",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{   \"plans\": [     {       \"plan_id\": \"plan1\",       \"description\": \"$1 fixed price for all rides\",       \"currency\": \"USD\",       \"price\": 1     },     {       \"plan_id\": \"plan2\",       \"description\": \"$1 to unlock and $0.10 for each minute of riding\",       \"currency\": \"USD\",       \"price\": 1,       \"variable_price\": {         \"variable_unit\": \"minute\",         \"rate_segments\": {           \"start\": 0,           \"rate\": 0.1         }       }     },     {       \"plan_id\": \"plan3\",       \"description\": \"$1 to unlcok with 30 minutes free, after 30 minutes, additional $1 every 30 minutes\",       \"currency\": \"USD\",       \"price\": 1,       \"variable_price\": {         \"variable_unit\": \"minute\",         \"flat_segments\": {           \"price\": 1,           \"interval\": 30,           \"start\": 30         }       }     },     {       \"plan_id\": \"plan4\",       \"description\": \"$1/km up to 10km, then $15 as well as $1/km\",       \"currency\": \"USD\",       \"variable_price\": {         \"variable_unit\": \"km\",         \"rate_segments\": {           \"start\": 0,           \"rate\": 1         },         \"flat_segments\": {           \"price\": 15,           \"start\": 10         }       }     }   ] }",
+        "payloadType": "json",
+        "x": 1110,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0bfbbaa.83b938",
+        "type": "inject",
+        "z": "fec3a672.124b78",
+        "name": "Lime sample",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{   \"plans\": [     {       \"plan_id\": \"2UBTPBLGLUIXU\",       \"currency\": \"EUR\",       \"is_taxable\": 0,       \"price_base\": 1,       \"price_variable\": 0.2,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 1.2         },         {           \"start\": 1,           \"rate\": 0.2         }       ]     },     {       \"plan_id\": \"GEZIJCCCQ62HV\",       \"currency\": \"ILS\",       \"is_taxable\": 0,       \"price_base\": 5,       \"price_variable\": 0.6,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 5.6         },         {           \"start\": 1,           \"rate\": 0.6         }       ]     },     {       \"plan_id\": \"7W32DQOL5VFQE\",       \"currency\": \"PLN\",       \"is_taxable\": 0,       \"price_base\": 3,       \"price_variable\": 0.5,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 3.5         },         {           \"start\": 1,           \"rate\": 0.5         }       ]     },     {       \"plan_id\": \"7HPRKJ4MXXMCG\",       \"currency\": \"USD\",       \"is_taxable\": 0,       \"price_base\": 1,       \"price_variable\": 0.25,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 1.25         },         {           \"start\": 1,           \"rate\": 0.25         }       ]     },     {       \"plan_id\": \"4LPDC7GQOTFJB\",       \"currency\": \"USD\",       \"is_taxable\": 0,       \"price_base\": 1,       \"price_variable\": 0.36,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 1.36         },         {           \"start\": 1,           \"rate\": 0.36         }       ]     },     {       \"plan_id\": \"GEOH3VUN4HC2R\",       \"currency\": \"USD\",       \"is_taxable\": 0,       \"price_base\": 1,       \"price_variable\": 0.42,       \"price_rates_per_minute\": [         {           \"start\": 0,           \"rate\": 1.42         },         {           \"start\": 1,           \"rate\": 0.42         }       ]     }   ] }",
+        "payloadType": "json",
+        "x": 510,
+        "y": 680,
+        "wires": [
+            [
+                "fd5316a.7ab6be8"
+            ]
+        ]
+    },
+    {
+        "id": "d89cbc38.4e925",
+        "type": "inject",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "lionelTopic",
+        "payload": "",
+        "payloadType": "date",
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "6f5f2514.9cef8c"
+            ]
+        ]
+    },
+    {
+        "id": "43c65ab8.86dba4",
+        "type": "debug",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a69f2a7b.e46368",
+        "type": "debug",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "6f5f2514.9cef8c",
+        "type": "change",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "myNewField",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "anotherNewField",
+                "pt": "msg",
+                "to": "1122",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 340,
+        "wires": [
+            [
+                "a69f2a7b.e46368"
+            ]
+        ]
+    },
+    {
+        "id": "d44f0c3b.4a804",
+        "type": "debug",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "fd5316a.7ab6be8",
+        "type": "change",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temp",
+                "pt": "msg",
+                "to": "payload.plans[0]",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "myNewField",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "anotherNewField",
+                "pt": "msg",
+                "to": "1122",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 540,
+        "wires": [
+            [
+                "d44f0c3b.4a804",
+                "206bb3f8.c35b1c"
+            ]
+        ]
+    },
+    {
+        "id": "206bb3f8.c35b1c",
+        "type": "debug",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "db7117e9.c39428",
+        "type": "switch",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 520,
+        "y": 500,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "b69f3e1.daea8c",
+        "type": "function",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 610,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "63879b67.daa724",
+        "type": "change",
+        "z": "fec3a672.124b78",
+        "name": "set paylod to MD sample",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{   \"plans\": [     {       \"plan_id\": \"plan1\",       \"description\": \"$1 fixed price for all rides\",       \"currency\": \"USD\",       \"price\": 1     },     {       \"plan_id\": \"plan2\",       \"description\": \"$1 to unlock and $0.10 for each minute of riding\",       \"currency\": \"USD\",       \"price\": 1,       \"variable_price\": {         \"variable_unit\": \"minute\",         \"rate_segments\": {           \"start\": 0,           \"rate\": 0.1         }       }     },     {       \"plan_id\": \"plan3\",       \"description\": \"$1 to unlcok with 30 minutes free, after 30 minutes, additional $1 every 30 minutes\",       \"currency\": \"USD\",       \"price\": 1,       \"variable_price\": {         \"variable_unit\": \"minute\",         \"flat_segments\": {           \"price\": 1,           \"interval\": 30,           \"start\": 30         }       }     },     {       \"plan_id\": \"plan4\",       \"description\": \"$1/km up to 10km, then $15 as well as $1/km\",       \"currency\": \"USD\",       \"variable_price\": {         \"variable_unit\": \"km\",         \"rate_segments\": {           \"start\": 0,           \"rate\": 1         },         \"flat_segments\": {           \"price\": 15,           \"start\": 10         }       }     }   ] }",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 820,
+        "wires": [
+            [
+                "20d924fc.f18f0c"
+            ]
+        ]
+    },
+    {
+        "id": "a391079c.f630a8",
+        "type": "link in",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8",
+            "96a9f981.2871c8"
+        ],
+        "x": 1685,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7867fe0f.15323",
+        "type": "inject",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "lionelTopic",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1240,
+        "y": 900,
+        "wires": [
+            [
+                "3e8863b0.5cfebc"
+            ]
+        ]
+    },
+    {
+        "id": "d4afe3b0.463ca",
+        "type": "debug",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1500,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "3dea3723.070f58",
+        "type": "debug",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1740,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "3e8863b0.5cfebc",
+        "type": "change",
+        "z": "fec3a672.124b78",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "myNewField",
+                "pt": "msg",
+                "to": "false",
+                "tot": "bool"
+            },
+            {
+                "t": "set",
+                "p": "anotherNewField",
+                "pt": "msg",
+                "to": "1122",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1470,
+        "y": 1120,
+        "wires": [
+            [
+                "3dea3723.070f58"
+            ]
+        ]
+    },
+    {
+        "id": "106153b7.7274bc",
+        "type": "comment",
+        "z": "aae8f9f.973a508",
+        "name": "This is a debug node",
+        "info": "Don't forget learning about the book icon (next to debug console icon)",
+        "x": 460,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "3447ba50.fe5c96",
+        "type": "http in",
+        "z": "60f3cd2a.064de4",
+        "name": "trancose post body",
+        "url": "transcode",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            [
+                "91cc31b7.78318"
+            ]
+        ]
+    },
+    {
+        "id": "801a48c1.824328",
+        "type": "catch",
+        "z": "60f3cd2a.064de4",
+        "name": "",
+        "scope": null,
+        "uncaught": false,
+        "x": 120,
+        "y": 60,
+        "wires": [
+            [
+                "543eed6c.b0b724"
+            ]
+        ]
+    },
+    {
+        "id": "543eed6c.b0b724",
+        "type": "http response",
+        "z": "60f3cd2a.064de4",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 770,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "548162d9.e545fc",
+        "type": "change",
+        "z": "60f3cd2a.064de4",
+        "name": "set payload to MD sample",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{   \"plans\": [     {       \"plan_id\": \"plan1\",       \"description\": \"$1 fixed price for all rides\",       \"currency\": \"USD\",       \"price\": 1     },     {       \"plan_id\": \"plan2\",       \"description\": \"$1 to unlock and $0.10 for each minute of riding\",       \"currency\": \"USD\",       \"price\": 1,       \"variable_price\": {         \"variable_unit\": \"minute\",         \"rate_segments\": {           \"start\": 0,           \"rate\": 0.1         }       }     },     {       \"plan_id\": \"plan3\",       \"description\": \"$1 to unlcok with 30 minutes free, after 30 minutes, additional $1 every 30 minutes\",       \"currency\": \"USD\",       \"price\": 1,       \"variable_price\": {         \"variable_unit\": \"minute\",         \"flat_segments\": {           \"price\": 1,           \"interval\": 30,           \"start\": 30         }       }     },     {       \"plan_id\": \"plan4\",       \"description\": \"$1/km up to 10km, then $15 as well as $1/km\",       \"currency\": \"USD\",       \"variable_price\": {         \"variable_unit\": \"km\",         \"rate_segments\": {           \"start\": 0,           \"rate\": 1         },         \"flat_segments\": {           \"price\": 15,           \"start\": 10         }       }     }   ] }",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "91cc31b7.78318",
+        "type": "change",
+        "z": "60f3cd2a.064de4",
+        "name": "extract plan 0",
+        "rules": [
+            {
+                "t": "set",
+                "p": "planzero",
+                "pt": "msg",
+                "to": "payload.plans[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "e03dad0d.f322b"
+            ]
+        ]
+    },
+    {
+        "id": "e03dad0d.f322b",
+        "type": "change",
+        "z": "60f3cd2a.064de4",
+        "name": "replace original content with reply",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "planzero",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 180,
+        "wires": [
+            [
+                "543eed6c.b0b724"
+            ]
+        ]
+    },
+    {
+        "id": "581c0d01.7ca474",
+        "type": "comment",
+        "z": "60f3cd2a.064de4",
+        "name": "YES! Be wary of the catch all though, you can catch individual nodes",
+        "info": "But yes there should be an error line in your flow and the error can indeed be fed back to the http request node and you get all your errors back as a nice parsable http response body ;)",
+        "x": 310,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a77ae8a5.4df918",
+        "type": "inject",
+        "z": "fe0abb7f.8647f8",
+        "name": "refreshDataOnceEveryWeek",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 06 * * 1",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 160,
+        "wires": [
+            [
+                "66ef402f.dd344",
+                "926a8de1.333f1",
+                "96a9f981.2871c8"
+            ]
+        ]
+    },
+    {
+        "id": "66ef402f.dd344",
+        "type": "moment",
+        "z": "fe0abb7f.8647f8",
+        "name": "from",
+        "topic": "",
+        "input": "payload",
+        "inputType": "msg",
+        "inTz": "America/New_York",
+        "adjAmount": "1",
+        "adjType": "months",
+        "adjDir": "subtract",
+        "format": "",
+        "locale": "C",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/New_York",
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "853dc5dc.1fddf8"
+            ]
+        ]
+    },
+    {
+        "id": "926a8de1.333f1",
+        "type": "moment",
+        "z": "fe0abb7f.8647f8",
+        "name": "to",
+        "topic": "",
+        "input": "payload",
+        "inputType": "msg",
+        "inTz": "America/New_York",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "",
+        "locale": "C",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "America/New_York",
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "508e0272.477f3c"
+            ]
+        ]
+    },
+    {
+        "id": "853dc5dc.1fddf8",
+        "type": "link out",
+        "z": "fe0abb7f.8647f8",
+        "name": "fromDate",
+        "links": [
+            "a391079c.f630a8",
+            "bb8b24e4.63e4f8",
+            "1aecb65f.4ef47a",
+            "88922743.abbc38",
+            "925e3ee4.2743e",
+            "60141ac2.eadae4",
+            "c37678f6.c51418",
+            "cfb1bc72.acf2f",
+            "febec035.1b5a4",
+            "9f127043.4cec6",
+            "36d01a3.8d30fe6",
+            "7283ac4f.0fc6b4",
+            "bc5c2584.bf32c8",
+            "fa47d207.42215",
+            "f136196a.dcfc18",
+            "4aa66638.048cc8",
+            "5165b9a.8378b48",
+            "f64eda21.78fd78",
+            "b549de2d.d1051",
+            "b3d9fc27.3132c",
+            "e934f8f1.c5d458",
+            "9ac8050e.7d3bf8",
+            "1613afa4.80914",
+            "49130e7.ae29df",
+            "70e25603.542078",
+            "36f90c8.1ba52f4",
+            "c6f8b8a2.4e7e88",
+            "5f397e3c.76852",
+            "65f2b812.5356f8",
+            "b2a5b7fc.269e58",
+            "5280f086.4580a",
+            "30204f3f.fbf3f",
+            "27577f2d.99563",
+            "1fc03b79.eb88b5"
+        ],
+        "x": 495,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "508e0272.477f3c",
+        "type": "link out",
+        "z": "fe0abb7f.8647f8",
+        "name": "toDate",
+        "links": [
+            "a391079c.f630a8",
+            "bb8b24e4.63e4f8",
+            "88922743.abbc38",
+            "60141ac2.eadae4",
+            "cfb1bc72.acf2f",
+            "9f127043.4cec6",
+            "7283ac4f.0fc6b4",
+            "fa47d207.42215",
+            "4aa66638.048cc8",
+            "f64eda21.78fd78",
+            "b3d9fc27.3132c",
+            "9ac8050e.7d3bf8",
+            "49130e7.ae29df",
+            "36f90c8.1ba52f4",
+            "5f397e3c.76852",
+            "b2a5b7fc.269e58",
+            "30204f3f.fbf3f",
+            "1fc03b79.eb88b5"
+        ],
+        "x": 495,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ee514b53.c41fc8",
+        "type": "comment",
+        "z": "fe0abb7f.8647f8",
+        "name": "date range: from 1month before timestamp to timestamp",
+        "info": "",
+        "x": 230,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "96a9f981.2871c8",
+        "type": "link out",
+        "z": "fe0abb7f.8647f8",
+        "name": "injectNode",
+        "links": [
+            "41cc478b.a5acd8",
+            "a391079c.f630a8",
+            "ae49b98d.442d98",
+            "9d0bbdac.858d5",
+            "adc1f2f7.1e655",
+            "40d91014.3a69c",
+            "9430299a.30dad8",
+            "2fb03544.bbf1ba",
+            "8fcb082c.d1a608",
+            "5561d400.b25fac",
+            "a3d4f09a.27ce5",
+            "be2ed062.d05ab",
+            "682d5874.7d7bb8",
+            "83a123fd.3d5d",
+            "b7d03ee0.a95d4",
+            "f3d33661.8fc528",
+            "2884faa7.88d716"
+        ],
+        "x": 495,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4b899903.b367c8",
+        "type": "graphql",
+        "z": "4bdc555e.83ca1c",
+        "name": "queryGetPrData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    pullRequests(first: 100, states: MERGED) {\n      edges {\n        node {\n          id\n          mergedAt\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 380,
+        "y": 240,
+        "wires": [
+            [
+                "18d0efc7.6538c",
+                "c27ccbe2.86d798"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "18d0efc7.6538c",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "retrievePrsMergeDate",
+        "func": "var pullRequests = msg.payload.repository.pullRequests.edges;\nvar mergedDates = [];\nfor (var i in pullRequests) {\n    var pullRequest = pullRequests[i].node;\n    mergedDates.push(pullRequest.mergedAt);\n}\nreturn {\n    payload:mergedDates,\n    topic: \"firstPage\"\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 660,
+        "y": 220,
+        "wires": [
+            [
+                "ed7da57c.5c7678"
+            ]
+        ]
+    },
+    {
+        "id": "ed7da57c.5c7678",
+        "type": "join",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 870,
+        "y": 180,
+        "wires": [
+            [
+                "11456fca.bf79c",
+                "2957af85.bf9d2"
+            ]
+        ]
+    },
+    {
+        "id": "11456fca.bf79c",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "getNumberOfMergedPrsInDateRange",
+        "func": "var dateCollection = msg.payload.firstPage;\nvar from = new Date(msg.payload.from);\nvar to = new Date(msg.payload.to);\nvar c = 0;\n\nfor (var i in dateCollection) {\n    let date = new Date(dateCollection[i]);\n    if (from <= date && date <= to) {\n        c = c+1;\n    }\n}\n\nreturn {payload: c, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1090,
+        "y": 120,
+        "wires": [
+            [
+                "31ef4a64.9d2da6"
+            ]
+        ]
+    },
+    {
+        "id": "c27ccbe2.86d798",
+        "type": "graphql",
+        "z": "4bdc555e.83ca1c",
+        "name": "queryGetPrData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    pullRequests(first: 100, states: MERGED, after:\"Y3Vyc29yOnYyOpHOG0PHmQ==\") {\n      edges {\n        node {\n          id\n          mergedAt\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 420,
+        "y": 360,
+        "wires": [
+            [
+                "295f6b93.543024",
+                "c39296f1.2b9e28"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "295f6b93.543024",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "retrievePrsMergeDate",
+        "func": "var pullRequests = msg.payload.repository.pullRequests.edges;\nvar mergedDates = [];\nfor (var i in pullRequests) {\n    var pullRequest = pullRequests[i].node;\n    mergedDates.push(pullRequest.mergedAt);\n}\nreturn {\n    payload:mergedDates,\n    topic: \"secondPage\"\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 660,
+        "y": 300,
+        "wires": [
+            [
+                "ed7da57c.5c7678"
+            ]
+        ]
+    },
+    {
+        "id": "2957af85.bf9d2",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "getNumberOfMergedPrsInDateRange",
+        "func": "var dateCollection = msg.payload.secondPage;\nvar from = new Date(msg.payload.from);\nvar to = new Date(msg.payload.to);\nvar c = 0;\n\nfor (var i in dateCollection) {\n    let date = new Date(dateCollection[i]);\n    if (from <= date && date <= to) {\n        c = c+1;\n    }\n}\n\nreturn {payload: c, topic: \"secondPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1090,
+        "y": 240,
+        "wires": [
+            [
+                "31ef4a64.9d2da6"
+            ]
+        ]
+    },
+    {
+        "id": "31ef4a64.9d2da6",
+        "type": "join",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1350,
+        "y": 180,
+        "wires": [
+            [
+                "8a0a1925.dbd708"
+            ]
+        ]
+    },
+    {
+        "id": "8a0a1925.dbd708",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "sumEachPageNumberOfMergedPRs",
+        "func": "return {payload: msg.payload.firstPage + msg.payload.secondPage};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1590,
+        "y": 180,
+        "wires": [
+            [
+                "1bc679b.c000586"
+            ]
+        ]
+    },
+    {
+        "id": "c39296f1.2b9e28",
+        "type": "switch",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "property": "payload.repository.issues.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 610,
+        "y": 420,
+        "wires": [
+            [
+                "ef711b4d.e3efa8"
+            ]
+        ]
+    },
+    {
+        "id": "ef711b4d.e3efa8",
+        "type": "ui_toast",
+        "z": "4bdc555e.83ca1c",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Continue",
+        "cancel": "",
+        "raw": false,
+        "topic": "Some data has been left out please check flows",
+        "name": "notifyUserThatSomeDataHasBeenLeftOut",
+        "x": 920,
+        "y": 420,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "Some data has been left out please check flows"
+        ]
+    },
+    {
+        "id": "8741ad57.bd2b9",
+        "type": "comment",
+        "z": "4bdc555e.83ca1c",
+        "name": "gtfs-validator: Number of PR successfully merged",
+        "info": "**Gets the number of pull requests that were sucessfully merged**\n\n * Connect to GitHub graphql API with token: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql\n * Authentication uses Bearer method",
+        "x": 250,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "ae49b98d.442d98",
+        "type": "link in",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 215,
+        "y": 160,
+        "wires": [
+            [
+                "4b899903.b367c8"
+            ]
+        ]
+    },
+    {
+        "id": "925e3ee4.2743e",
+        "type": "link in",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 475,
+        "y": 60,
+        "wires": [
+            [
+                "e0cdfe96.acce4"
+            ]
+        ]
+    },
+    {
+        "id": "60141ac2.eadae4",
+        "type": "link in",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 475,
+        "y": 140,
+        "wires": [
+            [
+                "e8b766af.d97c08"
+            ]
+        ]
+    },
+    {
+        "id": "e8b766af.d97c08",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "toDatePassthrough",
+        "func": "let date = new Date(msg.payload);\nreturn {payload:date, topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 670,
+        "y": 140,
+        "wires": [
+            [
+                "ed7da57c.5c7678"
+            ]
+        ]
+    },
+    {
+        "id": "e0cdfe96.acce4",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "fromDatePassthrough",
+        "func": "\nreturn {payload: msg.payload, topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 660,
+        "y": 60,
+        "wires": [
+            [
+                "ed7da57c.5c7678"
+            ]
+        ]
+    },
+    {
+        "id": "2da3fb26.456594",
+        "type": "comment",
+        "z": "1149b3f.5dfb14c",
+        "name": "gtfs-validator: Number of issues opened",
+        "info": "**Gets the number of issues opened**\n\n * Connect to GitHub graphql API with token: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql\n * Authentication uses Bearer method",
+        "x": 200,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "b94457e0.d5a388",
+        "type": "graphql",
+        "z": "1149b3f.5dfb14c",
+        "name": "queryGetIssuesData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    issues(first: 100) {\n      edges {\n        node {\n          id\n          createdAt\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 360,
+        "y": 300,
+        "wires": [
+            [
+                "302f3d4a.618862",
+                "dd4283e0.632f9"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "302f3d4a.618862",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "getIssuesDateOfOpening",
+        "func": "var issues = msg.payload.repository.issues.edges;\nvar issuesDates = [];\nfor (var i in issues) {\n    var date = issues[i].node.createdAt;\n    issuesDates.push(date);\n}\nreturn {payload:issuesDates, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 770,
+        "y": 300,
+        "wires": [
+            [
+                "6bd74929.da2638"
+            ]
+        ]
+    },
+    {
+        "id": "6bd74929.da2638",
+        "type": "join",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1070,
+        "y": 300,
+        "wires": [
+            [
+                "237904d2.98745c",
+                "bb42a0d3.1bedb",
+                "bf9ebf15.d92ec"
+            ]
+        ]
+    },
+    {
+        "id": "237904d2.98745c",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "getNumberOfIssuesOpenedInDateRange",
+        "func": "var dateCollection = msg.payload.secondPage;\nvar from = new Date(msg.payload.from);\nvar to = new Date(msg.payload.to);\nvar c = 0;\n\nfor (var i in dateCollection) {\n    let date = new Date(dateCollection[i]);\n    if (from <= date && date <= to) {\n        c = c+1;\n    }\n}\n\nreturn {payload: c, topic: \"secondPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1360,
+        "y": 300,
+        "wires": [
+            [
+                "4f151698.430108"
+            ]
+        ]
+    },
+    {
+        "id": "dd4283e0.632f9",
+        "type": "graphql",
+        "z": "1149b3f.5dfb14c",
+        "name": "queryGetIssuesData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    issues(first: 100, after: \"Y3Vyc29yOnYyOpHOJHt6pw==\") {\n      edges {\n        node {\n          id\n          createdAt\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 400,
+        "y": 360,
+        "wires": [
+            [
+                "5f6f5719.0cbc78",
+                "58e52db6.388b64"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5f6f5719.0cbc78",
+        "type": "graphql",
+        "z": "1149b3f.5dfb14c",
+        "name": "queryGetIssuesData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    issues(first: 100, after: \"Y3Vyc29yOnYyOpHOJub2qQ==\") {\n      edges {\n        node {\n          id\n          createdAt\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 440,
+        "y": 420,
+        "wires": [
+            [
+                "6db7eed5.0d776",
+                "f35e685e.8305b8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "58e52db6.388b64",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "getIssuesDateOfOpening",
+        "func": "var issues = msg.payload.repository.issues.edges;\nvar issuesDates = [];\nfor (var i in issues) {\n    var date = issues[i].node.createdAt;\n    issuesDates.push(date);\n}\nreturn {payload:issuesDates, topic: \"secondPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 770,
+        "y": 340,
+        "wires": [
+            [
+                "6bd74929.da2638"
+            ]
+        ]
+    },
+    {
+        "id": "6db7eed5.0d776",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "getIssuesDateOfOpening",
+        "func": "var issues = msg.payload.repository.issues.edges;\nvar issuesDates = [];\nfor (var i in issues) {\n    var date = issues[i].node.createdAt;\n    issuesDates.push(date);\n}\nreturn {payload:issuesDates, topic: \"thirdPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 770,
+        "y": 380,
+        "wires": [
+            [
+                "6bd74929.da2638"
+            ]
+        ]
+    },
+    {
+        "id": "bf9ebf15.d92ec",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "getNumberOfIssuesOpenedInDateRange",
+        "func": "var dateCollection = msg.payload.thirdPage;\nvar from = new Date(msg.payload.from);\nvar to = new Date(msg.payload.to);\nvar c = 0;\n\nfor (var i in dateCollection) {\n    let date = new Date(dateCollection[i]);\n    if (from <= date && date <= to) {\n        c = c+1;\n    }\n}\n\nreturn {payload: c, topic: \"thirdPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1360,
+        "y": 360,
+        "wires": [
+            [
+                "4f151698.430108"
+            ]
+        ]
+    },
+    {
+        "id": "bb42a0d3.1bedb",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "getNumberOfIssuesOpenedInDateRange",
+        "func": "var dateCollection = msg.payload.firstPage;\nvar from = new Date(msg.payload.from);\nvar to = new Date(msg.payload.to);\nvar c = 0;\n\nfor (var i in dateCollection) {\n    let date = new Date(dateCollection[i]);\n    if (from <= date && date <= to) {\n        c = c+1;\n    }\n}\n\nreturn {payload: c, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1360,
+        "y": 240,
+        "wires": [
+            [
+                "4f151698.430108"
+            ]
+        ]
+    },
+    {
+        "id": "4f151698.430108",
+        "type": "join",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1670,
+        "y": 300,
+        "wires": [
+            [
+                "937022ce.bc6d4"
+            ]
+        ]
+    },
+    {
+        "id": "937022ce.bc6d4",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "sumOpenedIssueCounts",
+        "func": "return {payload: msg.payload.firstPage + msg.payload.secondPage + msg.payload.thirdPage};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1910,
+        "y": 300,
+        "wires": [
+            [
+                "5e9b18b1.9f9738"
+            ]
+        ]
+    },
+    {
+        "id": "f35e685e.8305b8",
+        "type": "switch",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "property": "payload.repository.issues.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 710,
+        "y": 460,
+        "wires": [
+            [
+                "9336c5e6.9e47e8"
+            ]
+        ]
+    },
+    {
+        "id": "9336c5e6.9e47e8",
+        "type": "ui_toast",
+        "z": "1149b3f.5dfb14c",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Continue",
+        "cancel": "",
+        "raw": false,
+        "topic": "Some data has been left out please check flows",
+        "name": "notifyUserThatSomeDataHasBeenLeftOut",
+        "x": 1040,
+        "y": 460,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "Some data has been left out please check flows"
+        ]
+    },
+    {
+        "id": "9d0bbdac.858d5",
+        "type": "link in",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 175,
+        "y": 220,
+        "wires": [
+            [
+                "b94457e0.d5a388"
+            ]
+        ]
+    },
+    {
+        "id": "e3d0bcac.baf3",
+        "type": "ui_text",
+        "z": "57701e8f.efc2b",
+        "group": "48e1463b.bd6158",
+        "order": 5,
+        "width": "6",
+        "height": "2",
+        "name": "",
+        "label": "Content is updated every Monday. Last update was on",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 880,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "adc1f2f7.1e655",
+        "type": "link in",
+        "z": "57701e8f.efc2b",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 315,
+        "y": 320,
+        "wires": [
+            [
+                "c1e379c5.d255b8"
+            ]
+        ]
+    },
+    {
+        "id": "b961c9d1.744118",
+        "type": "comment",
+        "z": "4996e429.7d1b4c",
+        "name": "gtfs-validator: Number of comments on all issues of repo during date range",
+        "info": "**Gets the number of pull requests that were sucessfully merged**\n\n * Connect to GitHub graphql API with token: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql\n * Authentication uses Bearer method",
+        "x": 300,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "77106aef.766a04",
+        "type": "graphql",
+        "z": "4996e429.7d1b4c",
+        "name": "queryGetIssuesCommentData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    issues(first: 100) {\n      edges {\n        node {\n          comments(first: 100) {\n            nodes {\n              createdAt\n            }\n            totalCount\n          }\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 410,
+        "y": 360,
+        "wires": [
+            [
+                "44e0fa4f.b5a4b4",
+                "148de3b6.e3c16c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "148de3b6.e3c16c",
+        "type": "graphql",
+        "z": "4996e429.7d1b4c",
+        "name": "queryGetIssuesCommentData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "query Test($cursor: String = \"Y3Vyc29yOnYyOpHOJHt6pw==\") {\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    issues(first: 100, after:$cursor) {\n      edges {\n        node {\n          comments(first: 100) {\n            nodes {\n              createdAt\n            }\n            totalCount\n          }\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 430,
+        "y": 420,
+        "wires": [
+            [
+                "3617fccd.bf8224",
+                "daeb6f9a.c268e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "44e0fa4f.b5a4b4",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "queryDataPassthrough",
+        "func": "return {payload: msg.payload, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 821,
+        "y": 352,
+        "wires": [
+            [
+                "21b232a7.68686e"
+            ]
+        ]
+    },
+    {
+        "id": "3617fccd.bf8224",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "queryDataPassthrough",
+        "func": "return {payload: msg.payload, topic: \"secondPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 820,
+        "y": 400,
+        "wires": [
+            [
+                "21b232a7.68686e"
+            ]
+        ]
+    },
+    {
+        "id": "21b232a7.68686e",
+        "type": "join",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "5",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1090,
+        "y": 340,
+        "wires": [
+            [
+                "da41032e.e0b98",
+                "f5f5ef25.a22be",
+                "7b8e90a8.f947f"
+            ]
+        ]
+    },
+    {
+        "id": "daeb6f9a.c268e",
+        "type": "graphql",
+        "z": "4996e429.7d1b4c",
+        "name": "queryGetIssuesCommentData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "query Test($cursor: String = \"Y3Vyc29yOnYyOpHOJub2qQ==\") {\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    issues(first: 100, after:$cursor) {\n      edges {\n        node {\n          comments(first: 100) {\n            nodes {\n              createdAt\n            }\n            totalCount\n          }\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 470,
+        "y": 480,
+        "wires": [
+            [
+                "2a2f03a3.c216fc",
+                "6bd36936.c32758"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2a2f03a3.c216fc",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "queryDataPassthrough",
+        "func": "return {payload: msg.payload, topic: \"thirdPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 820,
+        "y": 460,
+        "wires": [
+            [
+                "21b232a7.68686e"
+            ]
+        ]
+    },
+    {
+        "id": "6bd36936.c32758",
+        "type": "switch",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "property": "payload.repository.issues.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 770,
+        "y": 520,
+        "wires": [
+            [
+                "d9fb2530.34e358"
+            ]
+        ]
+    },
+    {
+        "id": "d9fb2530.34e358",
+        "type": "ui_toast",
+        "z": "4996e429.7d1b4c",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Continue",
+        "cancel": "",
+        "raw": false,
+        "topic": "Some data has been left out please check flows",
+        "name": "notifyUserThatSomeDataHasBeenLeftOut",
+        "x": 1080,
+        "y": 520,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "Some data has been left out please check flows"
+        ]
+    },
+    {
+        "id": "eaeceab1.9f1238",
+        "type": "comment",
+        "z": "4996e429.7d1b4c",
+        "name": "First page of data",
+        "info": "",
+        "x": 180,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f0649786.f61ec8",
+        "type": "comment",
+        "z": "4996e429.7d1b4c",
+        "name": "Second page of data",
+        "info": "",
+        "x": 160,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "bd78cf50.24053",
+        "type": "comment",
+        "z": "4996e429.7d1b4c",
+        "name": "Third page of data",
+        "info": "",
+        "x": 190,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "da41032e.e0b98",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "computeNumberOfCommentsDuringDateRangeOnFirstPage",
+        "func": "let counter = 0;\nlet issues = msg.payload.firstPage.repository.issues.edges;\nlet from = msg.payload.from;\nlet to = msg.payload.to;\n\nlet toReturn = []\nlet dateCollection = []\nfor (var i in issues) {\n    let issue = issues[i];\n    let commentProperties = issue.node.comments;\n    let comments = commentProperties.nodes;\n    if (commentProperties.totalCount !== 0) {\n        for (var j in comments){\n            let comment = comments[j];\n            dateCollection.push(new Date(comment.createdAt));\n        } \n    }\n}\nfor (var date in dateCollection) {\n    if (new Date(from) <= new Date(dateCollection[date]) && new Date(dateCollection[date]) <= new Date(to)) {\n        counter = counter + 1;\n    }\n}\nreturn {payload: counter, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1460,
+        "y": 300,
+        "wires": [
+            [
+                "6ce7d54.ca3352c"
+            ]
+        ]
+    },
+    {
+        "id": "f5f5ef25.a22be",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "computeNumberOfCommentsDuringDateRangeOnSecondPage",
+        "func": "let counter = 0;\nlet issues = msg.payload.secondPage.repository.issues.edges;\nlet from = msg.payload.from;\nlet to = msg.payload.to;\n\nlet toReturn = []\nlet dateCollection = []\nfor (var i in issues) {\n    let issue = issues[i];\n    let commentProperties = issue.node.comments;\n    let comments = commentProperties.nodes;\n    if (commentProperties.totalCount !== 0) {\n        for (var j in comments){\n            let comment = comments[j];\n            dateCollection.push(new Date(comment.createdAt));\n        } \n    }\n}\nfor (var date in dateCollection) {\n    if (new Date(from) <= new Date(dateCollection[date]) && new Date(dateCollection[date]) <= new Date(to)) {\n        counter = counter + 1;\n    }\n}\nreturn {payload: counter, topic: \"secondPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1470,
+        "y": 340,
+        "wires": [
+            [
+                "6ce7d54.ca3352c"
+            ]
+        ]
+    },
+    {
+        "id": "7b8e90a8.f947f",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "computeNumberOfCommentsDuringDateRangeOnThirdPage",
+        "func": "let counter = 0;\nlet issues = msg.payload.thirdPage.repository.issues.edges;\nlet from = msg.payload.from;\nlet to = msg.payload.to;\n\nlet toReturn = []\nlet dateCollection = []\nfor (var i in issues) {\n    let issue = issues[i];\n    let commentProperties = issue.node.comments;\n    let comments = commentProperties.nodes;\n    if (commentProperties.totalCount !== 0) {\n        for (var j in comments){\n            let comment = comments[j];\n            dateCollection.push(new Date(comment.createdAt));\n        } \n    }\n}\n\n\nfor (var date in dateCollection) {\n    if (new Date(from) <= new Date(dateCollection[date]) && new Date(dateCollection[date]) <= new Date(to)) {\n        counter = counter + 1;\n    }\n}\nreturn {payload: counter, topic: \"thirdPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1460,
+        "y": 380,
+        "wires": [
+            [
+                "6ce7d54.ca3352c"
+            ]
+        ]
+    },
+    {
+        "id": "d4a83ab5.d15bf8",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "sumNumberOfComments",
+        "func": "\nreturn {payload: msg.payload.firstPage + msg.payload.secondPage + msg.payload.thirdPage};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2030,
+        "y": 340,
+        "wires": [
+            [
+                "4f2f1b79.34bed4"
+            ]
+        ]
+    },
+    {
+        "id": "6ce7d54.ca3352c",
+        "type": "join",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1810,
+        "y": 340,
+        "wires": [
+            [
+                "d4a83ab5.d15bf8"
+            ]
+        ]
+    },
+    {
+        "id": "40d91014.3a69c",
+        "type": "link in",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 155,
+        "y": 300,
+        "wires": [
+            [
+                "77106aef.766a04"
+            ]
+        ]
+    },
+    {
+        "id": "36d01a3.8d30fe6",
+        "type": "link in",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 615,
+        "y": 220,
+        "wires": [
+            [
+                "74ae97b0.1093a8"
+            ]
+        ]
+    },
+    {
+        "id": "7283ac4f.0fc6b4",
+        "type": "link in",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 615,
+        "y": 260,
+        "wires": [
+            [
+                "d1efcb40.30ccb8"
+            ]
+        ]
+    },
+    {
+        "id": "d1efcb40.30ccb8",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "toDatePassthrough",
+        "func": "let date = new Date(msg.payload);\nreturn {payload:date, topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 790,
+        "y": 260,
+        "wires": [
+            [
+                "6bd74929.da2638"
+            ]
+        ]
+    },
+    {
+        "id": "74ae97b0.1093a8",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "fromDatePassthrough",
+        "func": "\nreturn {payload: msg.payload, topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 780,
+        "y": 220,
+        "wires": [
+            [
+                "6bd74929.da2638"
+            ]
+        ]
+    },
+    {
+        "id": "bc5c2584.bf32c8",
+        "type": "link in",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 635,
+        "y": 240,
+        "wires": [
+            [
+                "95e77145.94ac4"
+            ]
+        ]
+    },
+    {
+        "id": "fa47d207.42215",
+        "type": "link in",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 635,
+        "y": 300,
+        "wires": [
+            [
+                "cd35f116.8f155"
+            ]
+        ]
+    },
+    {
+        "id": "cd35f116.8f155",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "toDatePassthrough",
+        "func": "let date = new Date(msg.payload);\nreturn {payload:date, topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 830,
+        "y": 300,
+        "wires": [
+            [
+                "21b232a7.68686e"
+            ]
+        ]
+    },
+    {
+        "id": "95e77145.94ac4",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "fromDatePassthrough",
+        "func": "\nreturn {payload: msg.payload, topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 820,
+        "y": 240,
+        "wires": [
+            [
+                "21b232a7.68686e"
+            ]
+        ]
+    },
+    {
+        "id": "34b1549f.a8298c",
+        "type": "comment",
+        "z": "75268d6f.390154",
+        "name": "gtfs-validator: Number of comments on all PRs of repo during date range",
+        "info": "**Gets the number of pull requests that were sucessfully merged**\n\n * Connect to GitHub graphql API with token: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql\n * Authentication uses Bearer method",
+        "x": 360,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "f58d8c5b.979b4",
+        "type": "graphql",
+        "z": "75268d6f.390154",
+        "name": "queryGetPrsCommentsData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    pullRequests(first: 100) {\n      edges {\n        node {\n          comments(first: 100) {\n            nodes {\n              createdAt\n            }\n            totalCount\n          }\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 500,
+        "y": 380,
+        "wires": [
+            [
+                "c2b11482.ff2f68",
+                "765c296f.4ac5e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "765c296f.4ac5e8",
+        "type": "graphql",
+        "z": "75268d6f.390154",
+        "name": "queryGetPrsCommentsData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "query Test($cursor: String = \"Y3Vyc29yOnYyOpHOGlv4dQ==\") {\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    pullRequests(first: 100, after:$cursor) {\n      edges {\n        node {\n          comments(first: 100) {\n            nodes {\n              createdAt\n            }\n            totalCount\n          }\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 520,
+        "y": 440,
+        "wires": [
+            [
+                "cf070ef8.05cba",
+                "98e0432b.13df2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c2b11482.ff2f68",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "queryDataPassthrough",
+        "func": "return {payload: msg.payload, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 880,
+        "y": 360,
+        "wires": [
+            [
+                "53947e57.0f1ec"
+            ]
+        ]
+    },
+    {
+        "id": "cf070ef8.05cba",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "queryDataPassthrough",
+        "func": "return {payload: msg.payload, topic: \"secondPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 879,
+        "y": 408,
+        "wires": [
+            [
+                "53947e57.0f1ec"
+            ]
+        ]
+    },
+    {
+        "id": "98e0432b.13df2",
+        "type": "switch",
+        "z": "75268d6f.390154",
+        "name": "",
+        "property": "payload.repository.issues.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 850,
+        "y": 500,
+        "wires": [
+            [
+                "a05dabc.bb73858"
+            ]
+        ]
+    },
+    {
+        "id": "a05dabc.bb73858",
+        "type": "ui_toast",
+        "z": "75268d6f.390154",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Continue",
+        "cancel": "",
+        "raw": false,
+        "topic": "Some data has been left out please check flows",
+        "name": "notifyUserThatSomeDataHasBeenLeftOut",
+        "x": 1100,
+        "y": 500,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "Some data has been left out please check flows"
+        ]
+    },
+    {
+        "id": "ebe1f0f2.1c5e3",
+        "type": "comment",
+        "z": "75268d6f.390154",
+        "name": "First page of data",
+        "info": "",
+        "x": 260,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "dd571879.892ed8",
+        "type": "comment",
+        "z": "75268d6f.390154",
+        "name": "Second page of data",
+        "info": "",
+        "x": 260,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "df64cbd3.c50b98",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "computeNumberOfCommentsOnRepoPrsDuringDateRange",
+        "func": "let counter = 0;\nlet prCollection = msg.payload.firstPage.repository.pullRequests.edges;\nlet from = msg.payload.from;\nlet to = msg.payload.to;\n\nlet toReturn = []\nlet dateCollection = []\nfor (var i in prCollection) {\n    let pr = prCollection[i];\n    let commentProperties = pr.node.comments;\n    let comments = commentProperties.nodes;\n    if (commentProperties.totalCount !== 0) {\n        for (var j in comments){\n            let comment = comments[j];\n            dateCollection.push(new Date(comment.createdAt));\n        } \n    }\n}\nfor (var date in dateCollection) {\n    if (new Date(from) <= new Date(dateCollection[date]) && new Date(dateCollection[date]) <= new Date(to)) {\n        counter = counter + 1;\n    }\n}\nreturn {payload: counter, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1420,
+        "y": 300,
+        "wires": [
+            [
+                "eecab069.95c2b"
+            ]
+        ]
+    },
+    {
+        "id": "56c500f.b998c",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "computeNumberOfCommentsOnRepoPrsDuringDateRange",
+        "func": "let counter = 0;\nlet prCollection = msg.payload.secondPage.repository.pullRequests.edges;\nlet from = msg.payload.from;\nlet to = msg.payload.to;\n\nlet toReturn = []\nlet dateCollection = []\nfor (var i in prCollection) {\n    let pr = prCollection[i];\n    let commentProperties = pr.node.comments;\n    let comments = commentProperties.nodes;\n    if (commentProperties.totalCount !== 0) {\n        for (var j in comments){\n            let comment = comments[j];\n            dateCollection.push(new Date(comment.createdAt));\n        } \n    }\n}\nfor (var date in dateCollection) {\n    if (new Date(from) <= new Date(dateCollection[date]) && new Date(dateCollection[date]) <= new Date(to)) {\n        counter = counter + 1;\n    }\n}\nreturn {payload: counter, topic: \"secondPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1420,
+        "y": 340,
+        "wires": [
+            [
+                "eecab069.95c2b"
+            ]
+        ]
+    },
+    {
+        "id": "eecab069.95c2b",
+        "type": "join",
+        "z": "75268d6f.390154",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1810,
+        "y": 320,
+        "wires": [
+            [
+                "cf5a644a.2a8918"
+            ]
+        ]
+    },
+    {
+        "id": "cf5a644a.2a8918",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "sumNumberOfPrsComments",
+        "func": "\nreturn {payload: msg.payload.firstPage + msg.payload.secondPage};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2020,
+        "y": 320,
+        "wires": [
+            [
+                "1a20e029.42705"
+            ]
+        ]
+    },
+    {
+        "id": "f136196a.dcfc18",
+        "type": "link in",
+        "z": "75268d6f.390154",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 715,
+        "y": 220,
+        "wires": [
+            [
+                "212cb4ac.1422cc"
+            ]
+        ]
+    },
+    {
+        "id": "4aa66638.048cc8",
+        "type": "link in",
+        "z": "75268d6f.390154",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 715,
+        "y": 280,
+        "wires": [
+            [
+                "3e104f0b.c2cac"
+            ]
+        ]
+    },
+    {
+        "id": "3e104f0b.c2cac",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "toDatePassthrough",
+        "func": "let date = new Date(msg.payload);\nreturn {payload:date, topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 870,
+        "y": 280,
+        "wires": [
+            [
+                "53947e57.0f1ec"
+            ]
+        ]
+    },
+    {
+        "id": "212cb4ac.1422cc",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "fromDatePassthrough",
+        "func": "\nreturn {payload: msg.payload, topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 880,
+        "y": 220,
+        "wires": [
+            [
+                "53947e57.0f1ec"
+            ]
+        ]
+    },
+    {
+        "id": "2fb03544.bbf1ba",
+        "type": "link in",
+        "z": "75268d6f.390154",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 235,
+        "y": 300,
+        "wires": [
+            [
+                "f58d8c5b.979b4"
+            ]
+        ]
+    },
+    {
+        "id": "53947e57.0f1ec",
+        "type": "join",
+        "z": "75268d6f.390154",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1110,
+        "y": 320,
+        "wires": [
+            [
+                "df64cbd3.c50b98",
+                "56c500f.b998c"
+            ]
+        ]
+    },
+    {
+        "id": "2a946110.542bfe",
+        "type": "graphql",
+        "z": "3d4f0b03.605214",
+        "name": "queryGetFirstLevelForksData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "query forkCount {\n  repository(owner: \"MobilityData\", name: \"gtfs-validator\") {\n    forkCount\n    forks(last: 100) {\n      edges {\n        node {\n          id\n          createdAt\n          forkCount\n        }\n      }\n    }\n  }\n}\n",
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "fde32227.ee5c2",
+                "85a36dfc.1524e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "fde32227.ee5c2",
+        "type": "function",
+        "z": "3d4f0b03.605214",
+        "name": "queryDataPassthrough",
+        "func": "return {payload: msg.payload, topic: \"forks\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "22a5b075.60e74"
+            ]
+        ]
+    },
+    {
+        "id": "e5075864.fbda38",
+        "type": "function",
+        "z": "3d4f0b03.605214",
+        "name": "computeNumberOfForksCreatedDuringDateRange",
+        "func": "let counter = 0;\nlet forks = msg.payload.forks.repository.forks.edges;\nlet from = msg.payload.from;\nlet to = msg.payload.to;\n\nlet toReturn = []\nlet dateCollection = []\n\nfor (var i in forks) {\n    let fork = forks[i].node;\n    dateCollection.push(new Date(fork.createdAt));\n}\n\nfor (var date in dateCollection) {\n    if (new Date(from) <= new Date(dateCollection[date]) && new Date(dateCollection[date]) <= new Date(to)) {\n        counter = counter + 1;\n    }\n}\nreturn {payload: counter, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1150,
+        "y": 260,
+        "wires": [
+            [
+                "5711d587.22979c"
+            ]
+        ]
+    },
+    {
+        "id": "22a5b075.60e74",
+        "type": "join",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 810,
+        "y": 260,
+        "wires": [
+            [
+                "e5075864.fbda38"
+            ]
+        ]
+    },
+    {
+        "id": "5165b9a.8378b48",
+        "type": "link in",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 415,
+        "y": 200,
+        "wires": [
+            [
+                "2cf734e0.3d18bc"
+            ]
+        ]
+    },
+    {
+        "id": "f64eda21.78fd78",
+        "type": "link in",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 415,
+        "y": 260,
+        "wires": [
+            [
+                "b50cc88c.f35478"
+            ]
+        ]
+    },
+    {
+        "id": "b50cc88c.f35478",
+        "type": "function",
+        "z": "3d4f0b03.605214",
+        "name": "toDatePassthrough",
+        "func": "let date = new Date(msg.payload);\nreturn {payload:date, topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 590,
+        "y": 260,
+        "wires": [
+            [
+                "22a5b075.60e74"
+            ]
+        ]
+    },
+    {
+        "id": "2cf734e0.3d18bc",
+        "type": "function",
+        "z": "3d4f0b03.605214",
+        "name": "fromDatePassthrough",
+        "func": "\nreturn {payload: msg.payload, topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 580,
+        "y": 200,
+        "wires": [
+            [
+                "22a5b075.60e74"
+            ]
+        ]
+    },
+    {
+        "id": "8fcb082c.d1a608",
+        "type": "link in",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 135,
+        "y": 320,
+        "wires": [
+            [
+                "2a946110.542bfe"
+            ]
+        ]
+    },
+    {
+        "id": "3858bbf0.ccea04",
+        "type": "comment",
+        "z": "4bdc555e.83ca1c",
+        "name": "First page of data",
+        "info": "",
+        "x": 200,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "c68ded65.76558",
+        "type": "comment",
+        "z": "4bdc555e.83ca1c",
+        "name": "Second page of data",
+        "info": "",
+        "x": 220,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "d80afc30.7e0b7",
+        "type": "comment",
+        "z": "1149b3f.5dfb14c",
+        "name": "First page of data",
+        "info": "",
+        "x": 140,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d0df880d.2ad048",
+        "type": "comment",
+        "z": "1149b3f.5dfb14c",
+        "name": "Second page of data",
+        "info": "",
+        "x": 160,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "28a0fa6b.8d5996",
+        "type": "comment",
+        "z": "1149b3f.5dfb14c",
+        "name": "Third page of data",
+        "info": "",
+        "x": 150,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "b5e5086.ee9b1f8",
+        "type": "comment",
+        "z": "3d4f0b03.605214",
+        "name": "gtfs-validator: Number of new forks created in date range",
+        "info": "**Gets the number of pull requests that were sucessfully merged**\n\n * Connect to GitHub graphql API with token: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql\n * Authentication uses Bearer method",
+        "x": 250,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "8e30ac64.64ad3",
+        "type": "ui_text",
+        "z": "57701e8f.efc2b",
+        "group": "48e1463b.bd6158",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "from",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 730,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3ebd05dd.71f60a",
+        "type": "ui_text",
+        "z": "57701e8f.efc2b",
+        "group": "48e1463b.bd6158",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "to",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 730,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "b549de2d.d1051",
+        "type": "link in",
+        "z": "57701e8f.efc2b",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 315,
+        "y": 200,
+        "wires": [
+            [
+                "ed37ab8e.cfbef8"
+            ]
+        ]
+    },
+    {
+        "id": "b3d9fc27.3132c",
+        "type": "link in",
+        "z": "57701e8f.efc2b",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 315,
+        "y": 260,
+        "wires": [
+            [
+                "473e4.7ee8ec1c8"
+            ]
+        ]
+    },
+    {
+        "id": "25d062dd.8f667e",
+        "type": "ui_text",
+        "z": "57701e8f.efc2b",
+        "group": "48e1463b.bd6158",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Dashboard displays information for the following dates:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 870,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "c80c03f3.78732",
+        "type": "comment",
+        "z": "57701e8f.efc2b",
+        "name": "gtfs-validator tab",
+        "info": "",
+        "x": 90,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "163dac9f.4850c3",
+        "type": "comment",
+        "z": "57701e8f.efc2b",
+        "name": "transit tab",
+        "info": "",
+        "x": 80,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "21152f02.d6f9a",
+        "type": "ui_text",
+        "z": "57701e8f.efc2b",
+        "group": "27c7b7e8.6f7c08",
+        "order": 4,
+        "width": "6",
+        "height": "2",
+        "name": "",
+        "label": "Content is updated every Monday. Last update was on",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 860,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "be2ed062.d05ab",
+        "type": "link in",
+        "z": "57701e8f.efc2b",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 295,
+        "y": 800,
+        "wires": [
+            [
+                "df80344d.071058"
+            ]
+        ]
+    },
+    {
+        "id": "6513c5b4.1c993c",
+        "type": "ui_text",
+        "z": "57701e8f.efc2b",
+        "group": "27c7b7e8.6f7c08",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "from",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 710,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "f4f0f126.48439",
+        "type": "ui_text",
+        "z": "57701e8f.efc2b",
+        "group": "27c7b7e8.6f7c08",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "to",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 710,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "e934f8f1.c5d458",
+        "type": "link in",
+        "z": "57701e8f.efc2b",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 295,
+        "y": 680,
+        "wires": [
+            [
+                "dbfc6e38.68b6d"
+            ]
+        ]
+    },
+    {
+        "id": "9ac8050e.7d3bf8",
+        "type": "link in",
+        "z": "57701e8f.efc2b",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 295,
+        "y": 740,
+        "wires": [
+            [
+                "446e4813.b661c8"
+            ]
+        ]
+    },
+    {
+        "id": "d90a3891.4b5d38",
+        "type": "ui_text",
+        "z": "57701e8f.efc2b",
+        "group": "27c7b7e8.6f7c08",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Dashboard displays information for the following dates:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 850,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "fbece74f.a4b4c8",
+        "type": "comment",
+        "z": "4bdc555e.83ca1c",
+        "name": "transit: Number of PR successfully merged",
+        "info": "**Gets the number of pull requests that were sucessfully merged**\n\n * Connect to GitHub graphql API with token: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql\n * Authentication uses Bearer method",
+        "x": 220,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "7645f9a3.9ad6a8",
+        "type": "graphql",
+        "z": "4bdc555e.83ca1c",
+        "name": "queryGetPrData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"google\", name: \"transit\") {\n    pullRequests(first: 100, states: MERGED) {\n      edges {\n        node {\n          id\n          mergedAt\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 380,
+        "y": 900,
+        "wires": [
+            [
+                "b36b8e1e.52d11",
+                "976da10a.14ab6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b36b8e1e.52d11",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "retrievePrsMergeDate",
+        "func": "var pullRequests = msg.payload.repository.pullRequests.edges;\nvar mergedDates = [];\nfor (var i in pullRequests) {\n    var pullRequest = pullRequests[i].node;\n    mergedDates.push(pullRequest.mergedAt);\n}\nreturn {\n    payload:mergedDates,\n    topic: \"firstPage\"\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 683,
+        "y": 893,
+        "wires": [
+            [
+                "e55bc1bd.8d394"
+            ]
+        ]
+    },
+    {
+        "id": "e55bc1bd.8d394",
+        "type": "join",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 910,
+        "y": 840,
+        "wires": [
+            [
+                "1a3a02f0.b7a0dd",
+                "1d7bbb0.913bb45"
+            ]
+        ]
+    },
+    {
+        "id": "1a3a02f0.b7a0dd",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "getNumberOfMergedPrsInDateRange",
+        "func": "var dateCollection = msg.payload.firstPage;\nvar from = new Date(msg.payload.from);\nvar to = new Date(msg.payload.to);\nvar c = 0;\n\nfor (var i in dateCollection) {\n    let date = new Date(dateCollection[i]);\n    if (from <= date && date <= to) {\n        c = c+1;\n    }\n}\n\nreturn {payload: c, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1150,
+        "y": 780,
+        "wires": [
+            [
+                "a0d01dc1.482c5"
+            ]
+        ]
+    },
+    {
+        "id": "976da10a.14ab6",
+        "type": "graphql",
+        "z": "4bdc555e.83ca1c",
+        "name": "queryGetPrData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"google\", name: \"transit\") {\n    pullRequests(first: 100, states: MERGED, after:\"Y3Vyc29yOnYyOpHOFYYlaw==\") {\n      edges {\n        node {\n          id\n          mergedAt\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 420,
+        "y": 1000,
+        "wires": [
+            [
+                "4173f803.be0a78",
+                "7c98592f.d4ed08"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4173f803.be0a78",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "retrievePrsMergeDate",
+        "func": "var pullRequests = msg.payload.repository.pullRequests.edges;\nvar mergedDates = [];\nfor (var i in pullRequests) {\n    var pullRequest = pullRequests[i].node;\n    mergedDates.push(pullRequest.mergedAt);\n}\nreturn {\n    payload:mergedDates,\n    topic: \"secondPage\"\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 680,
+        "y": 993,
+        "wires": [
+            [
+                "e55bc1bd.8d394"
+            ]
+        ]
+    },
+    {
+        "id": "1d7bbb0.913bb45",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "getNumberOfMergedPrsInDateRange",
+        "func": "var dateCollection = msg.payload.secondPage;\nvar from = new Date(msg.payload.from);\nvar to = new Date(msg.payload.to);\nvar c = 0;\n\nfor (var i in dateCollection) {\n    let date = new Date(dateCollection[i]);\n    if (from <= date && date <= to) {\n        c = c+1;\n    }\n}\n\nreturn {payload: c, topic: \"secondPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1150,
+        "y": 900,
+        "wires": [
+            [
+                "a0d01dc1.482c5"
+            ]
+        ]
+    },
+    {
+        "id": "a0d01dc1.482c5",
+        "type": "join",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1390,
+        "y": 840,
+        "wires": [
+            [
+                "4be0f3d6.82292c"
+            ]
+        ]
+    },
+    {
+        "id": "4be0f3d6.82292c",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "sumEachPageNumberOfMergedPRs",
+        "func": "return {payload: msg.payload.firstPage + msg.payload.secondPage};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1650,
+        "y": 840,
+        "wires": [
+            [
+                "5358c779.1416a8"
+            ]
+        ]
+    },
+    {
+        "id": "7c98592f.d4ed08",
+        "type": "switch",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "property": "payload.repository.issues.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 1100,
+        "wires": [
+            [
+                "3abccfec.a0361"
+            ]
+        ]
+    },
+    {
+        "id": "1613afa4.80914",
+        "type": "link in",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 535,
+        "y": 720,
+        "wires": [
+            [
+                "1dcd9aab.7f93a5"
+            ]
+        ]
+    },
+    {
+        "id": "49130e7.ae29df",
+        "type": "link in",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 535,
+        "y": 800,
+        "wires": [
+            [
+                "4c123ebd.d53f3"
+            ]
+        ]
+    },
+    {
+        "id": "4c123ebd.d53f3",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "toDatePassthrough",
+        "func": "let date = new Date(msg.payload);\nreturn {payload:date, topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 690,
+        "y": 800,
+        "wires": [
+            [
+                "e55bc1bd.8d394"
+            ]
+        ]
+    },
+    {
+        "id": "1dcd9aab.7f93a5",
+        "type": "function",
+        "z": "4bdc555e.83ca1c",
+        "name": "fromDatePassthrough",
+        "func": "\nreturn {payload: msg.payload, topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 680,
+        "y": 720,
+        "wires": [
+            [
+                "e55bc1bd.8d394"
+            ]
+        ]
+    },
+    {
+        "id": "682d5874.7d7bb8",
+        "type": "link in",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 195,
+        "y": 820,
+        "wires": [
+            [
+                "7645f9a3.9ad6a8"
+            ]
+        ]
+    },
+    {
+        "id": "89953813.c02388",
+        "type": "comment",
+        "z": "4bdc555e.83ca1c",
+        "name": "First page of data",
+        "info": "",
+        "x": 200,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "79675b94.0557e4",
+        "type": "comment",
+        "z": "4bdc555e.83ca1c",
+        "name": "Second page of data",
+        "info": "",
+        "x": 220,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "3abccfec.a0361",
+        "type": "ui_toast",
+        "z": "4bdc555e.83ca1c",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Continue",
+        "cancel": "",
+        "raw": false,
+        "topic": "Some data has been left out please check flows",
+        "name": "notifyUserThatSomeDataHasBeenLeftOut",
+        "x": 1000,
+        "y": 1100,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "Some data has been left out please check flows"
+        ]
+    },
+    {
+        "id": "8c542993.8a3518",
+        "type": "graphql",
+        "z": "1149b3f.5dfb14c",
+        "name": "queryGetIssuesData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"google\", name: \"transit\") {\n    issues(first: 100) {\n      edges {\n        node {\n          id\n          createdAt\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 400,
+        "y": 860,
+        "wires": [
+            [
+                "f8d5e265.a4268",
+                "50cc9fb1.7f374"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f8d5e265.a4268",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "getIssuesDateOfOpening",
+        "func": "var issues = msg.payload.repository.issues.edges;\nvar issuesDates = [];\nfor (var i in issues) {\n    var date = issues[i].node.createdAt;\n    issuesDates.push(date);\n}\nreturn {payload:issuesDates, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 810,
+        "y": 840,
+        "wires": [
+            [
+                "d52b9543.7f9df8"
+            ]
+        ]
+    },
+    {
+        "id": "d52b9543.7f9df8",
+        "type": "join",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1070,
+        "y": 780,
+        "wires": [
+            [
+                "ed6ca8bb.30c158"
+            ]
+        ]
+    },
+    {
+        "id": "ed6ca8bb.30c158",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "getNumberOfIssuesOpenedInDateRange",
+        "func": "var dateCollection = msg.payload.firstPage;\nvar from = new Date(msg.payload.from);\nvar to = new Date(msg.payload.to);\nvar c = 0;\n\nfor (var i in dateCollection) {\n    let date = new Date(dateCollection[i]);\n    if (from <= date && date <= to) {\n        c = c+1;\n    }\n}\n\nreturn {payload: c, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1440,
+        "y": 780,
+        "wires": [
+            [
+                "62799fa8.90232"
+            ]
+        ]
+    },
+    {
+        "id": "50cc9fb1.7f374",
+        "type": "switch",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "property": "payload.repository.issues.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 690,
+        "y": 940,
+        "wires": [
+            [
+                "216a9f3a.74834"
+            ]
+        ]
+    },
+    {
+        "id": "216a9f3a.74834",
+        "type": "ui_toast",
+        "z": "1149b3f.5dfb14c",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Continue",
+        "cancel": "",
+        "raw": false,
+        "topic": "Some data has been left out please check flows",
+        "name": "notifyUserThatSomeDataHasBeenLeftOut",
+        "x": 1080,
+        "y": 940,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "Some data has been left out please check flows"
+        ]
+    },
+    {
+        "id": "6927c831.9ab8f8",
+        "type": "comment",
+        "z": "1149b3f.5dfb14c",
+        "name": "transit: Number of issues opened",
+        "info": "**Gets the number of issues opened**\n\n * Connect to GitHub graphql API with token: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql\n * Authentication uses Bearer method",
+        "x": 170,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "70e25603.542078",
+        "type": "link in",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 655,
+        "y": 720,
+        "wires": [
+            [
+                "7bec64fd.e1f47c"
+            ]
+        ]
+    },
+    {
+        "id": "36f90c8.1ba52f4",
+        "type": "link in",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 655,
+        "y": 780,
+        "wires": [
+            [
+                "62d06ec.3bc6c9"
+            ]
+        ]
+    },
+    {
+        "id": "62d06ec.3bc6c9",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "toDatePassthrough",
+        "func": "let date = new Date(msg.payload);\nreturn {payload:date, topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 830,
+        "y": 780,
+        "wires": [
+            [
+                "d52b9543.7f9df8"
+            ]
+        ]
+    },
+    {
+        "id": "7bec64fd.e1f47c",
+        "type": "function",
+        "z": "1149b3f.5dfb14c",
+        "name": "fromDatePassthrough",
+        "func": "\nreturn {payload: msg.payload, topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 820,
+        "y": 720,
+        "wires": [
+            [
+                "d52b9543.7f9df8"
+            ]
+        ]
+    },
+    {
+        "id": "83a123fd.3d5d",
+        "type": "link in",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 235,
+        "y": 860,
+        "wires": [
+            [
+                "8c542993.8a3518"
+            ]
+        ]
+    },
+    {
+        "id": "28349665.01f3ca",
+        "type": "comment",
+        "z": "4996e429.7d1b4c",
+        "name": "transit: Number of comments on all issues of repo during date range",
+        "info": "**Gets the number of pull requests that were sucessfully merged**\n\n * Connect to GitHub graphql API with token: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql\n * Authentication uses Bearer method",
+        "x": 340,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "c592dde6.b4616",
+        "type": "graphql",
+        "z": "4996e429.7d1b4c",
+        "name": "queryGetIssuesCommentData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"google\", name: \"transit\") {\n    issues(first: 100) {\n      edges {\n        node {\n          comments(first: 100) {\n            nodes {\n              createdAt\n            }\n            totalCount\n          }\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 450,
+        "y": 1140,
+        "wires": [
+            [
+                "8f4ed0c6.428c7",
+                "323b2f88.34b8b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8f4ed0c6.428c7",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "queryDataPassthrough",
+        "func": "return {payload: msg.payload, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 861,
+        "y": 1132,
+        "wires": [
+            [
+                "7ec6fe68.b6e5"
+            ]
+        ]
+    },
+    {
+        "id": "7ec6fe68.b6e5",
+        "type": "join",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1090,
+        "y": 1080,
+        "wires": [
+            [
+                "9cb1f437.b89258"
+            ]
+        ]
+    },
+    {
+        "id": "323b2f88.34b8b",
+        "type": "switch",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "property": "payload.repository.issues.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 810,
+        "y": 1220,
+        "wires": [
+            [
+                "8af47e64.4ea8f"
+            ]
+        ]
+    },
+    {
+        "id": "a269cf6a.9df95",
+        "type": "comment",
+        "z": "4996e429.7d1b4c",
+        "name": "First page of data",
+        "info": "",
+        "x": 220,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "9cb1f437.b89258",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "computeNumberOfCommentsDuringDateRangeOnFirstPage",
+        "func": "let counter = 0;\nlet issues = msg.payload.firstPage.repository.issues.edges;\nlet from = msg.payload.from;\nlet to = msg.payload.to;\n\nlet toReturn = []\nlet dateCollection = []\nfor (var i in issues) {\n    let issue = issues[i];\n    let commentProperties = issue.node.comments;\n    let comments = commentProperties.nodes;\n    if (commentProperties.totalCount !== 0) {\n        for (var j in comments){\n            let comment = comments[j];\n            dateCollection.push(new Date(comment.createdAt));\n        } \n    }\n}\nfor (var date in dateCollection) {\n    if (new Date(from) <= new Date(dateCollection[date]) && new Date(dateCollection[date]) <= new Date(to)) {\n        counter = counter + 1;\n    }\n}\nreturn {payload: counter, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1500,
+        "y": 1080,
+        "wires": [
+            [
+                "5e974889.ddae18"
+            ]
+        ]
+    },
+    {
+        "id": "c6f8b8a2.4e7e88",
+        "type": "link in",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 655,
+        "y": 1020,
+        "wires": [
+            [
+                "2bc91132.880f8e"
+            ]
+        ]
+    },
+    {
+        "id": "5f397e3c.76852",
+        "type": "link in",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 655,
+        "y": 1080,
+        "wires": [
+            [
+                "ec29daeb.e47728"
+            ]
+        ]
+    },
+    {
+        "id": "ec29daeb.e47728",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "toDatePassthrough",
+        "func": "let date = new Date(msg.payload);\nreturn {payload:date, topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 870,
+        "y": 1080,
+        "wires": [
+            [
+                "7ec6fe68.b6e5"
+            ]
+        ]
+    },
+    {
+        "id": "2bc91132.880f8e",
+        "type": "function",
+        "z": "4996e429.7d1b4c",
+        "name": "fromDatePassthrough",
+        "func": "\nreturn {payload: msg.payload, topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 860,
+        "y": 1020,
+        "wires": [
+            [
+                "7ec6fe68.b6e5"
+            ]
+        ]
+    },
+    {
+        "id": "b7d03ee0.a95d4",
+        "type": "link in",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 175,
+        "y": 1040,
+        "wires": [
+            [
+                "c592dde6.b4616"
+            ]
+        ]
+    },
+    {
+        "id": "78579376.6fbe6c",
+        "type": "comment",
+        "z": "75268d6f.390154",
+        "name": "transit: Number of comments on all PRs of repo during date range",
+        "info": "**Gets the number of pull requests that were sucessfully merged**\n\n * Connect to GitHub graphql API with token: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql\n * Authentication uses Bearer method",
+        "x": 340,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "a26c91bf.b919c",
+        "type": "graphql",
+        "z": "75268d6f.390154",
+        "name": "queryGetPrsCommentsData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{\n  repository(owner: \"google\", name: \"transit\") {\n    pullRequests(first: 100) {\n      edges {\n        node {\n          comments(first: 100) {\n            nodes {\n              createdAt\n            }\n            totalCount\n          }\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 460,
+        "y": 860,
+        "wires": [
+            [
+                "ae67bfaf.61c9e",
+                "db830a03.9548e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "db830a03.9548e8",
+        "type": "graphql",
+        "z": "75268d6f.390154",
+        "name": "queryGetPrsCommentsData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "query Test($cursor: String = \"Y3Vyc29yOnYyOpHODvjWSg==\") {\n  repository(owner: \"google\", name: \"transit\") {\n    pullRequests(first: 100, after:$cursor) {\n      edges {\n        node {\n          comments(first: 100) {\n            nodes {\n              createdAt\n            }\n            totalCount\n          }\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}\n",
+        "x": 482,
+        "y": 946,
+        "wires": [
+            [
+                "156cd8c1.fb4287",
+                "950c7157.8d3b7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ae67bfaf.61c9e",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "queryDataPassthrough",
+        "func": "return {payload: msg.payload, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 880,
+        "y": 880,
+        "wires": [
+            [
+                "2bf19522.c96dfa"
+            ]
+        ]
+    },
+    {
+        "id": "156cd8c1.fb4287",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "queryDataPassthrough",
+        "func": "return {payload: msg.payload, topic: \"secondPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 880,
+        "y": 940,
+        "wires": [
+            [
+                "2bf19522.c96dfa"
+            ]
+        ]
+    },
+    {
+        "id": "2bf19522.c96dfa",
+        "type": "join",
+        "z": "75268d6f.390154",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1110,
+        "y": 860,
+        "wires": [
+            [
+                "d06203e.2a104",
+                "dfda3d4.70dc4c"
+            ]
+        ]
+    },
+    {
+        "id": "950c7157.8d3b7",
+        "type": "switch",
+        "z": "75268d6f.390154",
+        "name": "",
+        "property": "payload.repository.issues.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 830,
+        "y": 1060,
+        "wires": [
+            [
+                "b0c099ae.7d2128"
+            ]
+        ]
+    },
+    {
+        "id": "fad93fcb.3f0da",
+        "type": "comment",
+        "z": "75268d6f.390154",
+        "name": "First page of data",
+        "info": "",
+        "x": 240,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "e9449d33.bf0d2",
+        "type": "comment",
+        "z": "75268d6f.390154",
+        "name": "Second page of data",
+        "info": "",
+        "x": 220,
+        "y": 949,
+        "wires": []
+    },
+    {
+        "id": "d06203e.2a104",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "computeNumberOfCommentsOnRepoPrsDuringDateRange",
+        "func": "let counter = 0;\nlet issues = msg.payload.firstPage.repository.pullRequests.edges;\nlet from = msg.payload.from;\nlet to = msg.payload.to;\n\nlet toReturn = []\nlet dateCollection = []\nfor (var i in issues) {\n    let issue = issues[i];\n    let commentProperties = issue.node.comments;\n    let comments = commentProperties.nodes;\n    if (commentProperties.totalCount !== 0) {\n        for (var j in comments){\n            let comment = comments[j];\n            dateCollection.push(new Date(comment.createdAt));\n        } \n    }\n}\nfor (var date in dateCollection) {\n    if (new Date(from) <= new Date(dateCollection[date]) && new Date(dateCollection[date]) <= new Date(to)) {\n        counter = counter + 1;\n    }\n}\nreturn {payload: counter, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1440,
+        "y": 820,
+        "wires": [
+            [
+                "c28f41a.9ac61c"
+            ]
+        ]
+    },
+    {
+        "id": "dfda3d4.70dc4c",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "computeNumberOfCommentsOnRepoPrsDuringDateRange",
+        "func": "let counter = 0;\nlet issues = msg.payload.secondPage.repository.pullRequests.edges;\nlet from = msg.payload.from;\nlet to = msg.payload.to;\n\nlet toReturn = []\nlet dateCollection = []\nfor (var i in issues) {\n    let issue = issues[i];\n    let commentProperties = issue.node.comments;\n    let comments = commentProperties.nodes;\n    if (commentProperties.totalCount !== 0) {\n        for (var j in comments){\n            let comment = comments[j];\n            dateCollection.push(new Date(comment.createdAt));\n        } \n    }\n}\nfor (var date in dateCollection) {\n    if (new Date(from) <= new Date(dateCollection[date]) && new Date(dateCollection[date]) <= new Date(to)) {\n        counter = counter + 1;\n    }\n}\nreturn {payload: counter, topic: \"secondPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1440,
+        "y": 900,
+        "wires": [
+            [
+                "c28f41a.9ac61c"
+            ]
+        ]
+    },
+    {
+        "id": "c28f41a.9ac61c",
+        "type": "join",
+        "z": "75268d6f.390154",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 1810,
+        "y": 860,
+        "wires": [
+            [
+                "58b9a09.b80eb6"
+            ]
+        ]
+    },
+    {
+        "id": "58b9a09.b80eb6",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "sumNumberOfPrsComments",
+        "func": "\nreturn {payload: msg.payload.firstPage + msg.payload.secondPage};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 2020,
+        "y": 860,
+        "wires": [
+            [
+                "adfd4d5e.e4d5b"
+            ]
+        ]
+    },
+    {
+        "id": "65f2b812.5356f8",
+        "type": "link in",
+        "z": "75268d6f.390154",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 695,
+        "y": 760,
+        "wires": [
+            [
+                "9b1f54e3.d39328"
+            ]
+        ]
+    },
+    {
+        "id": "b2a5b7fc.269e58",
+        "type": "link in",
+        "z": "75268d6f.390154",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 695,
+        "y": 820,
+        "wires": [
+            [
+                "580dcf1f.5d491"
+            ]
+        ]
+    },
+    {
+        "id": "580dcf1f.5d491",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "toDatePassthrough",
+        "func": "let date = new Date(msg.payload);\nreturn {payload:date, topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 870,
+        "y": 820,
+        "wires": [
+            [
+                "2bf19522.c96dfa"
+            ]
+        ]
+    },
+    {
+        "id": "9b1f54e3.d39328",
+        "type": "function",
+        "z": "75268d6f.390154",
+        "name": "fromDatePassthrough",
+        "func": "\nreturn {payload: msg.payload, topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 880,
+        "y": 760,
+        "wires": [
+            [
+                "2bf19522.c96dfa"
+            ]
+        ]
+    },
+    {
+        "id": "f3d33661.8fc528",
+        "type": "link in",
+        "z": "75268d6f.390154",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 255,
+        "y": 800,
+        "wires": [
+            [
+                "a26c91bf.b919c"
+            ]
+        ]
+    },
+    {
+        "id": "3d6ec989.b10066",
+        "type": "comment",
+        "z": "3d4f0b03.605214",
+        "name": "transit: Number of new forks created in date range",
+        "info": "**Gets the number of pull requests that were sucessfully merged**\n\n * Connect to GitHub graphql API with token: https://developer.github.com/v4/guides/forming-calls/#authenticating-with-graphql\n * Authentication uses Bearer method",
+        "x": 190,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "400cf379.b8bbec",
+        "type": "graphql",
+        "z": "3d4f0b03.605214",
+        "name": "queryGetFirstLevelForksData",
+        "graphql": "736e0e84.c011c",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "query forkCount {\n  repository(owner: \"google\", name: \"transit\") {\n    forkCount\n    forks(last: 100) {\n      edges {\n        node {\n          id\n          createdAt\n          forkCount\n        }\n      }\n      pageInfo {\n        hasNextPage\n        endCursor\n      }\n    }\n  }\n}\n",
+        "x": 300,
+        "y": 640,
+        "wires": [
+            [
+                "b734dd94.f67ea",
+                "780790af.ee56e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b734dd94.f67ea",
+        "type": "function",
+        "z": "3d4f0b03.605214",
+        "name": "get data from query",
+        "func": "return {payload: msg.payload, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 610,
+        "y": 640,
+        "wires": [
+            [
+                "afc26beb.af3c18"
+            ]
+        ]
+    },
+    {
+        "id": "ed59e434.d608e8",
+        "type": "function",
+        "z": "3d4f0b03.605214",
+        "name": "computeNumberOfForksCreatedDuringDateRange",
+        "func": "let counter = 0;\nlet forks = msg.payload.firstPage.repository.forks.edges;\nlet from = msg.payload.from;\nlet to = msg.payload.to;\n\nlet toReturn = []\nlet dateCollection = []\n\nfor (var i in forks) {\n    let fork = forks[i].node;\n    dateCollection.push(new Date(fork.createdAt));\n}\n\nfor (var date in dateCollection) {\n    if (new Date(from) <= new Date(dateCollection[date]) && new Date(dateCollection[date]) <= new Date(to)) {\n        counter = counter + 1;\n    }\n}\nreturn {payload: counter, topic: \"firstPage\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1150,
+        "y": 580,
+        "wires": [
+            [
+                "2d1942dd.4779ee"
+            ]
+        ]
+    },
+    {
+        "id": "afc26beb.af3c18",
+        "type": "join",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 810,
+        "y": 580,
+        "wires": [
+            [
+                "ed59e434.d608e8"
+            ]
+        ]
+    },
+    {
+        "id": "780790af.ee56e",
+        "type": "switch",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "property": "payload.repository.issues.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 570,
+        "y": 740,
+        "wires": [
+            [
+                "94f0325a.5bfde"
+            ]
+        ]
+    },
+    {
+        "id": "edc9a2cf.d40d1",
+        "type": "comment",
+        "z": "3d4f0b03.605214",
+        "name": "First page of data",
+        "info": "",
+        "x": 80,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "c1e379c5.d255b8",
+        "type": "function",
+        "z": "57701e8f.efc2b",
+        "name": "toDateString",
+        "func": "let date = new Date(msg.payload);\nreturn {payload: date.toDateString(), topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 320,
+        "wires": [
+            [
+                "e3d0bcac.baf3"
+            ]
+        ]
+    },
+    {
+        "id": "df80344d.071058",
+        "type": "function",
+        "z": "57701e8f.efc2b",
+        "name": "toDateString",
+        "func": "let date = new Date(msg.payload);\nreturn {payload: date.toDateString(), topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 800,
+        "wires": [
+            [
+                "21152f02.d6f9a"
+            ]
+        ]
+    },
+    {
+        "id": "ed37ab8e.cfbef8",
+        "type": "function",
+        "z": "57701e8f.efc2b",
+        "name": "toDateString",
+        "func": "let date = new Date(msg.payload);\nreturn {payload: date.toDateString(), topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 200,
+        "wires": [
+            [
+                "8e30ac64.64ad3"
+            ]
+        ]
+    },
+    {
+        "id": "473e4.7ee8ec1c8",
+        "type": "function",
+        "z": "57701e8f.efc2b",
+        "name": "toDateString",
+        "func": "let date = new Date(msg.payload);\nreturn {payload: date.toDateString(), topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 260,
+        "wires": [
+            [
+                "3ebd05dd.71f60a"
+            ]
+        ]
+    },
+    {
+        "id": "dbfc6e38.68b6d",
+        "type": "function",
+        "z": "57701e8f.efc2b",
+        "name": "toDateString",
+        "func": "let date = new Date(msg.payload);\nreturn {payload: date.toDateString(), topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 680,
+        "wires": [
+            [
+                "6513c5b4.1c993c"
+            ]
+        ]
+    },
+    {
+        "id": "446e4813.b661c8",
+        "type": "function",
+        "z": "57701e8f.efc2b",
+        "name": "toDateString",
+        "func": "let date = new Date(msg.payload);\nreturn {payload: date.toDateString(), topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 450,
+        "y": 740,
+        "wires": [
+            [
+                "f4f0f126.48439"
+            ]
+        ]
+    },
+    {
+        "id": "1bc679b.c000586",
+        "type": "ui_gauge",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "group": "9d4e8729.9035e8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "15",
+        "colors": [
+            "#c5c7d8",
+            "#f2f3f7",
+            "#96a1ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1910,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "5e9b18b1.9f9738",
+        "type": "ui_gauge",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "group": "f3404590.666e58",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "15",
+        "colors": [
+            "#c5c7d8",
+            "#f2f3f7",
+            "#96a1ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2170,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "62799fa8.90232",
+        "type": "ui_gauge",
+        "z": "1149b3f.5dfb14c",
+        "name": "",
+        "group": "b63552c9.00e05",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#c5c7d8",
+            "#f2f3f7",
+            "#96a1ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1850,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "4f2f1b79.34bed4",
+        "type": "ui_gauge",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "group": "3e59cb0d.097304",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "15",
+        "colors": [
+            "#c5c7d8",
+            "#f2f3f7",
+            "#96a1ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2270,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5e974889.ddae18",
+        "type": "ui_gauge",
+        "z": "4996e429.7d1b4c",
+        "name": "",
+        "group": "bd6db19d.9a0ad",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#c5c7d8",
+            "#f2f3f7",
+            "#96a1ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1830,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "1a20e029.42705",
+        "type": "ui_gauge",
+        "z": "75268d6f.390154",
+        "name": "",
+        "group": "2954c1f.949923e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "15",
+        "colors": [
+            "#c5c7d8",
+            "#f2f3f7",
+            "#96a1ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2270,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "adfd4d5e.e4d5b",
+        "type": "ui_gauge",
+        "z": "75268d6f.390154",
+        "name": "",
+        "group": "2a70ce0c.8cc212",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#c5c7d8",
+            "#f2f3f7",
+            "#96a1ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 2270,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "5711d587.22979c",
+        "type": "ui_gauge",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "group": "101169b0.0dc846",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "15",
+        "colors": [
+            "#c5c7d8",
+            "#f2f3f7",
+            "#96a1ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1590,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "2d1942dd.4779ee",
+        "type": "ui_gauge",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "group": "41a7a2f0.2e6c6c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#c5c7d8",
+            "#f2f3f7",
+            "#96a1ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1590,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "5358c779.1416a8",
+        "type": "ui_gauge",
+        "z": "4bdc555e.83ca1c",
+        "name": "",
+        "group": "8244f0bd.c2964",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#c5c7d8",
+            "#f2f3f7",
+            "#96a1ff"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1910,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "8af47e64.4ea8f",
+        "type": "ui_toast",
+        "z": "4996e429.7d1b4c",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Continue",
+        "cancel": "",
+        "raw": false,
+        "topic": "Some data has been left out please check flows",
+        "name": "notifyUserThatSomeDataHasBeenLeftOut",
+        "x": 1120,
+        "y": 1220,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "Some data has been left out please check flows"
+        ]
+    },
+    {
+        "id": "b0c099ae.7d2128",
+        "type": "ui_toast",
+        "z": "75268d6f.390154",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Continue",
+        "cancel": "",
+        "raw": false,
+        "topic": "Some data has been left out please check flows",
+        "name": "notifyUserThatSomeDataHasBeenLeftOut",
+        "x": 1080,
+        "y": 1060,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "Some data has been left out please check flows"
+        ]
+    },
+    {
+        "id": "27577f2d.99563",
+        "type": "link in",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "links": [
+            "853dc5dc.1fddf8"
+        ],
+        "x": 435,
+        "y": 520,
+        "wires": [
+            [
+                "ceca4c66.7c7a7"
+            ]
+        ]
+    },
+    {
+        "id": "1fc03b79.eb88b5",
+        "type": "link in",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "links": [
+            "508e0272.477f3c",
+            "853dc5dc.1fddf8"
+        ],
+        "x": 435,
+        "y": 580,
+        "wires": [
+            [
+                "e22fabb5.8fb7a8"
+            ]
+        ]
+    },
+    {
+        "id": "e22fabb5.8fb7a8",
+        "type": "function",
+        "z": "3d4f0b03.605214",
+        "name": "toDatePassthrough",
+        "func": "let date = new Date(msg.payload);\nreturn {payload:date, topic: \"to\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 610,
+        "y": 580,
+        "wires": [
+            [
+                "afc26beb.af3c18"
+            ]
+        ]
+    },
+    {
+        "id": "ceca4c66.7c7a7",
+        "type": "function",
+        "z": "3d4f0b03.605214",
+        "name": "fromDatePassthrough",
+        "func": "\nreturn {payload: msg.payload, topic: \"from\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 600,
+        "y": 520,
+        "wires": [
+            [
+                "afc26beb.af3c18"
+            ]
+        ]
+    },
+    {
+        "id": "2884faa7.88d716",
+        "type": "link in",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "links": [
+            "96a9f981.2871c8"
+        ],
+        "x": 155,
+        "y": 540,
+        "wires": [
+            [
+                "400cf379.b8bbec"
+            ]
+        ]
+    },
+    {
+        "id": "85a36dfc.1524e",
+        "type": "switch",
+        "z": "3d4f0b03.605214",
+        "name": "",
+        "property": "payload.repository.issues.pageInfo.hasNextPage",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 530,
+        "y": 380,
+        "wires": [
+            [
+                "37f78f44.47428"
+            ]
+        ]
+    },
+    {
+        "id": "37f78f44.47428",
+        "type": "ui_toast",
+        "z": "3d4f0b03.605214",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Continue",
+        "cancel": "",
+        "raw": false,
+        "topic": "Some data has been left out please check flows",
+        "name": "notifyUserThatSomeDataHasBeenLeftOut",
+        "x": 840,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "Some data has been left out please check flows"
+        ]
+    },
+    {
+        "id": "94f0325a.5bfde",
+        "type": "ui_toast",
+        "z": "3d4f0b03.605214",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "Continue",
+        "cancel": "",
+        "raw": false,
+        "topic": "Some data has been left out please check flows",
+        "name": "notifyUserThatSomeDataHasBeenLeftOut",
+        "x": 860,
+        "y": 740,
+        "wires": [
+            []
+        ],
+        "outputLabels": [
+            "Some data has been left out please check flows"
+        ]
+    },
+    {
+        "id": "677e4956.ce78a8",
+        "type": "ui_text",
+        "z": "57701e8f.efc2b",
+        "group": "27c7b7e8.6f7c08",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "This set of information relates to <a href=\"https://github.com/google/transit\">google/transit repository</a>",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 690,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "7dc7de63.462a4",
+        "type": "ui_text",
+        "z": "57701e8f.efc2b",
+        "group": "48e1463b.bd6158",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "This set of information relates to <a href=\"https://github.com/MobilityData/gtfs-validator\">MobilityData/gtfs-validator repository</a>",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 650,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "889875ab.ecd488",
+        "type": "mqtt in",
+        "z": "3fed928b.104c6e",
+        "name": "",
+        "topic": "lionel/test",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "384cf460.6ed05c",
+        "x": 80,
+        "y": 200,
+        "wires": [
+            [
+                "d2748e8c.30a22",
+                "2a00bbfc.856f34"
+            ]
+        ]
+    },
+    {
+        "id": "d2748e8c.30a22",
+        "type": "switch",
+        "z": "3fed928b.104c6e",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 220,
+        "y": 200,
+        "wires": [
+            [
+                "2a00bbfc.856f34"
+            ],
+            [
+                "2a00bbfc.856f34"
+            ]
+        ]
+    },
+    {
+        "id": "2a00bbfc.856f34",
+        "type": "debug",
+        "z": "3fed928b.104c6e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 420,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d4e8a803.8b2cf8",
+        "type": "graphql",
+        "z": "56a13451.bb1bfc",
+        "name": "queryGetPackageData",
+        "graphql": "c087c688.c4f478",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "query MyQuery {\n  repository(name: \"gtfs-validator\", owner: \"MobilityData\") {\n    packages(first: 10) {\n      edges {\n        node {\n          id\n          name\n          versions(first: 10) {\n            edges {\n              node {\n                id\n              }\n            }\n          }\n        }\n      }\n    }\n  }\n}\n",
+        "x": 300,
+        "y": 100,
+        "wires": [
+            [
+                "59b4e531.d6284c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6b8a1864.f20bb8",
+        "type": "inject",
+        "z": "56a13451.bb1bfc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "d4e8a803.8b2cf8"
+            ]
+        ]
+    },
+    {
+        "id": "59b4e531.d6284c",
+        "type": "debug",
+        "z": "56a13451.bb1bfc",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 80,
+        "wires": []
+    }
+]
