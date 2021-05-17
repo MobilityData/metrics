@@ -12,8 +12,8 @@ import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
 
-import { aggregate, merge, removeDirectories } from '/Users/lionel/IdeaProjects/metrics/src/scripts/AggregateData.js'
-import { fetchRawData } from '/Users/lionel/IdeaProjects/metrics/src/scripts/FetchRawData.js'
+import { aggregate, merge, removeDirectories } from './scripts/AggregateData.js'
+import { fetchRawData } from './scripts/FetchRawData.js'
 
 const DATA = 'data'
 const RAW = 'raw'
