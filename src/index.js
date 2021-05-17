@@ -8,15 +8,18 @@
  * @param {Object} res Cloud Function response context.
  *                     More info: https://expressjs.com/en/api.html#res
  */
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 
-import { fetchRawData } from './scripts/FetchRawData'
-import { aggregate, merge, removeDirectories } from './scripts/AggregateData'
+
+import { aggregate, merge, removeDirectories } from '/Users/lionel/IdeaProjects/metrics/src/scripts/AggregateData.js'
+import { fetchRawData } from '/Users/lionel/IdeaProjects/metrics/src/scripts/FetchRawData.js'
 
 const DATA = 'data'
 const RAW = 'raw'
 const TMP = 'tmp'
 
-exports.helloWorld = (req, res) => {
+export function helloWorld(req, res)  {
   fetchRawData().then(res.send('hello'))
   merge('transit', 'google', 'MobilityData')
   merge('gbfs', 'NABSA', 'MobilityData')

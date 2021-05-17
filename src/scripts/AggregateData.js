@@ -1,3 +1,5 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 const fs = require('fs')
 const shell = require('shelljs')
 const moment = require('moment')
@@ -15,7 +17,6 @@ const PR_MERGED_JSON = 'pr_merged.json'
 const ISSUE_COMMENTS_JSON = 'issue_comments.json'
 const PR_COMMENTS_JSON = 'pr_comments.json'
 const JSON_EXTENSION = '.json'
-
 function getDateCount (dateList) {
   const toReturn = {}
   for (const i in dateList) {

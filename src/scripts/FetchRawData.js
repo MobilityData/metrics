@@ -1,6 +1,3 @@
-require('dotenv').config()
-const fs = require('fs')
-const shell = require('shelljs')
 const REPOS = 'repos'
 const COMMENTS = 'comments'
 const PULLS = 'pulls'
@@ -13,6 +10,13 @@ const OPEN_PR_JSON = 'open_pulls_count.json'
 const DATA = 'data'
 const RAW = 'raw'
 const STATE_OPEN = 'open'
+
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
+require('dotenv').config()
+const fs = require('fs')
+const shell = require('shelljs')
 
 const { Octokit } = require('@octokit/rest')
 const octokit = new Octokit({
