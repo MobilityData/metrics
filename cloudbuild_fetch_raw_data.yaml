@@ -5,3 +5,5 @@ steps:
   - name: node
     entrypoint: npm
     args: ['run', 'fetch']
+    env:
+      - 'GH_TOKEN=$_GH_TOKEN'
