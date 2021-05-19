@@ -7,12 +7,12 @@ const shell = require('shelljs')
 const REPOS = 'repos'
 const COMMENTS = 'comments'
 const PULLS = 'pulls'
-const ISSUE_CREATION_JSON = 'issue_creation.json'
-const PR_MERGED_JSON = 'pr_merged.json'
-const ISSUE_COMMENTS_JSON = 'issue_comments.json'
-const PR_COMMENTS_JSON = 'pr_comments.json'
-const OPEN_ISSUE_JSON = 'open_issues_count.json'
-const OPEN_PR_JSON = 'open_pulls_count.json'
+const ISSUE_CREATION_DATES = 'issue_creation_dates'
+const PR_MERGED_DATES = 'pr_merged_dates'
+const ISSUE_COMMENTS_DATES = 'issue_comments_dates'
+const PR_COMMENTS_DATES = 'pr_comments_dates'
+const OPEN_ISSUE_COUNT = 'open_issues_count'
+const OPEN_PR_COUNT = 'open_pulls_count'
 const DATA = 'data'
 const STATE_OPEN = 'open'
 
@@ -170,32 +170,32 @@ async function fetchRawData () {
     }
     await getAllIssueCreationDateCollection(repo, owner)
     .then(issueCreationData => {
-      metrics[ISSUE_CREATION_JSON] = issueCreationData
+      metrics[ISSUE_CREATION_DATES] = issueCreationData
     }).catch(error => console.log(error))
 
     await getAllPrMergeDatesCollection(repo, owner)
     .then(prMergedData => {
-      metrics[PR_MERGED_JSON] = prMergedData
+      metrics[PR_MERGED_DATES] = prMergedData
     }).catch(error => console.log(error))
 
     await getAllIssueCommentForRepo(repo, owner)
     .then(issueCommentsData => {
-      metrics[ISSUE_COMMENTS_JSON] = issueCommentsData
+      metrics[ISSUE_COMMENTS_DATES] = issueCommentsData
     }).catch(error => console.log(error))
 
     await getAllPrCommentForRepo(repo, owner)
     .then(prCommentsData => {
-      metrics[PR_COMMENTS_JSON] = prCommentsData
+      metrics[PR_COMMENTS_DATES] = prCommentsData
     }).catch(error => console.log(error))
 
     await getIssueCountForRepo(repo, owner, STATE_OPEN)
     .then(openIssueCount => {
-      metrics[OPEN_ISSUE_JSON] = openIssueCount
+      metrics[OPEN_ISSUE_COUNT] = openIssueCount
     }).catch(error => console.log(error))
 
     await getPullCountForRepo(repo, owner, STATE_OPEN)
     .then(openPullCount => {
-      metrics[OPEN_PR_JSON] = openPullCount
+      metrics[OPEN_PR_COUNT] = openPullCount
     }).catch(error => console.log(error))
 
     data[owner][repo] = metrics
