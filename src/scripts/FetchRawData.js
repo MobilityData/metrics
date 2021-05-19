@@ -1,3 +1,6 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 require('dotenv').config()
 const fs = require('fs')
 const shell = require('shelljs')
