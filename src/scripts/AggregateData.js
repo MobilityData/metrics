@@ -1,3 +1,5 @@
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
 const fs = require('fs')
 const shell = require('shelljs')
 const moment = require('moment')
@@ -15,7 +17,6 @@ const PR_MERGED_JSON = 'pr_merged.json'
 const ISSUE_COMMENTS_JSON = 'issue_comments.json'
 const PR_COMMENTS_JSON = 'pr_comments.json'
 const JSON_EXTENSION = '.json'
-
 function getDateCount (dateList) {
   const toReturn = {}
   for (const i in dateList) {
@@ -47,7 +48,7 @@ function byQuarterYear (dateCountDict) {
   return toReturn
 }
 
-async function merge (repo, owner1, owner2) {
+export async function merge (repo, owner1, owner2) {
   console.log(`Merging data from ${owner1} and ${owner2} ⏳ `)
   shell.mkdir('-p', `${DATA}/${TMP}/${repo}/`)
   const mergedData = {}
@@ -146,7 +147,7 @@ function aggregateDataForMultipleOwner (repo, owner1, owner2) {
   fs.writeFileSync(`${DATA}/${AGGREGATED}/${repo}${JSON_EXTENSION}`, JSON.stringify(data))
 }
 
-function aggregate () {
+export function aggregate () {
   console.log('Aggregating data ⏳ ')
   shell.mkdir('-p', `${DATA}/${AGGREGATED}/`)
   const singleOwnerRepositories = [{
@@ -181,7 +182,7 @@ function aggregate () {
   }
 }
 
-function removeDirectories (dirs) {
+export function removeDirectories (dirs) {
   console.log('Removing temporary data files 🌬 ')
   for (const i in dirs) {
     const dir = dirs[i]
@@ -194,7 +195,7 @@ function removeDirectories (dirs) {
   }
 }
 
-merge('transit', 'google', 'MobilityData')
-merge('gbfs', 'NABSA', 'MobilityData')
-aggregate()
-removeDirectories([`${DATA}/${RAW}`, `${DATA}/${TMP}`])
+// merge('transit', 'google', 'MobilityData')
+// merge('gbfs', 'NABSA', 'MobilityData')
+// aggregate()
+// removeDirectories([`${DATA}/${RAW}`, `${DATA}/${TMP}`])
