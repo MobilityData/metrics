@@ -14,7 +14,6 @@ const PR_COMMENTS_JSON = 'pr_comments.json'
 const OPEN_ISSUE_JSON = 'open_issues_count.json'
 const OPEN_PR_JSON = 'open_pulls_count.json'
 const DATA = 'data'
-const RAW = 'raw'
 const STATE_OPEN = 'open'
 
 const { Octokit } = require('@octokit/rest')
@@ -79,13 +78,13 @@ async function getPullCountForRepo (repository, owner, state) {
 }
 
 async function getIssueCountForRepo (repository, owner, state) {
-    return await octokit.paginate(octokit.issues.listForRepo, {
+  return await octokit.paginate(octokit.issues.listForRepo, {
     owner: owner,
     repo: repository,
     state: state,
     per_page: 100
   }).then(res => {
-      return res.filter(item => item.pull_request == null).length
+    return res.filter(item => item.pull_request == null).length
   })
 }
 
@@ -142,11 +141,12 @@ async function getAllIssueCommentForRepo (repository, owner) {
 
 async function getAllPrCommentForRepo (repository, owner) {
   const toReturn = []
-  return await octokit.paginate(`GET /${REPOS}/{owner}/{repo}/${PULLS}/${COMMENTS}`, {
-    owner: owner,
-    repo: repository,
-    per_page: 100
-  }).then(res => {
+  return await octokit.paginate(
+    `GET /${REPOS}/{owner}/{repo}/${PULLS}/${COMMENTS}`, {
+      owner: owner,
+      repo: repository,
+      per_page: 100
+    }).then(res => {
     for (const i in res) {
       const date = new Date(res[i].created_at)
       toReturn.push(
@@ -158,53 +158,54 @@ async function getAllPrCommentForRepo (repository, owner) {
 
 async function fetchRawData () {
   console.log('Fetching raw data from Github ⏳ ')
+  let data = {}
+
   for (const i in repositories) {
+    let metrics = {}
     const repository = repositories[i]
     const repo = repository.repo
     const owner = repository.owner
-
-    shell.mkdir('-p', `${DATA}/${RAW}/${owner}/${repo}/`)
+    if (data[owner] == null) {
+      data[owner] = {}
+    }
     await getAllIssueCreationDateCollection(repo, owner)
-      .then(issueCreationData => {
-        fs.writeFileSync(`${DATA}/${RAW}/${owner}/${repo}/${ISSUE_CREATION_JSON}`,
-          JSON.stringify(issueCreationData))
-      }).catch(error => console.log(error))
+    .then(issueCreationData => {
+      metrics[ISSUE_CREATION_JSON] = issueCreationData
+    }).catch(error => console.log(error))
 
     await getAllPrMergeDatesCollection(repo, owner)
-      .then(issueCreationData => {
-        fs.writeFileSync(`${DATA}/${RAW}/${owner}/${repo}/${PR_MERGED_JSON}`,
-          JSON.stringify(issueCreationData))
-      }).catch(error => console.log(error))
+    .then(prMergedData => {
+      metrics[PR_MERGED_JSON] = prMergedData
+    }).catch(error => console.log(error))
 
     await getAllIssueCommentForRepo(repo, owner)
-      .then(issueCreationData => {
-        fs.writeFileSync(`${DATA}/${RAW}/${owner}/${repo}/${ISSUE_COMMENTS_JSON}`,
-          JSON.stringify(issueCreationData))
-      }).catch(error => console.log(error))
+    .then(issueCommentsData => {
+      metrics[ISSUE_COMMENTS_JSON] = issueCommentsData
+    }).catch(error => console.log(error))
 
     await getAllPrCommentForRepo(repo, owner)
-      .then(issueCreationData => {
-        fs.writeFileSync(`${DATA}/${RAW}/${owner}/${repo}/${PR_COMMENTS_JSON}`,
-          JSON.stringify(issueCreationData))
-      }).catch(error => console.log(error))
+    .then(prCommentsData => {
+      metrics[PR_COMMENTS_JSON] = prCommentsData
+    }).catch(error => console.log(error))
 
     await getIssueCountForRepo(repo, owner, STATE_OPEN)
-      .then(openIssueCount => {
-        fs.writeFileSync(`${DATA}/${RAW}/${owner}/${repo}/${OPEN_ISSUE_JSON}`,
-          JSON.stringify(openIssueCount))
-      }).catch(error => console.log(error))
+    .then(openIssueCount => {
+      metrics[OPEN_ISSUE_JSON] = openIssueCount
+    }).catch(error => console.log(error))
 
     await getPullCountForRepo(repo, owner, STATE_OPEN)
-      .then(openPullCount => {
-        fs.writeFileSync(`${DATA}/${RAW}/${owner}/${repo}/${OPEN_PR_JSON}`,
-          JSON.stringify(openPullCount))
-      }).catch(error => console.log(error))
+    .then(openPullCount => {
+      metrics[OPEN_PR_JSON] = openPullCount
+    }).catch(error => console.log(error))
 
-    console.log(`🗄 Repository: ${repo}`)
+    data[owner][repo] = metrics
     console.log(`🏡 Owner: ${owner}`)
+    console.log(`🗄 Repository: ${repo}`)
     console.log(`🔗 Link: ${repository.direction}`)
     console.log('\n')
   }
+  shell.mkdir('-p', `${DATA}/`)
+  fs.writeFileSync(`${DATA}/raw_data.json`, JSON.stringify(data))
 }
 
 fetchRawData()
