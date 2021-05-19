@@ -7,3 +7,6 @@ steps:
     args: ['run', 'fetch']
     env:
       - 'GH_TOKEN=$_GH_TOKEN'
+  - name: node
+    entrypoint: npm
+    args: ['run', 'aggregate']
