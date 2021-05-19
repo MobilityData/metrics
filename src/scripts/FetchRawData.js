@@ -27,6 +27,33 @@ const octokit = new Octokit({
     error: console.error
   }
 })
+const repositories = [
+  {
+    repo: 'gtfs-validator',
+    owner: 'MobilityData',
+    direction: 'https://github.com/MobilityData/gtfs-validator'
+  },
+  {
+    repo: 'transit',
+    owner: 'MobilityData',
+    direction: 'https://github.com/MobilityData/transit'
+  },
+  {
+    repo: 'transit',
+    owner: 'google',
+    direction: 'https://github.com/google/transit'
+  },
+  {
+    repo: 'gbfs',
+    owner: 'NABSA',
+    direction: 'https://github.com/nabsa/gbfs'
+  },
+  {
+    repo: 'gbfs',
+    owner: 'MobilityData',
+    direction: 'https://github.com/MobilityData/gbfs'
+  }
+]
 
 const ascOrder = function (firstDate, otherDate) {
   if (firstDate > otherDate) {
@@ -125,34 +152,6 @@ async function getAllPrCommentForRepo (repository, owner) {
     return toReturn.sort(ascOrder)
   })
 }
-
-const repositories = [
-  {
-    repo: 'gtfs-validator',
-    owner: 'MobilityData',
-    direction: 'https://github.com/MobilityData/gtfs-validator'
-  },
-  {
-    repo: 'transit',
-    owner: 'MobilityData',
-    direction: 'https://github.com/MobilityData/transit'
-  },
-  {
-    repo: 'transit',
-    owner: 'google',
-    direction: 'https://github.com/google/transit'
-  },
-  {
-    repo: 'gbfs',
-    owner: 'NABSA',
-    direction: 'https://github.com/nabsa/gbfs'
-  },
-  {
-    repo: 'gbfs',
-    owner: 'MobilityData',
-    direction: 'https://github.com/MobilityData/gbfs'
-  }
-]
 
 async function fetchRawData () {
   console.log('Fetching raw data from Github ⏳ ')
