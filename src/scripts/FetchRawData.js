@@ -123,7 +123,7 @@ async function getAllIssueCreationDateCollection (repository, owner) {
   })
 }
 
-async function getAllIssueCommentForRepo (repository, owner) {
+async function getAllIssueCommentsDateForRepo (repository, owner) {
   const toReturn = []
   return await octokit.paginate(octokit.issues.listCommentsForRepo, {
     owner: owner,
@@ -139,7 +139,7 @@ async function getAllIssueCommentForRepo (repository, owner) {
   })
 }
 
-async function getAllPrCommentForRepo (repository, owner) {
+async function getAllPrCommentsDateForRepo (repository, owner) {
   const toReturn = []
   return await octokit.paginate(
     `GET /${REPOS}/{owner}/{repo}/${PULLS}/${COMMENTS}`, {
@@ -178,12 +178,12 @@ async function fetchRawData () {
       metrics[PR_MERGED_DATES] = prMergedData
     }).catch(error => console.log(error))
 
-    await getAllIssueCommentForRepo(repo, owner)
+    await getAllIssueCommentsDateForRepo(repo, owner)
     .then(issueCommentsData => {
       metrics[ISSUE_COMMENTS_DATES] = issueCommentsData
     }).catch(error => console.log(error))
 
-    await getAllPrCommentForRepo(repo, owner)
+    await getAllPrCommentsDateForRepo(repo, owner)
     .then(prCommentsData => {
       metrics[PR_COMMENTS_DATES] = prCommentsData
     }).catch(error => console.log(error))

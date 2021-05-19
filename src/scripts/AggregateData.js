@@ -3,20 +3,23 @@ const require = createRequire(import.meta.url);
 const fs = require('fs')
 const shell = require('shelljs')
 const moment = require('moment')
-const MERGED = 'merged'
+const MERGED = 'total'
 const DATA = 'data'
-const RAW = 'raw'
 const TMP = 'tmp'
-const ISSUE_COMMENTS_COUNT = 'issueCommentsCount'
-const ISSUE_CREATION_DATES = 'issueCreationDates'
-const PR_COMMENTS_COUNT = 'prCommentsCount'
-const MERGED_PR_DATES = 'mergedPrDates'
+const ISSUE_COMMENTS_COUNT = 'issue_comments_count'
+const PR_COMMENTS_COUNT = 'pr_comments_count'
 const AGGREGATED = 'aggregated'
-const ISSUE_CREATION_JSON = 'issue_creation.json'
-const PR_MERGED_JSON = 'pr_merged.json'
-const ISSUE_COMMENTS_JSON = 'issue_comments.json'
-const PR_COMMENTS_JSON = 'pr_comments.json'
 const JSON_EXTENSION = '.json'
+const ISSUE_CREATION_DATES = 'issue_creation_dates'
+const PR_MERGED_DATES = 'pr_merged_dates'
+const ISSUE_COMMENTS_DATES = 'issue_comments_dates'
+const PR_COMMENTS_DATES = 'pr_comments_dates'
+const OPEN_ISSUE_COUNT = 'open_issues_count'
+const OPEN_PR_COUNT = 'open_pulls_count'
+const RAW_DATA_JSON = `raw_data.json`
+const RAW_DATA = `raw_data`
+const METRICS_PREFIX = `metrics_`
+
 function getDateCount (dateList) {
   const toReturn = {}
   for (const i in dateList) {
@@ -48,108 +51,93 @@ function byQuarterYear (dateCountDict) {
   return toReturn
 }
 
-export async function merge (repo, owner1, owner2) {
+function merge (rawData, repo, owner1, owner2) {
   console.log(`Merging data from ${owner1} and ${owner2} ⏳ `)
-  shell.mkdir('-p', `${DATA}/${TMP}/${repo}/`)
   const mergedData = {}
+  mergedData[repo] = {}
+  mergedData[repo][owner1] = {}
+  mergedData[repo][owner2] = {}
+  mergedData[repo][MERGED] = {}
 
-  const issueCommentsOwner1 = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner1}/${repo}/${ISSUE_COMMENTS_JSON}`))
-  const issueCommentsOwner2 = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner2}/${repo}/${ISSUE_COMMENTS_JSON}`))
-  mergedData[owner1] = issueCommentsOwner1
-  mergedData[owner2] = issueCommentsOwner2
-  mergedData[MERGED] = issueCommentsOwner1.concat(issueCommentsOwner2)
-  fs.writeFileSync(`${DATA}/${TMP}/${repo}/${ISSUE_COMMENTS_JSON}`,
-    JSON.stringify(mergedData))
+  mergedData[repo][owner1][ISSUE_COMMENTS_DATES] = rawData[owner1][repo][ISSUE_COMMENTS_DATES]
+  mergedData[repo][owner2][ISSUE_COMMENTS_DATES] = rawData[owner2][repo][ISSUE_COMMENTS_DATES]
+  mergedData[repo][MERGED][ISSUE_COMMENTS_DATES] = mergedData[repo][owner1][ISSUE_COMMENTS_DATES].concat(mergedData[repo][owner2][ISSUE_COMMENTS_DATES])
 
-  const issueCreationOwner1 = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner1}/${repo}/${ISSUE_CREATION_JSON}`))
-  const issueCreationOwner2 = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner2}/${repo}/${ISSUE_CREATION_JSON}`))
-  mergedData[owner1] = issueCreationOwner1
-  mergedData[owner2] = issueCreationOwner2
-  mergedData[MERGED] = issueCreationOwner1.concat(issueCreationOwner2)
-  fs.writeFileSync(`${DATA}/${TMP}/${repo}/${ISSUE_CREATION_JSON}`,
-    JSON.stringify(mergedData))
+  mergedData[repo][owner1][ISSUE_CREATION_DATES] = rawData[owner1][repo][ISSUE_CREATION_DATES]
+  mergedData[repo][owner2][ISSUE_CREATION_DATES] = rawData[owner2][repo][ISSUE_CREATION_DATES]
+  mergedData[repo][MERGED][ISSUE_CREATION_DATES] = mergedData[repo][owner1][ISSUE_CREATION_DATES].concat(mergedData[repo][owner2][ISSUE_CREATION_DATES])
 
-  const prCommentsOwner1 = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner1}/${repo}/${PR_COMMENTS_JSON}`))
-  const prCommentsOwner2 = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner2}/${repo}/${PR_COMMENTS_JSON}`))
-  mergedData[owner1] = prCommentsOwner1
-  mergedData[owner2] = prCommentsOwner2
-  mergedData[MERGED] = prCommentsOwner1.concat(prCommentsOwner2)
-  fs.writeFileSync(`${DATA}/${TMP}/${repo}/${PR_COMMENTS_JSON}`,
-    JSON.stringify(mergedData))
+  mergedData[repo][owner1][PR_COMMENTS_DATES] = rawData[owner1][repo][PR_COMMENTS_DATES]
+  mergedData[repo][owner2][PR_COMMENTS_DATES] = rawData[owner2][repo][PR_COMMENTS_DATES]
+  mergedData[repo][MERGED][PR_COMMENTS_DATES] = mergedData[repo][owner1][PR_COMMENTS_DATES].concat(mergedData[repo][owner2][PR_COMMENTS_DATES])
 
-  const prMergedOwner1 = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner1}/${repo}/${PR_MERGED_JSON}`))
-  const prMergedOwner2 = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner2}/${repo}/${PR_MERGED_JSON}`))
-  mergedData[owner1] = prMergedOwner1
-  mergedData[owner2] = prMergedOwner2
-  mergedData[MERGED] = prMergedOwner1.concat(prMergedOwner2)
-  fs.writeFileSync(`${DATA}/${TMP}/${repo}/${PR_MERGED_JSON}`,
-    JSON.stringify(mergedData))
+  mergedData[repo][owner1][PR_MERGED_DATES] = rawData[owner1][repo][PR_MERGED_DATES]
+  mergedData[repo][owner2][PR_MERGED_DATES] = rawData[owner2][repo][PR_MERGED_DATES]
+  mergedData[repo][MERGED][PR_MERGED_DATES] = mergedData[repo][owner1][PR_MERGED_DATES].concat(mergedData[repo][owner2][PR_MERGED_DATES])
+
+  mergedData[repo][owner1][OPEN_ISSUE_COUNT] = rawData[owner1][repo][OPEN_ISSUE_COUNT]
+  mergedData[repo][owner2][OPEN_ISSUE_COUNT] = rawData[owner2][repo][OPEN_ISSUE_COUNT]
+  mergedData[repo][MERGED][OPEN_ISSUE_COUNT] = mergedData[repo][owner1][OPEN_ISSUE_COUNT] + mergedData[repo][owner2][OPEN_ISSUE_COUNT]
+
+  mergedData[repo][owner1][OPEN_PR_COUNT] = rawData[owner1][repo][OPEN_PR_COUNT]
+  mergedData[repo][owner2][OPEN_PR_COUNT] = rawData[owner2][repo][OPEN_PR_COUNT]
+  mergedData[repo][MERGED][OPEN_PR_COUNT] = mergedData[repo][owner1][OPEN_PR_COUNT] + mergedData[repo][owner2][OPEN_PR_COUNT]
+
+  shell.mkdir('-p', `${DATA}/${TMP}`)
+  fs.writeFileSync(`${DATA}/${TMP}/metrics_${repo}.json`, JSON.stringify(mergedData))
 }
 
-function aggregateDataForSingleOwner (repo, owner) {
-  const issueComments = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner}/${repo}/${ISSUE_COMMENTS_JSON}`))
-  const issueCreation = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner}/${repo}/${ISSUE_CREATION_JSON}`))
-  const prComments = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner}/${repo}/${PR_COMMENTS_JSON}`))
-  const prMerged = JSON.parse(
-    fs.readFileSync(`${DATA}/${RAW}/${owner}/${repo}/${PR_MERGED_JSON}`))
+function aggregateDataForSingleOwner (rawData, repo, owner) {
+  const issueComments = rawData[owner][repo][ISSUE_COMMENTS_DATES]
+  const issueCreation = rawData[owner][repo][ISSUE_CREATION_DATES]
+  const prComments = rawData[owner][repo][PR_COMMENTS_DATES]
+  const prMerged = rawData[owner][repo][PR_MERGED_DATES]
 
   const data = {}
   data[repo] = {}
   data[repo][owner] = {}
   data[repo][owner][ISSUE_COMMENTS_COUNT] = byQuarterYear(
     getDateCount(issueComments))
-  data[repo][owner][ISSUE_CREATION_DATES] = byQuarterYear(
-    getDateCount(issueCreation))
-  data[repo][owner][PR_COMMENTS_COUNT] = byQuarterYear(
-    getDateCount(prComments))
-  data[repo][owner][MERGED_PR_DATES] = byQuarterYear(getDateCount(prMerged))
+  data[repo][owner][ISSUE_CREATION_DATES] = byQuarterYear(getDateCount(issueCreation))
+  data[repo][owner][PR_COMMENTS_COUNT] = byQuarterYear(getDateCount(prComments))
+  data[repo][owner][PR_MERGED_DATES] = byQuarterYear(getDateCount(prMerged))
+
+  shell.mkdir('-p', `${DATA}/${AGGREGATED}`)
   fs.writeFileSync(`${DATA}/${AGGREGATED}/${repo}${JSON_EXTENSION}`, JSON.stringify(data))
+  return data;
 }
 
-function aggregateDataForMultipleOwner (repo, owner1, owner2) {
-  const issueComments = JSON.parse(
-    fs.readFileSync(`${DATA}/${TMP}/${repo}/${ISSUE_COMMENTS_JSON}`))
-  const issueCreation = JSON.parse(
-    fs.readFileSync(`${DATA}/${TMP}/${repo}/${ISSUE_CREATION_JSON}`))
-  const prComments = JSON.parse(
-    fs.readFileSync(`${DATA}/${TMP}/${repo}/${PR_COMMENTS_JSON}`))
-  const prMerged = JSON.parse(
-    fs.readFileSync(`${DATA}/${TMP}/${repo}/${PR_MERGED_JSON}`))
-
+function aggregateDataForMultipleOwner (mergedData, repo, owner1, owner2) {
   const data = {}
   data[repo] = {}
   data[repo][owner1] = {}
   data[repo][owner2] = {}
   data[repo][MERGED] = {}
+
   const owners = [owner1, owner2, MERGED]
   for (const i in owners) {
     const owner = owners[i]
     data[repo][owner][ISSUE_COMMENTS_COUNT] = byQuarterYear(
-      getDateCount(issueComments[owner]))
+      getDateCount(mergedData[repo][owner][ISSUE_COMMENTS_DATES]))
     data[repo][owner][ISSUE_CREATION_DATES] = byQuarterYear(
-      getDateCount(issueCreation[owner]))
+      getDateCount(mergedData[repo][owner][ISSUE_CREATION_DATES]))
     data[repo][owner][PR_COMMENTS_COUNT] = byQuarterYear(
-      getDateCount(prComments[owner]))
-    data[repo][owner][MERGED_PR_DATES] = byQuarterYear(
-      getDateCount(prMerged[owner]))
+      getDateCount(mergedData[repo][owner][PR_COMMENTS_DATES]))
+    data[repo][owner][PR_MERGED_DATES] = byQuarterYear(
+      getDateCount(mergedData[repo][owner][PR_MERGED_DATES]))
+    data[repo][owner][OPEN_ISSUE_COUNT] = mergedData[repo][owner][OPEN_ISSUE_COUNT]
+    data[repo][owner][OPEN_PR_COUNT] = mergedData[repo][owner][OPEN_PR_COUNT]
   }
   fs.writeFileSync(`${DATA}/${AGGREGATED}/${repo}${JSON_EXTENSION}`, JSON.stringify(data))
+  return data;
 }
 
-export function aggregate () {
+function aggregate () {
   console.log('Aggregating data ⏳ ')
-  shell.mkdir('-p', `${DATA}/${AGGREGATED}/`)
+  const rawData = JSON.parse(fs.readFileSync(`${DATA}/raw_data.json`))
+
+  merge(rawData, 'transit', 'google', 'MobilityData')
+  merge(rawData, 'gbfs', 'NABSA', 'MobilityData')
   const singleOwnerRepositories = [{
     repo: 'gtfs-validator',
     owner: 'MobilityData'
@@ -171,18 +159,18 @@ export function aggregate () {
   for (const i in singleOwnerRepositories) {
     const repo = singleOwnerRepositories[i].repo
     const owner = singleOwnerRepositories[i].owner
-    aggregateDataForSingleOwner(repo, owner)
+    aggregateDataForSingleOwner(JSON.parse(fs.readFileSync(`${DATA}/${RAW_DATA}${JSON_EXTENSION}`)), repo, owner)
   }
   // aggregate data for repositories owned by a two organization
   for (const i in multipleOwnerRepositories) {
     const repo = multipleOwnerRepositories[i].repo
     const owner1 = multipleOwnerRepositories[i].owner1
     const owner2 = multipleOwnerRepositories[i].owner2
-    aggregateDataForMultipleOwner(repo, owner1, owner2)
+    aggregateDataForMultipleOwner(JSON.parse(fs.readFileSync(`${DATA}/${TMP}/${METRICS_PREFIX}${repo}${JSON_EXTENSION}`)), repo, owner1, owner2)
   }
 }
 
-export function removeDirectories (dirs) {
+function removeDirectories (dirs) {
   console.log('Removing temporary data files 🌬 ')
   for (const i in dirs) {
     const dir = dirs[i]
@@ -195,7 +183,7 @@ export function removeDirectories (dirs) {
   }
 }
 
-// merge('transit', 'google', 'MobilityData')
-// merge('gbfs', 'NABSA', 'MobilityData')
-// aggregate()
-// removeDirectories([`${DATA}/${RAW}`, `${DATA}/${TMP}`])
+merge(JSON.parse(fs.readFileSync(`${DATA}/${RAW_DATA_JSON}`)), 'transit', 'google', 'MobilityData')
+merge(JSON.parse(fs.readFileSync(`${DATA}/${RAW_DATA_JSON}`)), 'gbfs', 'NABSA', 'MobilityData')
+aggregate()
+removeDirectories([`${DATA}/${TMP}`])
