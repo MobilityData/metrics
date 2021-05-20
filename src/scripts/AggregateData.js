@@ -6,6 +6,7 @@ const moment = require('moment')
 const MERGED = 'total'
 const DATA = 'data'
 const TMP = 'tmp'
+const FILENAME = 'metrics.json'
 const ISSUE_COMMENTS_COUNT = 'issue_comments_count'
 const PR_COMMENTS_COUNT = 'pr_comments_count'
 const AGGREGATED = 'aggregated'
@@ -101,9 +102,6 @@ function aggregateDataForSingleOwner (rawData, repo, owner) {
   data[repo][owner][ISSUE_CREATION_DATES] = byQuarterYear(getDateCount(issueCreation))
   data[repo][owner][PR_COMMENTS_COUNT] = byQuarterYear(getDateCount(prComments))
   data[repo][owner][PR_MERGED_DATES] = byQuarterYear(getDateCount(prMerged))
-
-  shell.mkdir('-p', `${DATA}/${AGGREGATED}`)
-  fs.writeFileSync(`${DATA}/${AGGREGATED}/${repo}${JSON_EXTENSION}`, JSON.stringify(data))
   return data;
 }
 
@@ -128,11 +126,11 @@ function aggregateDataForMultipleOwner (mergedData, repo, owner1, owner2) {
     data[repo][owner][OPEN_ISSUE_COUNT] = mergedData[repo][owner][OPEN_ISSUE_COUNT]
     data[repo][owner][OPEN_PR_COUNT] = mergedData[repo][owner][OPEN_PR_COUNT]
   }
-  fs.writeFileSync(`${DATA}/${AGGREGATED}/${repo}${JSON_EXTENSION}`, JSON.stringify(data))
   return data;
 }
 
 function aggregate () {
+  let data = {};
   console.log('Aggregating data ⏳ ')
   const rawData = JSON.parse(fs.readFileSync(`${DATA}/raw_data.json`))
 
@@ -159,15 +157,16 @@ function aggregate () {
   for (const i in singleOwnerRepositories) {
     const repo = singleOwnerRepositories[i].repo
     const owner = singleOwnerRepositories[i].owner
-    aggregateDataForSingleOwner(JSON.parse(fs.readFileSync(`${DATA}/${RAW_DATA}${JSON_EXTENSION}`)), repo, owner)
+    data[repo] = aggregateDataForSingleOwner(JSON.parse(fs.readFileSync(`${DATA}/${RAW_DATA}${JSON_EXTENSION}`)), repo, owner)[repo]
   }
   // aggregate data for repositories owned by a two organization
   for (const i in multipleOwnerRepositories) {
     const repo = multipleOwnerRepositories[i].repo
     const owner1 = multipleOwnerRepositories[i].owner1
     const owner2 = multipleOwnerRepositories[i].owner2
-    aggregateDataForMultipleOwner(JSON.parse(fs.readFileSync(`${DATA}/${TMP}/${METRICS_PREFIX}${repo}${JSON_EXTENSION}`)), repo, owner1, owner2)
+    data[repo] = aggregateDataForMultipleOwner(JSON.parse(fs.readFileSync(`${DATA}/${TMP}/${METRICS_PREFIX}${repo}${JSON_EXTENSION}`)), repo, owner1, owner2)[repo]
   }
+  fs.writeFileSync(`${DATA}/${FILENAME}`, JSON.stringify(data))
 }
 
 function removeDirectories (dirs) {
@@ -186,4 +185,4 @@ function removeDirectories (dirs) {
 merge(JSON.parse(fs.readFileSync(`${DATA}/${RAW_DATA_JSON}`)), 'transit', 'google', 'MobilityData')
 merge(JSON.parse(fs.readFileSync(`${DATA}/${RAW_DATA_JSON}`)), 'gbfs', 'NABSA', 'MobilityData')
 aggregate()
-removeDirectories([`${DATA}/${TMP}`])
+removeDirectories([`${DATA}/${TMP}`, `${DATA}/${AGGREGATED}`])
