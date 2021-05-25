@@ -4,19 +4,8 @@ const require = createRequire(import.meta.url);
 require('dotenv').config()
 const fs = require('fs')
 const shell = require('shelljs')
-const REPOS = 'repos'
-const COMMENTS = 'comments'
-const PULLS = 'pulls'
-const ISSUE_CREATION_DATES = 'issue_creation_dates'
-const PR_MERGED_DATES = 'pr_merged_dates'
-const ISSUE_COMMENTS_DATES = 'issue_comments_dates'
-const PR_COMMENTS_DATES = 'pr_comments_dates'
-const OPEN_ISSUE_COUNT = 'open_issues_count'
-const OPEN_PR_COUNT = 'open_pulls_count'
-const DATA = 'data'
-const STATE_OPEN = 'open'
-
 const { Octokit } = require('@octokit/rest')
+
 const octokit = new Octokit({
   auth: process.env.GH_TOKEN,
   baseUrl: 'https://api.github.com',
@@ -29,6 +18,7 @@ const octokit = new Octokit({
     error: console.error
   }
 })
+
 const repositories = [
   {
     repo: 'gtfs-validator',
@@ -67,7 +57,7 @@ const ascOrder = function (firstDate, otherDate) {
 }
 
 async function getPullCountForRepo (repository, owner, state) {
-  return await octokit.paginate(octokit.issues.listForRepo, {
+  return octokit.paginate(octokit.issues.listForRepo, {
     owner: owner,
     repo: repository,
     state: state,
@@ -78,7 +68,7 @@ async function getPullCountForRepo (repository, owner, state) {
 }
 
 async function getIssueCountForRepo (repository, owner, state) {
-  return await octokit.paginate(octokit.issues.listForRepo, {
+  return octokit.paginate(octokit.issues.listForRepo, {
     owner: owner,
     repo: repository,
     state: state,
@@ -90,7 +80,7 @@ async function getIssueCountForRepo (repository, owner, state) {
 
 async function getAllPrMergeDatesCollection (repository, owner) {
   const toReturn = []
-  return await octokit.paginate(`GET /${REPOS}/{owner}/{repo}/${PULLS}`, {
+  return octokit.paginate(`GET /${REPOS}/{owner}/{repo}/${PULLS}`, {
     owner: owner,
     repo: repository,
     state: 'all',
@@ -108,7 +98,7 @@ async function getAllPrMergeDatesCollection (repository, owner) {
 
 async function getAllIssueCreationDateCollection (repository, owner) {
   const toReturn = []
-  return await octokit.paginate(octokit.issues.listForRepo, {
+  return octokit.paginate(octokit.issues.listForRepo, {
     owner: owner,
     repo: repository,
     state: 'all',
@@ -125,7 +115,7 @@ async function getAllIssueCreationDateCollection (repository, owner) {
 
 async function getAllIssueCommentsDateForRepo (repository, owner) {
   const toReturn = []
-  return await octokit.paginate(octokit.issues.listCommentsForRepo, {
+  return octokit.paginate(octokit.issues.listCommentsForRepo, {
     owner: owner,
     repo: repository,
     per_page: 100
@@ -141,7 +131,7 @@ async function getAllIssueCommentsDateForRepo (repository, owner) {
 
 async function getAllPrCommentsDateForRepo (repository, owner) {
   const toReturn = []
-  return await octokit.paginate(
+  return octokit.paginate(
     `GET /${REPOS}/{owner}/{repo}/${PULLS}/${COMMENTS}`, {
       owner: owner,
       repo: repository,
@@ -180,12 +170,14 @@ async function fetchRawData () {
 
     await getAllIssueCommentsDateForRepo(repo, owner)
     .then(issueCommentsData => {
-      metrics[ISSUE_COMMENTS_DATES] = issueCommentsData
+      metrics[COMMENTS_DATES] = issueCommentsData
     }).catch(error => console.log(error))
 
     await getAllPrCommentsDateForRepo(repo, owner)
     .then(prCommentsData => {
-      metrics[PR_COMMENTS_DATES] = prCommentsData
+      let tmp = metrics[COMMENTS_DATES].concat(prCommentsData)
+      metrics[COMMENTS_DATES] = tmp
+      metrics[COMMENTS_DATES].sort(ascOrder)
     }).catch(error => console.log(error))
 
     await getIssueCountForRepo(repo, owner, STATE_OPEN)

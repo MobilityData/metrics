@@ -4,3 +4,5 @@
 node_modules/
 /.idea/
 /data/
+/credentials.json
+/token.json

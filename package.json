@@ -2,12 +2,15 @@
   "dependencies": {
     "@octokit/rest": "18.5.2",
     "dotenv": "8.2.0",
+    "google-spreadsheet": "^3.1.15",
+    "googleapis": "^39.2.0",
     "moment": "2.29.1",
     "shelljs": "0.8.4"
   },
   "scripts": {
     "fetch": "node src/scripts/FetchRawData.js",
-    "aggregate": "node src/scripts/AggregateData.js"
+    "aggregate": "node src/scripts/AggregateData.js",
+    "update-google-sheet": "node index.js"
   },
   "devDependencies": {
     "standard": "16.0.3"

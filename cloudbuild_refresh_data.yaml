@@ -1,5 +1,8 @@
 steps:
   - name: node
+    entrypoint: node
+    args: ['.']
+  - name: node
     entrypoint: npm
     args: ['install']
   - name: node
@@ -10,3 +13,6 @@ steps:
   - name: node
     entrypoint: npm
     args: ['run', 'aggregate']
+  - name: node
+    entrypoint: npm
+    args: ['run', 'update-google-sheet']
