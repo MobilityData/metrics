@@ -1,10 +1,22 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
+import { createRequire } from 'module'
+
+const require = createRequire(import.meta.url)
 
 require('dotenv').config()
 const fs = require('fs')
 const shell = require('shelljs')
 const { Octokit } = require('@octokit/rest')
+
+const COMMENTS = 'comments'
+const COMMENTS_DATES = 'comments_dates'
+const DATA = 'data'
+const ISSUE_CREATION_DATES = 'issue_creation_dates'
+const OPEN_ISSUE_COUNT = 'open_issues_count'
+const OPEN_PR_COUNT = 'open_pulls_count'
+const PR_MERGED_DATES = 'pr_merged_dates'
+const PULLS = 'pulls'
+const REPOS = 'repos'
+const STATE_OPEN = 'open'
 
 const octokit = new Octokit({
   auth: process.env.GH_TOKEN,

@@ -6,7 +6,13 @@ require('dotenv').config()
 const { google } = require('googleapis')
 const { GoogleSpreadsheet } = require('google-spreadsheet')
 
-
+const COUNT = 'count'
+const CUMULATED = 'cumulated'
+const DATA = 'data'
+const DATE = 'date'
+const FILENAME = 'metrics.json'
+const OPEN_ISSUE_COUNT = 'open_issues_count'
+const OPEN_PR_COUNT = 'open_pulls_count'
 
 async function updateSheetHeaders (newSheet, idx, idy, metric) {
   let titleCell = newSheet.getCell(idx, idy)
@@ -81,7 +87,7 @@ export async function updateGoogleSheet (auth) {
         idy += 3
         // we  slow down the process on purpose because of the API rate limit
         // of 60 req/user/min applied by Google.
-      await new Promise(resolve => setTimeout(resolve, 2000))
+        await new Promise(resolve => setTimeout(resolve, 2000))
       }
       await updatePunctualIndicators(newSheet, metrics, repo, owner)
     }

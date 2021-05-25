@@ -4,6 +4,21 @@ const fs = require('fs')
 const shell = require('shelljs')
 const moment = require('moment')
 
+const AGGREGATED = 'aggregated'
+const COMMENTS_DATES = 'comments_dates'
+const DATA = 'data'
+const FILENAME = 'metrics.json'
+const ISSUE_CREATION_DATES = 'issue_creation_dates'
+const JSON_EXTENSION = '.json'
+const MERGED = 'total'
+const METRICS_PREFIX = `metrics_`
+const OPEN_ISSUE_COUNT = 'open_issues_count'
+const OPEN_PR_COUNT = 'open_pulls_count'
+const PR_MERGED_DATES = 'pr_merged_dates'
+const RAW_DATA_JSON = `raw_data.json`
+const RAW_DATA = `raw_data`
+const TMP = 'tmp'
+
 function getDateCount (dateList) {
   const toReturn = {}
   for (const i in dateList) {

@@ -8,6 +8,7 @@
     "shelljs": "0.8.4"
   },
   "scripts": {
+    "google-spreadsheet-loader": "node index.js",
     "fetch": "node src/scripts/FetchRawData.js",
     "aggregate": "node src/scripts/AggregateData.js",
     "update-google-sheet": "node index.js"
