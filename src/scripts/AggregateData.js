@@ -1,5 +1,5 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
 const fs = require('fs')
 const shell = require('shelljs')
 const moment = require('moment')
@@ -10,12 +10,12 @@ const FILENAME = 'metrics.json'
 const ISSUE_CREATION_DATES = 'issue_creation_dates'
 const JSON_EXTENSION = '.json'
 const MERGED = 'total'
-const METRICS_PREFIX = `metrics_`
+const METRICS_PREFIX = 'metrics_'
 const OPEN_ISSUE_COUNT = 'open_issues_count'
 const OPEN_PR_COUNT = 'open_pulls_count'
 const PR_MERGED_DATES = 'pr_merged_dates'
-const RAW_DATA_JSON = `raw_data.json`
-const RAW_DATA = `raw_data`
+const RAW_DATA_JSON = 'raw_data.json'
+const RAW_DATA = 'raw_data'
 const TMP = 'tmp'
 
 function getDateCount (dateList) {
@@ -94,7 +94,7 @@ function aggregateDataForSingleOwner (rawData, repo, owner) {
   data[repo][owner][PR_MERGED_DATES] = byQuarterYear(getDateCount(prMerged))
   data[repo][owner][OPEN_ISSUE_COUNT] = rawData[owner][repo][OPEN_ISSUE_COUNT]
   data[repo][owner][OPEN_PR_COUNT] = rawData[owner][repo][OPEN_PR_COUNT]
-  return data;
+  return data
 }
 
 function aggregateDataForMultipleOwner (mergedData, repo, owner1, owner2) {
@@ -116,11 +116,11 @@ function aggregateDataForMultipleOwner (mergedData, repo, owner1, owner2) {
     data[repo][owner][OPEN_ISSUE_COUNT] = mergedData[repo][owner][OPEN_ISSUE_COUNT]
     data[repo][owner][OPEN_PR_COUNT] = mergedData[repo][owner][OPEN_PR_COUNT]
   }
-  return data;
+  return data
 }
 
 function aggregate () {
-  let data = {};
+  const data = {}
   console.log('Aggregating data ⏳ ')
   const rawData = JSON.parse(fs.readFileSync(`${DATA}/raw_data.json`))
 

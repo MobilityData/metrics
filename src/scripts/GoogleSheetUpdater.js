@@ -15,13 +15,13 @@ const OPEN_ISSUE_COUNT = 'open_issues_count'
 const OPEN_PR_COUNT = 'open_pulls_count'
 
 async function updateSheetHeaders (newSheet, idx, idy, metric) {
-  let titleCell = newSheet.getCell(idx, idy)
+  const titleCell = newSheet.getCell(idx, idy)
   titleCell.value = metric
-  let dateTitleCell = newSheet.getCell(idx + 1, idy)
+  const dateTitleCell = newSheet.getCell(idx + 1, idy)
   dateTitleCell.value = DATE
-  let countTitleCell = newSheet.getCell(idx + 1, idy + 1)
+  const countTitleCell = newSheet.getCell(idx + 1, idy + 1)
   countTitleCell.value = COUNT
-  let cumulatedCell = newSheet.getCell(idx + 1, idy + 2)
+  const cumulatedCell = newSheet.getCell(idx + 1, idy + 2)
   cumulatedCell.value = CUMULATED
   await newSheet.saveUpdatedCells()
 }
@@ -29,9 +29,9 @@ async function updateSheetHeaders (newSheet, idx, idy, metric) {
 async function updateDateRanges (idx, idy, metrics, repo, owner, metric,
   newSheet) {
   let x = idx + 2
-  let y = idy
-  for (let dateRange in Object.keys(metrics[repo][owner][metric])) {
-    let cell = newSheet.getCell(x, y)
+  const y = idy
+  for (const dateRange in Object.keys(metrics[repo][owner][metric])) {
+    const cell = newSheet.getCell(x, y)
     cell.value = Object.keys(metrics[repo][owner][metric])[dateRange]
     x += 1
   }
@@ -41,13 +41,13 @@ async function updateDateRanges (idx, idy, metrics, repo, owner, metric,
 async function updateCounts (idx, idy, metrics, repo, owner, metric,
   newSheet) {
   let x = idx + 2
-  let y = idy + 1
+  const y = idy + 1
   let cumulatedCellValue = 0
-  for (let dateRange in Object.keys(metrics[repo][owner][metric])) {
-    let countCell = newSheet.getCell(x, y)
+  for (const dateRange in Object.keys(metrics[repo][owner][metric])) {
+    const countCell = newSheet.getCell(x, y)
     countCell.value = Object.values(metrics[repo][owner][metric])[dateRange]
     cumulatedCellValue += Object.values(metrics[repo][owner][metric])[dateRange]
-    let cumulatedCell = newSheet.getCell(x, y + 1)
+    const cumulatedCell = newSheet.getCell(x, y + 1)
     cumulatedCell.value = cumulatedCellValue
     x += 1
   }
@@ -55,9 +55,9 @@ async function updateCounts (idx, idy, metrics, repo, owner, metric,
 }
 
 async function updatePunctualIndicators (newSheet, metrics, repo, owner) {
-  let openIssueCountCell = newSheet.getCellByA1('K3')
+  const openIssueCountCell = newSheet.getCellByA1('K3')
   openIssueCountCell.value = metrics[repo][owner][OPEN_ISSUE_COUNT]
-  let openPRCountCell = newSheet.getCellByA1('N3')
+  const openPRCountCell = newSheet.getCellByA1('N3')
   openPRCountCell.value = metrics[repo][owner][OPEN_PR_COUNT]
   await newSheet.saveUpdatedCells()
 }
@@ -68,18 +68,18 @@ async function updatePunctualIndicators (newSheet, metrics, repo, owner) {
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
 export async function updateGoogleSheet (auth) {
-  let metrics = JSON.parse(fs.readFileSync(`${DATA}/${FILENAME}`))
+  const metrics = JSON.parse(fs.readFileSync(`${DATA}/${FILENAME}`))
   const doc = new GoogleSpreadsheet(process.env.SPREADSHEET_ID)
   await doc.useOAuth2Client(auth)
   await doc.loadInfo()
 
-  for (let repo in metrics) {
-    for (let owner in metrics[repo]) {
-      let newSheet = doc.sheetsByTitle[`${repo}-${owner}`]
-      let idx = 0, idy = 0
+  for (const repo in metrics) {
+    for (const owner in metrics[repo]) {
+      const newSheet = doc.sheetsByTitle[`${repo}-${owner}`]
+      const idx = 0; let idy = 0
       await newSheet.loadCells('A1:Z50')
 
-      for (let metric in metrics[repo][owner]) {
+      for (const metric in metrics[repo][owner]) {
         await updateSheetHeaders(newSheet, idx, idy, metric)
         await updateDateRanges(idx, idy, metrics, repo, owner, metric,
           newSheet)

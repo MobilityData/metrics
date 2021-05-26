@@ -160,10 +160,10 @@ async function getAllPrCommentsDateForRepo (repository, owner) {
 
 async function fetchRawData () {
   console.log('Fetching raw data from Github ⏳ ')
-  let data = {}
+  const data = {}
 
   for (const i in repositories) {
-    let metrics = {}
+    const metrics = {}
     const repository = repositories[i]
     const repo = repository.repo
     const owner = repository.owner
@@ -171,36 +171,36 @@ async function fetchRawData () {
       data[owner] = {}
     }
     await getAllIssueCreationDateCollection(repo, owner)
-    .then(issueCreationData => {
-      metrics[ISSUE_CREATION_DATES] = issueCreationData
-    }).catch(error => console.log(error))
+      .then(issueCreationData => {
+        metrics[ISSUE_CREATION_DATES] = issueCreationData
+      }).catch(error => console.log(error))
 
     await getAllPrMergeDatesCollection(repo, owner)
-    .then(prMergedData => {
-      metrics[PR_MERGED_DATES] = prMergedData
-    }).catch(error => console.log(error))
+      .then(prMergedData => {
+        metrics[PR_MERGED_DATES] = prMergedData
+      }).catch(error => console.log(error))
 
     await getAllIssueCommentsDateForRepo(repo, owner)
-    .then(issueCommentsData => {
-      metrics[COMMENTS_DATES] = issueCommentsData
-    }).catch(error => console.log(error))
+      .then(issueCommentsData => {
+        metrics[COMMENTS_DATES] = issueCommentsData
+      }).catch(error => console.log(error))
 
     await getAllPrCommentsDateForRepo(repo, owner)
-    .then(prCommentsData => {
-      let tmp = metrics[COMMENTS_DATES].concat(prCommentsData)
-      metrics[COMMENTS_DATES] = tmp
-      metrics[COMMENTS_DATES].sort(ascOrder)
-    }).catch(error => console.log(error))
+      .then(prCommentsData => {
+        const tmp = metrics[COMMENTS_DATES].concat(prCommentsData)
+        metrics[COMMENTS_DATES] = tmp
+        metrics[COMMENTS_DATES].sort(ascOrder)
+      }).catch(error => console.log(error))
 
     await getIssueCountForRepo(repo, owner, STATE_OPEN)
-    .then(openIssueCount => {
-      metrics[OPEN_ISSUE_COUNT] = openIssueCount
-    }).catch(error => console.log(error))
+      .then(openIssueCount => {
+        metrics[OPEN_ISSUE_COUNT] = openIssueCount
+      }).catch(error => console.log(error))
 
     await getPullCountForRepo(repo, owner, STATE_OPEN)
-    .then(openPullCount => {
-      metrics[OPEN_PR_COUNT] = openPullCount
-    }).catch(error => console.log(error))
+      .then(openPullCount => {
+        metrics[OPEN_PR_COUNT] = openPullCount
+      }).catch(error => console.log(error))
 
     data[owner][repo] = metrics
     console.log(`🏡 Owner: ${owner}`)
