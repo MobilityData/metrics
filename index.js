@@ -21,12 +21,11 @@ function authorize (credentials, callback) {
   const client_id = credentials.installed.client_id
   const client_secret = credentials.installed.client_secret
   const redirect_uris = credentials.installed.redirect_uris
-  console.log(client_id)
-  console.log(client_secret)
-  console.log(redirect_uris)
   const oAuth2Client = new google.auth.OAuth2(
     client_id, client_secret, redirect_uris[0])
+  console.log("lala")
 
   oAuth2Client.setCredentials(JSON.parse(TOKEN))
+  console.log("lolo")
   callback(oAuth2Client)
 }
