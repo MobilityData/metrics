@@ -14,5 +14,6 @@ steps:
     entrypoint: npm
     args: ['run', 'refresh']
     env:
+      - 'SPREADSHEET_ID=$_SPREADSHEET_ID'
       - 'CREDENTIALS=$_CREDENTIALS'
       - 'TOKEN=$_TOKEN'
