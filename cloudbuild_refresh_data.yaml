@@ -5,6 +5,9 @@ steps:
   - name: node
     entrypoint: node
     args: ['.']
+    env:
+      - 'CREDENTIALS=$_CREDENTIALS'
+      - 'TOKEN=$_TOKEN'
   - name: node
     entrypoint: npm
     args: ['run', 'fetch']
@@ -16,3 +19,6 @@ steps:
   - name: node
     entrypoint: npm
     args: ['run', 'update-google-sheet']
+    env:
+      - 'CREDENTIALS=$_CREDENTIALS'
+      - 'TOKEN=$_TOKEN'
