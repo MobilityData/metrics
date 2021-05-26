@@ -176,4 +176,4 @@ function removeDirectories (dirs) {
 merge(JSON.parse(fs.readFileSync(`${DATA}/${RAW_DATA_JSON}`)), 'transit', 'google', 'MobilityData')
 merge(JSON.parse(fs.readFileSync(`${DATA}/${RAW_DATA_JSON}`)), 'gbfs', 'NABSA', 'MobilityData')
 aggregate()
-removeDirectories([`${DATA}/${TMP}`, `${DATA}/${AGGREGATED}`])
+removeDirectories([`${DATA}/${TMP}`])
