@@ -4,7 +4,6 @@ const fs = require('fs')
 const shell = require('shelljs')
 const moment = require('moment')
 
-const AGGREGATED = 'aggregated'
 const COMMENTS_DATES = 'comments_dates'
 const DATA = 'data'
 const FILENAME = 'metrics.json'
