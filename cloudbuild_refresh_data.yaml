@@ -3,12 +3,6 @@ steps:
     entrypoint: npm
     args: ['install']
   - name: node
-    entrypoint: node
-    args: ['.']
-    env:
-      - 'CREDENTIALS=$_CREDENTIALS'
-      - 'TOKEN=$_TOKEN'
-  - name: node
     entrypoint: npm
     args: ['run', 'fetch']
     env:
@@ -18,7 +12,7 @@ steps:
     args: ['run', 'aggregate']
   - name: node
     entrypoint: npm
-    args: ['run', 'update-google-sheet']
+    args: ['run', 'refresh']
     env:
       - 'CREDENTIALS=$_CREDENTIALS'
       - 'TOKEN=$_TOKEN'
