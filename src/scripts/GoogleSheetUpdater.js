@@ -70,8 +70,11 @@ async function updatePunctualIndicators (newSheet, metrics, repo, owner) {
 export async function updateGoogleSheet (auth) {
   let metrics = JSON.parse(fs.readFileSync(`${DATA}/${FILENAME}`))
   const doc = new GoogleSpreadsheet(process.env.SPREADSHEET_ID)
+  console.log("test")
   await doc.useOAuth2Client(auth)
+  console.log("test2")
   await doc.loadInfo()
+  console.log("test3")
 
   for (let repo in metrics) {
     for (let owner in metrics[repo]) {
