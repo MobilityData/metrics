@@ -10,7 +10,9 @@
   "scripts": {
     "fetch": "node src/scripts/FetchRawData.js",
     "aggregate": "node src/scripts/AggregateData.js",
-    "refresh": "node ."
+    "refresh": "node .",
+    "format": "npx standard --fix"
+
   },
   "devDependencies": {
     "standard": "16.0.3"
