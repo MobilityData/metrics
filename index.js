@@ -6,6 +6,8 @@ const fs = require('fs')
 const readline = require('readline')
 const { google } = require('googleapis')
 require('dotenv').config()
+export const CREDENTIALS = process.env.CREDENTIALS
+export const TOKEN = process.env.TOKEN
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -16,8 +18,8 @@ const TOKEN_PATH = 'token.json'
 
 // Load client secrets from a secrets
 // Authorize a client with credentials, then call the Google Sheets API.
-authorize(JSON.parse(process.env.CREDENTIALS), updateGoogleSheet)
-console.log(JSON.parse(process.env.CREDENTIALS))
+authorize(JSON.parse(CREDENTIALS), updateGoogleSheet)
+console.log(JSON.parse(CREDENTIALS))
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
@@ -33,7 +35,7 @@ function authorize (credentials, callback) {
   const oAuth2Client = new google.auth.OAuth2(
     client_id, client_secret, redirect_uris[0])
 
-  oAuth2Client.setCredentials(JSON.parse(process.env.TOKEN))
+  oAuth2Client.setCredentials(JSON.parse(TOKEN))
   callback(oAuth2Client)
 }
 
