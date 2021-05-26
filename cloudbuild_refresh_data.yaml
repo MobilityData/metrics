@@ -1,0 +1,18 @@
+steps:
+  - name: node
+    entrypoint: npm
+    args: ['install']
+  - name: node
+    entrypoint: node
+    args: ['.']
+  - name: node
+    entrypoint: npm
+    args: ['run', 'fetch']
+    env:
+      - 'GH_TOKEN=$_GH_TOKEN'
+  - name: node
+    entrypoint: npm
+    args: ['run', 'aggregate']
+  - name: node
+    entrypoint: npm
+    args: ['run', 'update-google-sheet']
