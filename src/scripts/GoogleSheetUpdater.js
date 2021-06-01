@@ -13,6 +13,7 @@ const DATE = 'date'
 const FILENAME = 'metrics.json'
 const OPEN_ISSUE_COUNT = 'open_issues_count'
 const OPEN_PR_COUNT = 'open_pulls_count'
+const Q1 = 'Q1'
 
 async function updateSheetHeaders (newSheet, idx, idy, metric) {
   const titleCell = newSheet.getCell(idx, idy)
@@ -30,10 +31,21 @@ async function updateDateRanges (idx, idy, metrics, repo, owner, metric,
   newSheet) {
   let x = idx + 2
   const y = idy
+  let counter = 0
   for (const dateRange in Object.keys(metrics[repo][owner][metric])) {
     const cell = newSheet.getCell(x, y)
-    cell.value = Object.keys(metrics[repo][owner][metric])[dateRange]
+    const date = Object.keys(metrics[repo][owner][metric])[dateRange]
+    if (date.includes(Q1)) {
+      cell.value = date
+    } else {
+      if (counter === 0) {
+        cell.value = date
+      } else {
+        cell.value = date.substring(0, 2)
+      }
+    }
     x += 1
+    counter += 1
   }
   await newSheet.saveUpdatedCells()
 }
@@ -76,7 +88,8 @@ export async function updateGoogleSheet (auth) {
   for (const repo in metrics) {
     for (const owner in metrics[repo]) {
       const newSheet = doc.sheetsByTitle[`${repo}-${owner}`]
-      const idx = 0; let idy = 0
+      const idx = 0
+      let idy = 0
       await newSheet.loadCells('A1:Z50')
 
       for (const metric in metrics[repo][owner]) {
