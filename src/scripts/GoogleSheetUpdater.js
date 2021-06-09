@@ -15,6 +15,14 @@ const OPEN_ISSUE_COUNT = 'open_issues_count'
 const OPEN_PR_COUNT = 'open_pulls_count'
 const Q1 = 'Q1'
 
+/**
+ * Updates headers of a google spreadsheet
+ * @param newSheet the sheet to update
+ * @param idx x position of the cell to update
+ * @param idy y position of the cell to update
+ * @param metric the metric's name
+ * @returns {Promise<void>}
+ */
 async function updateSheetHeaders (newSheet, idx, idy, metric) {
   const titleCell = newSheet.getCell(idx, idy)
   titleCell.value = metric
@@ -27,6 +35,17 @@ async function updateSheetHeaders (newSheet, idx, idy, metric) {
   await newSheet.saveUpdatedCells()
 }
 
+/**
+ * Updates date ranges for temporal indicators
+ * @param idx x position of the cell to update
+ * @param idy y position of the cell to update
+ * @param metrics the list of metrics
+ * @param repo the repository from which the data is extracted from
+ * @param owner the organization that owns the repository
+ * @param metric the metric's names
+ * @param newSheet the sheet to update
+ * @returns {Promise<void>}
+ */
 async function updateDateRanges (idx, idy, metrics, repo, owner, metric,
   newSheet) {
   let x = idx + 2
@@ -50,6 +69,17 @@ async function updateDateRanges (idx, idy, metrics, repo, owner, metric,
   await newSheet.saveUpdatedCells()
 }
 
+/**
+ * Updates values for temporal indicators
+ * @param idx x position of the cell to update
+ * @param idy y position of the cell to update
+ * @param metrics the list of metrics
+ * @param repo the repository from which the data is extracted from
+ * @param owner the organization that owns the repository
+ * @param metric the metric's names
+ * @param newSheet the sheet to update
+ * @returns {Promise<void>}
+ */
 async function updateCounts (idx, idy, metrics, repo, owner, metric,
   newSheet) {
   let x = idx + 2
@@ -66,6 +96,14 @@ async function updateCounts (idx, idy, metrics, repo, owner, metric,
   await newSheet.saveUpdatedCells()
 }
 
+/**
+ * Updates values for puncutal indicators
+ * @param newSheet the sheet to update
+ * @param metrics the list of metrics
+ * @param repo the repository from which the data is extracted from
+ * @param owner the organization that owns the repository
+ * @returns {Promise<void>}
+ */
 async function updatePunctualIndicators (newSheet, metrics, repo, owner) {
   const openIssueCountCell = newSheet.getCellByA1('K3')
   openIssueCountCell.value = metrics[repo][owner][OPEN_ISSUE_COUNT]
@@ -75,8 +113,7 @@ async function updatePunctualIndicators (newSheet, metrics, repo, owner) {
 }
 
 /**
- * Prints the names and majors of students in a sample spreadsheet:
- * @see https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+ * Performs a set of operations to update the content of a Google Spreasheet
  * @param {google.auth.OAuth2} auth The authenticated Google OAuth client.
  */
 export async function updateGoogleSheet (auth) {

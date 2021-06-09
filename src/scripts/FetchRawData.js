@@ -6,13 +6,16 @@ require('dotenv').config()
 const fs = require('fs')
 const shell = require('shelljs')
 const { Octokit } = require('@octokit/rest')
+const axios = require('axios')
 
 const COMMENTS = 'comments'
 const COMMENTS_DATES = 'comments_dates'
 const DATA = 'data'
+const EXTERNAL_COMMENTS_DATES = 'external_comments_dates'
 const ISSUE_CREATION_DATES = 'issue_creation_dates'
 const OPEN_ISSUE_COUNT = 'open_issues_count'
-const OPEN_PR_COUNT = 'open_pulls_count'
+const OPEN_PR_COUNT = 'issue_creation_dates'
+const OPEN_PR_DATES = 'pr_creation_dates'
 const PR_MERGED_DATES = 'pr_merged_dates'
 const PULLS = 'pulls'
 const REPOS = 'repos'
@@ -68,6 +71,14 @@ const ascOrder = function (firstDate, otherDate) {
   }
 }
 
+/**
+ * Returns the number of pull requests in a given state for a repository of an
+ * organization.
+ * @param repository the repository to extract the data from
+ * @param owner the owner of the repository
+ * @param state state of pull request: open, all, merged or closed.
+ * @returns {Promise<any|Thenable<any>>}
+ */
 async function getPullCountForRepo (repository, owner, state) {
   return octokit.paginate(octokit.issues.listForRepo, {
     owner: owner,
@@ -79,6 +90,39 @@ async function getPullCountForRepo (repository, owner, state) {
   })
 }
 
+/**
+ * Returns the list of dates on which pull request were open sorted by
+ * chronological order.
+ * @param repository the repository to extract the data from
+ * @param owner the owner of the repository
+ * @returns {Promise<this|Thenable<this>>} the list of dates on which pull
+ * request were open sorted by chronological order
+ */
+async function getOpenPrOpeningDateCollection (repository, owner) {
+  const toReturn = []
+  return octokit.paginate(octokit.issues.listForRepo, {
+    owner: owner,
+    repo: repository,
+    state: 'all',
+    per_page: 100
+  }).then(res => {
+    const filteredData = res.filter(item => item.pull_request != null)
+    for (const i in filteredData) {
+      const date = new Date(filteredData[i].created_at)
+      toReturn.push(date)
+    }
+    return toReturn.sort(ascOrder)
+  })
+}
+
+/**
+ * Returns the number of issues in a given state for a repository of an
+ * organization.
+ * @param repository the repository to extract the data from.
+ * @param owner the owner of the repository.
+ * @param state state of issues: open, all or closed.
+ * @returns {Promise<any|Thenable<any>>}
+ */
 async function getIssueCountForRepo (repository, owner, state) {
   return octokit.paginate(octokit.issues.listForRepo, {
     owner: owner,
@@ -90,6 +134,15 @@ async function getIssueCountForRepo (repository, owner, state) {
   })
 }
 
+/**
+ * Returns the list of dates on which pull request from a repository
+ * of an organization were merged, sorted by chronological order.
+ * @param repository the repository to extract the data from
+ * @param owner the owner of the repository
+ * @returns {Promise<this|Thenable<this>>} the list of dates on which pull
+ * request from a repository of an organization were merged, sorted by chronological
+ * order.
+ */
 async function getAllPrMergeDatesCollection (repository, owner) {
   const toReturn = []
   return octokit.paginate(`GET /${REPOS}/{owner}/{repo}/${PULLS}`, {
@@ -108,6 +161,14 @@ async function getAllPrMergeDatesCollection (repository, owner) {
   })
 }
 
+/**
+ * Returns the list of dates of creation for all issues from a repository
+ * of an organization, sorted by chronological order.
+ * @param repository the repository to extract the data from
+ * @param owner the owner of the repository
+ * @returns {Promise<this|Thenable<this>>} the list of dates of creation for all
+ * issues from a repository of an organization, sorted by chronological order
+ */
 async function getAllIssueCreationDateCollection (repository, owner) {
   const toReturn = []
   return octokit.paginate(octokit.issues.listForRepo, {
@@ -125,6 +186,14 @@ async function getAllIssueCreationDateCollection (repository, owner) {
   })
 }
 
+/**
+ * Returns the list of creation date of all issue comments sorted by chronological
+ * order.
+ * @param repository the repository to extract the data from
+ * @param owner the owner of the repository
+ * @returns {Promise<this|Thenable<this>>} the list of creation date of all
+ * issue comments sorted by chronological order
+ */
 async function getAllIssueCommentsDateForRepo (repository, owner) {
   const toReturn = []
   return octokit.paginate(octokit.issues.listCommentsForRepo, {
@@ -141,6 +210,85 @@ async function getAllIssueCommentsDateForRepo (repository, owner) {
   })
 }
 
+/**
+ * Returns the list of creation date of all issue comments authored by users
+ * outside of MobilityData sorted by chronological order.
+ * @param repository the repository to extract the data from
+ * @param owner the owner of the repository
+ * @returns {Promise<this|Thenable<this>>} the list of creation date of all
+ * issue comments authored by users outside of MobilityData sorted by chronological
+ * order.
+ */
+async function getExternalContributorsIssueCommentsDatesForRepo (repository,
+  owner) {
+  return octokit.paginate(octokit.issues.listCommentsForRepo, {
+    owner: owner,
+    repo: repository,
+    per_page: 100
+  }).then(res => {
+    let toReturn = []
+    let externalContributors = []
+    for (const i in res) {
+      let userLogin = res[i].user.login
+      if (externalContributors.includes(userLogin) || isExternalContributor(
+        userLogin)) {
+        if (!externalContributors.includes(userLogin)) {
+          externalContributors.push(userLogin)
+        }
+        const date = new Date(res[i].created_at)
+        toReturn.push(
+          new Date(date.getFullYear(), date.getMonth(), date.getDate()))
+      }
+    }
+    return toReturn.sort(ascOrder)
+  })
+}
+
+/**
+ * Returns the list of creation date of all pull requests comments authored by
+ * users outside of MobilityData sorted by chronological order.
+ * @param repository the repository to extract the data from
+ * @param owner the owner of the repository
+ * @returns {Promise<this|Thenable<this>>} the list of creation date of all pull
+ * requests comments authored by users outside of MobilityData sorted by chronological order.
+ */
+async function getExternalContributorsPrCommentsDatesForRepo (repository,
+  owner) {
+  return octokit.paginate(
+    `GET /${REPOS}/{owner}/{repo}/${PULLS}/${COMMENTS}`, {
+      owner: owner,
+      repo: repository,
+      per_page: 100
+    }).then(res => {
+    let toReturn = []
+    let externalContributors = []
+    if (res.length === 0) {
+      return []
+    }
+    for (const i in res) {
+      let userLogin = res[i].user.login
+      if (externalContributors.includes(userLogin) || isExternalContributor(
+        userLogin)) {
+        if (!externalContributors.includes(userLogin)) {
+          externalContributors.push(userLogin)
+        }
+        const date = new Date(res[i].created_at)
+        toReturn.push(
+          new Date(date.getFullYear(), date.getMonth(), date.getDate()))
+      }
+    }
+    return toReturn.sort(ascOrder)
+  })
+}
+
+/**
+ * Returns the list of creation date of all pull requests comments sorted by
+ * chronological order.
+ * @param repository the repository to extract the data from
+ * @param owner the owner of the repository
+ * @returns {Promise<this|Thenable<this>>} the list of creation date of all pull
+ * requests comments sorted by chronological order
+ */
 async function getAllPrCommentsDateForRepo (repository, owner) {
   const toReturn = []
   return octokit.paginate(
@@ -158,6 +306,36 @@ async function getAllPrCommentsDateForRepo (repository, owner) {
   })
 }
 
+/**
+ * Determines whether a Github user is affiliated to MobilityData or no.
+ * @param handler  the github handler of the user
+ * @returns {Promise<void>} true if user is not affiliated to MobilityData,
+ * else false.
+ */
+async function isExternalContributor (handler) {
+  axios.get(`https://api.github.com/users/${handler}/orgs`)
+  .then(response => {
+    const data = response.data
+    if (response.data.length === 0) {
+      return true
+    }
+    for (let i in data) {
+      if (data[i] === 'MobilityData') {
+        return false
+      }
+    }
+    return true
+  })
+  .catch(error => {
+    console.log(error)
+  })
+}
+
+/**
+ * Creates json file that contains raw data from different repositories for
+ * different owners.
+ * @returns {Promise<void>}
+ */
 async function fetchRawData () {
   console.log('Fetching raw data from Github ⏳ ')
   const data = {}
@@ -171,42 +349,59 @@ async function fetchRawData () {
       data[owner] = {}
     }
     await getAllIssueCreationDateCollection(repo, owner)
-      .then(issueCreationData => {
-        metrics[ISSUE_CREATION_DATES] = issueCreationData
-      }).catch(error => console.log(error))
+    .then(issueCreationData => {
+      metrics[ISSUE_CREATION_DATES] = issueCreationData
+    }).catch(error => console.log(error))
 
     await getAllPrMergeDatesCollection(repo, owner)
-      .then(prMergedData => {
-        metrics[PR_MERGED_DATES] = prMergedData
-      }).catch(error => console.log(error))
+    .then(prMergedData => {
+      metrics[PR_MERGED_DATES] = prMergedData
+    }).catch(error => console.log(error))
 
     await getAllIssueCommentsDateForRepo(repo, owner)
-      .then(issueCommentsData => {
-        metrics[COMMENTS_DATES] = issueCommentsData
-      }).catch(error => console.log(error))
+    .then(issueCommentsData => {
+      metrics[COMMENTS_DATES] = issueCommentsData
+    }).catch(error => console.log(error))
 
     await getAllPrCommentsDateForRepo(repo, owner)
-      .then(prCommentsData => {
-        const tmp = metrics[COMMENTS_DATES].concat(prCommentsData)
-        metrics[COMMENTS_DATES] = tmp
-        metrics[COMMENTS_DATES].sort(ascOrder)
-      }).catch(error => console.log(error))
+    .then(prCommentsData => {
+      const tmp = metrics[COMMENTS_DATES].concat(prCommentsData)
+      metrics[COMMENTS_DATES] = tmp
+      metrics[COMMENTS_DATES].sort(ascOrder)
+    }).catch(error => console.log(error))
+
+    await getExternalContributorsIssueCommentsDatesForRepo(repo, owner)
+    .then(externalIssueCommentsData => {
+      metrics[EXTERNAL_COMMENTS_DATES] = externalIssueCommentsData
+    }).catch(error => console.log(error))
+
+    await getExternalContributorsPrCommentsDatesForRepo(repo, owner)
+    .then(externalPrCommentsData => {
+      metrics[EXTERNAL_COMMENTS_DATES] = metrics[EXTERNAL_COMMENTS_DATES].concat(
+        externalPrCommentsData)
+      metrics[EXTERNAL_COMMENTS_DATES].sort(ascOrder())
+    }).catch(error => console.log(error))
 
     await getIssueCountForRepo(repo, owner, STATE_OPEN)
-      .then(openIssueCount => {
-        metrics[OPEN_ISSUE_COUNT] = openIssueCount
-      }).catch(error => console.log(error))
+    .then(openIssueCount => {
+      metrics[OPEN_ISSUE_COUNT] = openIssueCount
+    }).catch(error => console.log(error))
 
     await getPullCountForRepo(repo, owner, STATE_OPEN)
-      .then(openPullCount => {
-        metrics[OPEN_PR_COUNT] = openPullCount
-      }).catch(error => console.log(error))
+    .then(openPullCount => {
+      metrics[OPEN_PR_COUNT] = openPullCount
+    }).catch(error => console.log(error))
+
+    await getOpenPrOpeningDateCollection(repo, owner)
+    .then(openPrData => {
+      metrics[OPEN_PR_DATES] = openPrData
+    })
+    .catch(error => console.log(error))
 
     data[owner][repo] = metrics
     console.log(`🏡 Owner: ${owner}`)
     console.log(`🗄 Repository: ${repo}`)
-    console.log(`🔗 Link: ${repository.direction}`)
-    console.log('\n')
+    console.log(`🔗 Link: ${repository.direction}\n`)
   }
   shell.mkdir('-p', `${DATA}/`)
   fs.writeFileSync(`${DATA}/raw_data.json`, JSON.stringify(data))
