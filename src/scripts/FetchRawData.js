@@ -225,18 +225,21 @@ async function getAllExternalContributorsIssueCommentsDates (repository,
     owner: owner,
     repo: repository,
     per_page: 100
-  }).then(res => {
+  }).then(comments => {
     const toReturn = []
     const externalContributors = []
-    for (const i in res) {
-      if (res[i].user) {
-        const userLogin = res[i].user.login
+    if (comments.length === 0) {
+      return []
+    }
+    for (const i in comments) {
+      if (comments[i].user) {
+        const userLogin = comments[i].user.login
         if (externalContributors.includes(userLogin) || isExternalContributor(
           userLogin)) {
           if (!externalContributors.includes(userLogin)) {
             externalContributors.push(userLogin)
           }
-          const date = new Date(res[i].created_at)
+          const date = new Date(comments[i].created_at)
           toReturn.push(
             new Date(date.getFullYear(), date.getMonth(), date.getDate()))
         }
