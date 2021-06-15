@@ -1,1 +1,8 @@
 *.backup
+/.env
+# Dependency directories
+node_modules/
+/.idea/
+/data/
+/credentials.json
+/token.json
