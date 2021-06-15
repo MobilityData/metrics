@@ -1,4 +1,5 @@
 steps:
+  timeout: 1200s
   - name: node
     entrypoint: npm
     args: ['install']
