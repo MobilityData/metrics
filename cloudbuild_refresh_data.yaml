@@ -5,18 +5,18 @@ steps:
   - name: node
     entrypoint: npm
     args: ['run', 'fetch']
+    timeout: 1200s
     env:
       - 'GH_TOKEN=$_GH_TOKEN'
-    timeout: 1200s
   - name: node
     entrypoint: npm
     args: ['run', 'aggregate']
   - name: node
     entrypoint: npm
     args: ['run', 'refresh']
+    timeout: 1200s
     env:
     - 'SPREADSHEET_ID=$_SPREADSHEET_ID'
     - 'CREDENTIALS=$_CREDENTIALS'
     - 'TOKEN=$_TOKEN'
-    timeout: 1200s
 
