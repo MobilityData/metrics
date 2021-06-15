@@ -17,5 +17,5 @@ steps:
       - 'SPREADSHEET_ID=$_SPREADSHEET_ID'
       - 'CREDENTIALS=$_CREDENTIALS'
       - 'TOKEN=$_TOKEN'
-  - timeout: 1200s
+  timeout: 1200s
 
