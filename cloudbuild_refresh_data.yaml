@@ -1,5 +1,4 @@
 steps:
-  timeout: 1200s
   - name: node
     entrypoint: npm
     args: ['install']
@@ -20,4 +19,5 @@ steps:
     - 'SPREADSHEET_ID=$_SPREADSHEET_ID'
     - 'CREDENTIALS=$_CREDENTIALS'
     - 'TOKEN=$_TOKEN'
+  timeout: 1200s
 
