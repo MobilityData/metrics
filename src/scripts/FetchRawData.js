@@ -226,11 +226,11 @@ async function getAllExternalContributorsIssueCommentsDates (repository,
     repo: repository,
     per_page: 100
   }).then(res => {
-    let toReturn = []
-    let externalContributors = []
+    const toReturn = []
+    const externalContributors = []
     for (const i in res) {
       if (res[i].user) {
-        let userLogin = res[i].user.login
+        const userLogin = res[i].user.login
         if (externalContributors.includes(userLogin) || isExternalContributor(
           userLogin)) {
           if (!externalContributors.includes(userLogin)) {
@@ -262,8 +262,8 @@ async function getAllExternalContributorsPullRequestCommentsDates (repository,
       repo: repository,
       per_page: 100
     }).then(comments => {
-    let toReturn = []
-    let externalContributors = []
+    const toReturn = []
+    const externalContributors = []
     if (comments.length === 0) {
       return []
     }
@@ -319,20 +319,20 @@ async function getAllPullRequestCommentsDates (repository, owner) {
  */
 async function isExternalContributor (handler) {
   octokit.paginate(`GET /users/${handler}/orgs`)
-  .then(organizations => {
-    if (organizations.length === 0) {
-      return true
-    }
-    for (let i in organizations) {
-      if (organizations[i] === MOBILITY_DATA) {
-        return false
+    .then(organizations => {
+      if (organizations.length === 0) {
+        return true
       }
-    }
-    return true
-  })
-  .catch(error => {
-    console.log(error)
-  })
+      for (const i in organizations) {
+        if (organizations[i] === MOBILITY_DATA) {
+          return false
+        }
+      }
+      return true
+    })
+    .catch(error => {
+      console.log(error)
+    })
 }
 
 /**
@@ -353,54 +353,52 @@ async function fetchRawData () {
       data[owner] = {}
     }
     await getAllIssueCreationDates(repo, owner)
-    .then(issueCreationData => {
-      metrics[ISSUE_CREATION_DATES] = issueCreationData
-    }).catch(error => console.log(error))
+      .then(issueCreationData => {
+        metrics[ISSUE_CREATION_DATES] = issueCreationData
+      }).catch(error => console.log(error))
 
     await getAllPullRequestMergeDates(repo, owner)
-    .then(prMergedData => {
-      metrics[PR_MERGED_DATES] = prMergedData
-    }).catch(error => console.log(error))
+      .then(prMergedData => {
+        metrics[PR_MERGED_DATES] = prMergedData
+      }).catch(error => console.log(error))
 
     await getAllIssueCommentDates(repo, owner)
-    .then(issueCommentsData => {
-      metrics[COMMENTS_DATES] = issueCommentsData
-    }).catch(error => console.log(error))
+      .then(issueCommentsData => {
+        metrics[COMMENTS_DATES] = issueCommentsData
+      }).catch(error => console.log(error))
 
     await getAllPullRequestCommentsDates(repo, owner)
-    .then(prCommentsData => {
-      const tmp = metrics[COMMENTS_DATES].concat(prCommentsData)
-      metrics[COMMENTS_DATES] = tmp
-      metrics[COMMENTS_DATES].sort(ascOrder)
-    }).catch(error => console.log(error))
+      .then(prCommentsData => {
+        const tmp = metrics[COMMENTS_DATES].concat(prCommentsData)
+        metrics[COMMENTS_DATES] = tmp.sort(ascOrder)
+      }).catch(error => console.log(error))
 
     await getAllExternalContributorsIssueCommentsDates(repo, owner)
-    .then(externalIssueCommentsData => {
-      metrics[EXTERNAL_COMMENTS_DATES] = externalIssueCommentsData
-    }).catch(error => console.log(error))
+      .then(externalIssueCommentsData => {
+        metrics[EXTERNAL_COMMENTS_DATES] = externalIssueCommentsData
+      }).catch(error => console.log(error))
 
     await getAllExternalContributorsPullRequestCommentsDates(repo, owner)
-    .then(externalPrCommentsData => {
-      metrics[EXTERNAL_COMMENTS_DATES] = metrics[EXTERNAL_COMMENTS_DATES].concat(
-        externalPrCommentsData)
-      metrics[EXTERNAL_COMMENTS_DATES].sort(ascOrder())
-    }).catch(error => console.log(error))
+      .then(externalPrCommentsData => {
+        const tmp = metrics[EXTERNAL_COMMENTS_DATES].concat(externalPrCommentsData)
+        metrics[EXTERNAL_COMMENTS_DATES] = tmp.sort(ascOrder)
+      }).catch(error => console.log(error))
 
     await getIssueCountForRepo(repo, owner, STATE_OPEN)
-    .then(openIssueCount => {
-      metrics[OPEN_ISSUE_COUNT] = openIssueCount
-    }).catch(error => console.log(error))
+      .then(openIssueCount => {
+        metrics[OPEN_ISSUE_COUNT] = openIssueCount
+      }).catch(error => console.log(error))
 
     await getPullRequestInStateCountForRepo(repo, owner, STATE_OPEN)
-    .then(openPullCount => {
-      metrics[OPEN_PR_COUNT] = openPullCount
-    }).catch(error => console.log(error))
+      .then(openPullCount => {
+        metrics[OPEN_PR_COUNT] = openPullCount
+      }).catch(error => console.log(error))
 
     await getAllPullRequestCreationDates(repo, owner)
-    .then(openPrData => {
-      metrics[OPEN_PR_DATES] = openPrData
-    })
-    .catch(error => console.log(error))
+      .then(openPrData => {
+        metrics[OPEN_PR_DATES] = openPrData
+      })
+      .catch(error => console.log(error))
 
     data[owner][repo] = metrics
     console.log(`🏡 Owner: ${owner}`)

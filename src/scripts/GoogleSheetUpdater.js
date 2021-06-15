@@ -105,9 +105,9 @@ async function updateCounts (idx, idy, metrics, repo, owner, metric,
  * @returns {Promise<void>}
  */
 async function updatePunctualIndicators (newSheet, metrics, repo, owner) {
-  const openIssueCountCell = newSheet.getCellByA1('K3')
+  const openIssueCountCell = newSheet.getCellByA1('Q3')
   openIssueCountCell.value = metrics[repo][owner][OPEN_ISSUE_COUNT]
-  const openPRCountCell = newSheet.getCellByA1('N3')
+  const openPRCountCell = newSheet.getCellByA1('T3')
   openPRCountCell.value = metrics[repo][owner][OPEN_PR_COUNT]
   await newSheet.saveUpdatedCells()
 }
