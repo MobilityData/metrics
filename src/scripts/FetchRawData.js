@@ -176,11 +176,15 @@ async function getAllIssueCreationDates (repository, owner) {
     repo: repository,
     state: 'all',
     per_page: 100
+
   }).then(res => {
     for (const i in res) {
-      const date = new Date(res[i].created_at)
-      toReturn.push(
-        new Date(date.getFullYear(), date.getMonth(), date.getDate()))
+      let issue = res[i]
+      if (issue.pull_request == null ) {
+        const date = new Date(issue.created_at)
+        toReturn.push(
+          new Date(date.getFullYear(), date.getMonth(), date.getDate()))
+      }
     }
     return toReturn.sort(ascOrder)
   })
