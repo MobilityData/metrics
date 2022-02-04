@@ -20,7 +20,12 @@ const PR_MERGED_DATES = 'pr_merged_dates'
 const RAW_DATA_JSON = 'raw_data.json'
 const RAW_DATA = 'raw_data'
 const TMP = 'tmp'
-
+const STARGAZERS = "stargazers"
+const COMMITS = "commits"
+const ISSUE_AUTHORS = "issueAuthors"
+const PULL_AUTHORS = "pullAuthors"
+const FORKS = "forks"
+const COMMIT_AUTHORS = "commitAuthors"
 /**
  * Returns the number of occurrences of elements in a list of dates as a map
  * @param dateList the list of dates to examine
@@ -39,29 +44,29 @@ function getDateCount (dateList) {
 }
 
 /**
- * Formats a date as QQ-YYYY
+ * Formats a date as MM-YYYY
  * @param date the date to format
- * @returns {string} a date as QQ-YYYY
+ * @returns {string} a date as MM-YYYY
  */
-function toQuarterYear (date) {
-  const quarter = moment(date.toUTCString()).quarter()
+function toMonthYear (date) {
+  const month = date.getMonth() + 1
   const year = date.getFullYear()
-  return `Q${quarter}-${year}`
+  return `${month}-${year}`
 }
 
 /**
- * Formats dates as QQ-YYYY
+ * Formats dates as MM-YYYY
  * @param dateCountDict dates to reformat
- * @returns {{}} dates as QQ-YYY
+ * @returns {{}} dates as MM-YYY
  */
-function byQuarterYear (dateCountDict) {
+function byMonthYear(dateCountDict) {
   const toReturn = {}
   for (const i in dateCountDict) {
-    if (toQuarterYear(new Date(i)) in toReturn) {
-      toReturn[toQuarterYear(new Date(i))] = toReturn[toQuarterYear(
+    if (toMonthYear(new Date(i)) in toReturn) {
+      toReturn[toMonthYear(new Date(i))] = toReturn[toMonthYear(
         new Date(i))] + dateCountDict[i]
     } else {
-      toReturn[toQuarterYear(new Date(i))] = dateCountDict[i]
+      toReturn[toMonthYear(new Date(i))] = dateCountDict[i]
     }
   }
   return toReturn
@@ -135,6 +140,12 @@ function aggregateDataForSingleOwner (rawData, repo, owner) {
   const prMerged = rawData[owner][repo][PR_MERGED_DATES]
   const prOpened = rawData[owner][repo][PR_CREATION_DATES]
   const externalComments = rawData[owner][repo][EXTERNAL_COMMENTS_DATES]
+  const forks = rawData[owner][repo][FORKS]
+  const stargazers = rawData[owner][repo][STARGAZERS]
+  const commits = rawData[owner][repo][COMMITS]
+  const issueAuthors = rawData[owner][repo][ISSUE_AUTHORS]
+  const pullAuthors = rawData[owner][repo][PULL_AUTHORS]
+  const commitAuthors = rawData[owner][repo][COMMIT_AUTHORS]
 
   const data = {}
   data[repo] = {}
@@ -145,6 +156,12 @@ function aggregateDataForSingleOwner (rawData, repo, owner) {
   data[repo][owner][PR_MERGED_DATES] = byQuarterYear(getDateCount(prMerged))
   data[repo][owner][PR_CREATION_DATES] = byQuarterYear(getDateCount(prOpened))
   data[repo][owner][EXTERNAL_COMMENTS_DATES] = byQuarterYear(getDateCount(externalComments))
+  data[repo][owner][FORKS] = byMonthYear(getDateCount(forks))
+  data[repo][owner][STARGAZERS] = byMonthYear(getDateCount(stargazers))
+  data[repo][owner][COMMITS] = byMonthYear(getDateCount(commits))
+  data[repo][owner][ISSUE_AUTHORS] = byMonthYear(getDateCount(issueAuthors))
+  data[repo][owner][PULL_AUTHORS] = byMonthYear(getDateCount(pullAuthors))
+  data[repo][owner][COMMIT_AUTHORS] = byMonthYear(getDateCount(commitAuthors))
   data[repo][owner][OPEN_ISSUE_COUNT] = rawData[owner][repo][OPEN_ISSUE_COUNT]
   data[repo][owner][OPEN_PR_COUNT] = rawData[owner][repo][OPEN_PR_COUNT]
   return data
@@ -219,7 +236,7 @@ function aggregate () {
       JSON.parse(fs.readFileSync(`${DATA}/${RAW_DATA}${JSON_EXTENSION}`)), repo,
       owner)[repo]
   }
-  // aggregate data for repositories owned by a two organization
+  // aggregate data for repositories owned by a two organizations
   for (const i in multipleOwnerRepositories) {
     const repo = multipleOwnerRepositories[i].repo
     const owner1 = multipleOwnerRepositories[i].owner1
