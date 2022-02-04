@@ -24,12 +24,14 @@ Note that the update of the dashboard will fail it all operations are not comple
 
 - comment's dates by months and quarter of the year
 - issue creation date by months and quarter of the year
-- pull request creation date by months and quarter of the year
 - pull request merge date by months and quarter of the year
+- pull request creation date by months and quarter of the year
 - external comments dates by months and quarter of the year
 - forks creation dates by months and quarter of the year
 - repository starring dates by months and quarter of the year
 - repository commit dates by months and quarter of the year
-- number of issue authors by months and quarter of the year
-- number of pull request authors by months and quarter of the year
-- number of commit request authors by months and quarter of the year
+- number of new issue authors by months and quarter of the year
+- number of new pull request authors by months and quarter of the year
+- number of new commit authors by months and quarter of the year
+- number of open issues
+- number of open pull requests
