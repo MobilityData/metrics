@@ -16,4 +16,20 @@ Different scripts are implemented in this repository. Their execution in the fol
 * [GoogleSheetUpdater.js](/src/scripts/GoogleSheetUpdater.js) updates the google spreadsheet cells with new data.
 
 ## Automation
-[Google Cloud Platform](https://cloud.google.com/) is used to automate the process. Data is refreshed every day at 9am (GMT-4). 
+This dashboard is updated on a daily basis at 10AM (GMT-4) via a Google Cloud Build that is triggered by a pub/sub message.
+
+Note that the update of the dashboard will fail it all operations are not completed within 1200s (20 mins).
+
+## Indicators
+
+- comment's dates by months and quarter of the year
+- issue creation date by months and quarter of the year
+- pull request creation date by months and quarter of the year
+- pull request merge date by months and quarter of the year
+- external comments dates by months and quarter of the year
+- forks creation dates by months and quarter of the year
+- repository starring dates by months and quarter of the year
+- repository commit dates by months and quarter of the year
+- number of issue authors by months and quarter of the year
+- number of pull request authors by months and quarter of the year
+- number of commit request authors by months and quarter of the year
