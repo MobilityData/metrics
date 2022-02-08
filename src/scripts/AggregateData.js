@@ -150,12 +150,12 @@ function aggregateDataForSingleOwner (rawData, repo, owner) {
   const data = {}
   data[repo] = {}
   data[repo][owner] = {}
-  data[repo][owner][COMMENTS_DATES] = byQuarterYear(getDateCount(comments))
-  data[repo][owner][ISSUE_CREATION_DATES] = byQuarterYear(
+  data[repo][owner][COMMENTS_DATES] = byMonthYear(getDateCount(comments))
+  data[repo][owner][ISSUE_CREATION_DATES] = byMonthYear(
     getDateCount(issueCreation))
-  data[repo][owner][PR_MERGED_DATES] = byQuarterYear(getDateCount(prMerged))
-  data[repo][owner][PR_CREATION_DATES] = byQuarterYear(getDateCount(prOpened))
-  data[repo][owner][EXTERNAL_COMMENTS_DATES] = byQuarterYear(getDateCount(externalComments))
+  data[repo][owner][PR_MERGED_DATES] = byMonthYear(getDateCount(prMerged))
+  data[repo][owner][PR_CREATION_DATES] = byMonthYear(getDateCount(prOpened))
+  data[repo][owner][EXTERNAL_COMMENTS_DATES] = byMonthYear(getDateCount(externalComments))
   data[repo][owner][FORKS] = byMonthYear(getDateCount(forks))
   data[repo][owner][STARGAZERS] = byMonthYear(getDateCount(stargazers))
   data[repo][owner][COMMITS] = byMonthYear(getDateCount(commits))
@@ -185,15 +185,15 @@ function aggregateDataForMultipleOwner (mergedData, repo, owner1, owner2) {
   const owners = [owner1, owner2, MERGED]
   for (const i in owners) {
     const owner = owners[i]
-    data[repo][owner][COMMENTS_DATES] = byQuarterYear(
+    data[repo][owner][COMMENTS_DATES] = byMonthYear(
       getDateCount(mergedData[repo][owner][COMMENTS_DATES]))
-    data[repo][owner][ISSUE_CREATION_DATES] = byQuarterYear(
+    data[repo][owner][ISSUE_CREATION_DATES] = byMonthYear(
       getDateCount(mergedData[repo][owner][ISSUE_CREATION_DATES]))
-    data[repo][owner][PR_MERGED_DATES] = byQuarterYear(
+    data[repo][owner][PR_MERGED_DATES] = byMonthYear(
       getDateCount(mergedData[repo][owner][PR_MERGED_DATES]))
-    data[repo][owner][PR_CREATION_DATES] = byQuarterYear(
+    data[repo][owner][PR_CREATION_DATES] = byMonthYear(
       getDateCount(mergedData[repo][owner][PR_CREATION_DATES]))
-    data[repo][owner][EXTERNAL_COMMENTS_DATES] = byQuarterYear(
+    data[repo][owner][EXTERNAL_COMMENTS_DATES] = byMonthYear(
       getDateCount(mergedData[repo][owner][EXTERNAL_COMMENTS_DATES]))
     data[repo][owner][OPEN_ISSUE_COUNT] = mergedData[repo][owner][OPEN_ISSUE_COUNT]
     data[repo][owner][OPEN_PR_COUNT] = mergedData[repo][owner][OPEN_PR_COUNT]
