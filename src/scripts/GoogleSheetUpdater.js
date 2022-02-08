@@ -127,7 +127,7 @@ export async function updateGoogleSheet (auth) {
       const newSheet = doc.sheetsByTitle[`${repo}-${owner}`]
       const idx = 0
       let idy = 0
-      await newSheet.loadCells('A1:Z50')
+      await newSheet.loadCells('A1:Z1000')
 
       for (const metric in metrics[repo][owner]) {
         await updateSheetHeaders(newSheet, idx, idy, metric)
