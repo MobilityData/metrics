@@ -3,7 +3,6 @@ import { createRequire } from 'module'
 const require = createRequire(import.meta.url)
 const fs = require('fs')
 const shell = require('shelljs')
-const moment = require('moment')
 
 const COMMENTS_DATES = 'comments_dates'
 const DATA = 'data'
@@ -20,12 +19,12 @@ const PR_MERGED_DATES = 'pr_merged_dates'
 const RAW_DATA_JSON = 'raw_data.json'
 const RAW_DATA = 'raw_data'
 const TMP = 'tmp'
-const STARGAZERS = "stargazers"
-const COMMITS = "commits"
-const ISSUE_AUTHORS = "issueAuthors"
-const PULL_AUTHORS = "pullAuthors"
-const FORKS = "forks"
-const COMMIT_AUTHORS = "commitAuthors"
+const STARGAZERS = 'stargazers'
+const COMMITS = 'commits'
+const ISSUE_AUTHORS = 'issueAuthors'
+const PULL_AUTHORS = 'pullAuthors'
+const FORKS = 'forks'
+const COMMIT_AUTHORS = 'commitAuthors'
 /**
  * Returns the number of occurrences of elements in a list of dates as a map
  * @param dateList the list of dates to examine
@@ -59,7 +58,7 @@ function toMonthYear (date) {
  * @param dateCountDict dates to reformat
  * @returns {{}} dates as MM-YYY
  */
-function byMonthYear(dateCountDict) {
+function byMonthYear (dateCountDict) {
   const toReturn = {}
   for (const i in dateCountDict) {
     if (toMonthYear(new Date(i)) in toReturn) {

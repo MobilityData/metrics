@@ -7,7 +7,6 @@ const fs = require('fs')
 const shell = require('shelljs')
 const { Octokit } = require('@octokit/rest')
 
-const COMMENTS = 'comments'
 const COMMENTS_DATES = 'comments_dates'
 const DATA = 'data'
 const EXTERNAL_COMMENTS_DATES = 'external_comments_dates'
@@ -19,12 +18,12 @@ const PULLS = 'pulls'
 const OPEN_PR_DATES = 'pr_creation_dates'
 const PR_MERGED_DATES = 'pr_merged_dates'
 const REPOS = 'repos'
-const STARGAZERS = "stargazers"
-const FORKS = "forks"
-const COMMITS = "commits"
-const ISSUE_AUTHORS = "issueAuthors"
-const PULL_AUTHORS = "pullAuthors"
-const COMMENT_AUTHORS = "commentAuthors"
+const STARGAZERS = 'stargazers'
+const FORKS = 'forks'
+const COMMITS = 'commits'
+const ISSUE_AUTHORS = 'issueAuthors'
+const PULL_AUTHORS = 'pullAuthors'
+const COMMENT_AUTHORS = 'commentAuthors'
 
 const octokit = new Octokit({
   auth: process.env.GH_TOKEN,
@@ -91,8 +90,8 @@ async function getIssueAndPullInStateCountForRepo (repository, owner, state) {
     state: state,
     per_page: 100
   }).then(res => {
-    let issueCount =  res.filter(item => item.pull_request == null).length
-    return {'issueCount': issueCount, 'pullCount': res.length - issueCount}
+    const issueCount = res.filter(item => item.pull_request == null).length
+    return { issueCount: issueCount, pullCount: res.length - issueCount }
   })
 }
 
@@ -102,7 +101,7 @@ async function getDatesOfRepoStarring (repository, owner) {
     owner: owner,
     repo: repository,
     headers: {
-      "accept": 'application/vnd.github.v3.star+json'
+      accept: 'application/vnd.github.v3.star+json'
     }
   }).then(res => {
     for (const i in res) {
@@ -113,11 +112,12 @@ async function getDatesOfRepoStarring (repository, owner) {
     return toReturn
   })
 }
+
 async function getDatesOfRepoSubscription (repository, owner) {
   const toReturn = []
   return octokit.paginate(`GET /${REPOS}/${owner}/${repository}/subscribers`, {
     owner: owner,
-    repo: repository,
+    repo: repository
   }).then(res => {
     for (const i in res) {
       const date = new Date(res[i].starred_at)
@@ -175,7 +175,7 @@ async function getIssueNewAuthors (repository, owner) {
     const issues = res.filter(item => item.pull_request == null)
     for (const i in issues) {
       const issue = issues[i]
-      const dateTime = new Date(issue.created_at);
+      const dateTime = new Date(issue.created_at)
       const date = new Date(dateTime.getFullYear(), dateTime.getMonth(), dateTime.getDate())
       if (issue.user.id in datePerIssueAuthor) {
         if (datePerIssueAuthor[issue.user.id] <= date) {
@@ -250,10 +250,10 @@ async function getCommentsNewAuthors (repository, owner) {
           datePerCommentAuthor[comment.user.id] = date
         }
       }
-  }
-  const toReturn = Object.values(datePerCommentAuthor)
-  toReturn.sort(ascOrder)
-  return toReturn
+    }
+    const toReturn = Object.values(datePerCommentAuthor)
+    toReturn.sort(ascOrder)
+    return toReturn
   })
 }
 
@@ -327,8 +327,8 @@ async function getAllIssueCreationDates (repository, owner) {
 
   }).then(res => {
     for (const i in res) {
-      let issue = res[i]
-      if (issue.pull_request == null ) {
+      const issue = res[i]
+      if (issue.pull_request == null) {
         const date = new Date(issue.created_at)
         toReturn.push(
           new Date(date.getFullYear(), date.getMonth(), date.getDate()))
@@ -379,8 +379,8 @@ async function getAllExternalContributorsIssueAndPullRequestCommentsDates (repos
     per_page: 100
   }).then(comments => {
     const toReturn = []
-    if (comments.
-      length === 0) {
+    if (comments
+      .length === 0) {
       return []
     }
     for (const i in comments) {
@@ -399,31 +399,6 @@ async function getAllExternalContributorsIssueAndPullRequestCommentsDates (repos
 }
 
 /**
- * Returns the list of creation date of all pull requests comments sorted by
- * chronological order.
- * @param repository the repository to extract the data from
- * @param owner the owner of the repository
- * @returns {Promise<this|Thenable<this>>} the list of creation date of all pull
- * requests comments sorted by chronological order
- */
-async function getAllPullRequestCommentsDates (repository, owner) {
-  const toReturn = []
-  return octokit.paginate(
-    `GET /${REPOS}/{owner}/{repo}/${PULLS}/${COMMENTS}`, {
-      owner: owner,
-      repo: repository,
-      per_page: 100
-    }).then(res => {
-    for (const i in res) {
-      const date = new Date(res[i].created_at)
-      toReturn.push(
-        new Date(date.getFullYear(), date.getMonth(), date.getDate()))
-    }
-    return toReturn.sort(ascOrder)
-  })
-}
-
-/**
  * Determines whether a Github user is affiliated to MobilityData or no.
  * @param handler  the github handler of the user
  * @returns true if user is not affiliated to MobilityData,
@@ -432,12 +407,12 @@ async function getAllPullRequestCommentsDates (repository, owner) {
 function isExternalContributor (handler) {
 // very ugly and not optimal but it seems that there is an error not caught when
   // directly using the github aPI
-  const members = ["ameliembd", "barbeau", "carlfredl", "Cristhian-HA",
-    "danielmbd", "ElisabethPDefoy", "emmambd", "fredericsimard",
-    "genevieveproulx", "GretchenNewcomb", "heidiguenin", "isabelle-dr",
-    "jessicacir", "josee-sabourin", "kaiomi-i", "LeoFrachet", "lionel-nj",
-    "maximearmstrong", "michellenguyenta", "mplsmitch", "newton-davis",
-    "omar-kabbani", "scmcca", "TuThoThai", "ValerieGiguere"
+  const members = ['ameliembd', 'barbeau', 'carlfredl', 'Cristhian-HA',
+    'danielmbd', 'ElisabethPDefoy', 'emmambd', 'fredericsimard',
+    'genevieveproulx', 'GretchenNewcomb', 'heidiguenin', 'isabelle-dr',
+    'jessicacir', 'josee-sabourin', 'kaiomi-i', 'LeoFrachet', 'lionel-nj',
+    'maximearmstrong', 'michellenguyenta', 'mplsmitch', 'newton-davis',
+    'omar-kabbani', 'scmcca', 'TuThoThai', 'ValerieGiguere'
   ]
   if (members.includes(handler)) {
     return false
@@ -538,5 +513,4 @@ async function fetchRawData () {
   shell.mkdir('-p', `${DATA}/`)
   fs.writeFileSync(`${DATA}/raw_data.json`, JSON.stringify(data))
 }
-
 fetchRawData()

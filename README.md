@@ -13,7 +13,6 @@ This dashboard gives information regarding the following repositories:
 Different scripts are implemented in this repository. Their execution in the following order enables rendering of the metrics dashboard.
 * [FetchRawData.js](/src/scripts/FetchRawData.js) fetches raw data from the Github repositories;
 * [AggregateData.js](/src/scripts/AggregateData.js) aggregates the data previously retrieved for future rendering;
-* [GoogleSheetUpdater.js](/src/scripts/GoogleSheetUpdater.js) updates the google spreadsheet cells with new data.
 
 ## Automation
 This dashboard is updated on a daily basis at 10AM (GMT-4) via a Google Cloud Build that is triggered by a pub/sub message.
@@ -35,3 +34,11 @@ Note that the update of the dashboard will fail it all operations are not comple
 - number of new commit authors by months and quarter of the year
 - number of open issues
 - number of open pull requests
+
+## Run
+
+### Locally
+
+- Make sure that `GH_TOKEN` is defined at in a file named `.env` located at the root of the project
+- run `node src/scripts/FetchRawData.js`: this script will fetch raw data from Github and save it under `data/raw_data.json` 
+- run `node src/scripts/AggregateData.js`: this script will aggregate data from the previous script and save all metrics by month under `data/metrics.json`
