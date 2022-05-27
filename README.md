@@ -1,3 +1,5 @@
+# THIS REPO HAS BEEN ARCHIVED. READ-ONLY.
+
 Metrics
 =======
 
